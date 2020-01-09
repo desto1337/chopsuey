@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { OpeningComponent } from './opening/opening.component';
+import { AppComponent } from './component/app.component';
+import { OpeningComponent } from '../../opening/opening.component';
 
 @NgModule({
   declarations: [
