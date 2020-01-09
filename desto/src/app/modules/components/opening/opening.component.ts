@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OpeningContent } from './classes/OpeningContent';
+import { OpeningContent } from '../../../shared/models/opening/opening-content';
 
 @Component({
   selector: 'app-opening',

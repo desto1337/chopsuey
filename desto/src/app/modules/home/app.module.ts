@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './component/app.component';
-import { OpeningComponent } from '../../opening/opening.component';
+import { OpeningComponent } from '../../modules/components/opening/opening.component';
 
 @NgModule({
   declarations: [
