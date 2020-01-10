@@ -4,7 +4,6 @@ export class OpeningContent {
 
   constructor(title?: string, description?: string) {
     this.title = title || 'Hallo, ich bin Dennis Stoklosa';
-    // tslint:disable-next-line:max-line-length
     this.description = description || 'Ein leidenschaftlicher Software-Entwickler. Wissbegierig hinsichtlich aktuellster Technologien zur Umsetzung des Gesamtprodukts - mit dem Auge auf die User Experience.';
   }
 }
