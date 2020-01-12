@@ -4,13 +4,15 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { OpeningComponent } from './modules/components/opening/opening.component';
-import { AboutmeComponent } from './modules/components/aboutme/aboutme.component';
-import { MyskillsComponent } from './modules/components/myskills/myskills.component';
-import { MypassionComponent } from './modules/components/mypassion/mypassion.component';
-import { MyprojectsComponent } from './modules/components/myprojects/myprojects.component';
-import { MycareerComponent } from './modules/components/mycareer/mycareer.component';
-import { ContactmeComponent } from './modules/components/contactme/contactme.component';
+import { OpeningComponent } from './modules/opening/opening.component';
+import { AboutmeComponent } from './modules/aboutme/aboutme.component';
+import { MyskillsComponent } from './modules/myskills/myskills.component';
+import { MypassionComponent } from './modules/mypassion/mypassion.component';
+import { MyprojectsComponent } from './modules/myprojects/myprojects.component';
+import { MycareerComponent } from './modules/mycareer/mycareer.component';
+import { ContactmeComponent } from './modules/contactme/contactme.component';
+import { HeaderComponent } from './core/header/header.component';
+import { FooterComponent } from './core/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ContactmeComponent } from './modules/components/contactme/contactme.com
     MypassionComponent,
     MyprojectsComponent,
     MycareerComponent,
-    ContactmeComponent
+    ContactmeComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
