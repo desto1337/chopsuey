@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import "./assets/scss/myVariables";
+
 @import "./assets/scss/bootstrapTheme"; // Bootstrap-Theme must be imported before bootstrap itself
 @import "~bootstrap/scss/bootstrap";
 
