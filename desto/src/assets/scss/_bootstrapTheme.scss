@@ -2,6 +2,8 @@
 *  predefined colors can be found in /node_modules/bootstrap/scss/_variables.scss
 */
 
+@import "globalvariables";
+
 $theme-colors: (
     "primary": $primary-color,
     "secondary": $secondary-color

@@ -1,9 +1,11 @@
+@import "globalvariables";
+
 .toolbar {
   height: 60px;
   margin: -8px;
   display: flex;
   align-items: center;
-  background-color: #1976d2;
+  background-color: $primary-color;
   color: white;
   font-weight: 600;
 }
