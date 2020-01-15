@@ -1,3 +1,5 @@
+@import "globalvariables";
+
 h1,
 h2,
 h3,
@@ -33,7 +35,7 @@ svg.material-icons:not(:last-child) {
   margin-right: 8px;
 }
 
-.card svg.material-icons path {
+.custom_card svg.material-icons path {
   fill: #888;
 }
 
@@ -44,12 +46,12 @@ svg.material-icons:not(:last-child) {
   margin-top: 16px;
 }
 
-.card {
+.custom_card {
   border-radius: 4px;
   border: 1px solid #eee;
   background-color: #fafafa;
-  height: 40px;
-  width: 200px;
+  height: 70px;
+  width: 250px;
   margin: 0 8px 16px;
   padding: 16px;
   display: flex;
@@ -60,30 +62,30 @@ svg.material-icons:not(:last-child) {
   line-height: 24px;
 }
 
-.card-container .card:not(:last-child) {
+.card-container .custom_card:not(:last-child) {
   margin-right: 0;
 }
 
-.card.card-small {
-  height: 16px;
-  width: 168px;
+.custom_card.card-small {
+  height: 50px;
+  width: 200px;
 }
 
-.card-container .card:not(.highlight-card) {
+.card-container .custom_card:not(.highlight-card) {
   cursor: pointer;
 }
 
-.card-container .card:not(.highlight-card):hover {
+.card-container .custom_card:not(.highlight-card):hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 17px rgba(black, 0.35);
 }
 
-.card-container .card:not(.highlight-card):hover .material-icons path {
+.card-container .custom_card:not(.highlight-card):hover .material-icons path {
   fill: rgb(105, 103, 103);
 }
 
-.card.highlight-card {
-  background-color: #1976d2;
+.custom_card.highlight-card {
+  background-color: $primary-color;
   color: white;
   font-weight: 600;
   border: none;
@@ -92,7 +94,7 @@ svg.material-icons:not(:last-child) {
   position: relative;
 }
 
-.card.card.highlight-card span {
+.custom_card.custom_card.highlight-card span {
   margin-left: 60px;
 }
 
@@ -217,12 +219,12 @@ svg#clouds {
     width: 100%;
   }
 
-  .card:not(.highlight-card) {
+  .custom_card:not(.highlight-card) {
     height: 16px;
     margin: 8px 0;
   }
 
-  .card.highlight-card span {
+  .custom_card.highlight-card span {
     margin-left: 72px;
   }
 
