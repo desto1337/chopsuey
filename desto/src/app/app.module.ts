@@ -13,6 +13,8 @@ import { MycareerComponent } from './modules/mycareer/mycareer.component';
 import { ContactmeComponent } from './modules/contactme/contactme.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
+import { LegalsComponent } from './core/legals/legals.component';
+import { PrivacypolicyComponent } from './core/privacypolicy/privacypolicy.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FooterComponent } from './core/footer/footer.component';
     MycareerComponent,
     ContactmeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LegalsComponent,
+    PrivacypolicyComponent
   ],
   imports: [
     BrowserModule,
