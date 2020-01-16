@@ -2,7 +2,13 @@
 *  predefined colors can be found in /node_modules/bootstrap/scss/_variables.scss
 */
 
+@import "~bootstrap/scss/bootstrap";
+
 $theme-colors: (
     "primary": $primary-color,
     "secondary": $secondary-color
 );
+
+.btn-primary {
+  @include button-variant($secondary-color, darken($secondary-color, 7.5%), darken($secondary-color, 10%), lighten($secondary-color,5%), lighten($secondary-color, 10%), darken($secondary-color,30%));
+}
