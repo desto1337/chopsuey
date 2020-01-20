@@ -15,6 +15,7 @@ import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { LegalsComponent } from './core/legals/legals.component';
 import { PrivacypolicyComponent } from './core/privacypolicy/privacypolicy.component';
+import { DashboardComponent } from './core/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PrivacypolicyComponent } from './core/privacypolicy/privacypolicy.compo
     HeaderComponent,
     FooterComponent,
     LegalsComponent,
-    PrivacypolicyComponent
+    PrivacypolicyComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
