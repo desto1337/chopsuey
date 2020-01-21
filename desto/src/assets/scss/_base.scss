@@ -1,5 +1,15 @@
 @import "globalvariables";
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 20px; // TO DO eigene variable
+}
+
 h1,
 h2,
 h3,
