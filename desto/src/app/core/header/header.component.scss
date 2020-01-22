@@ -1,5 +1,18 @@
 @import "globalvariables";
 
+
+header {
+  margin-bottom: 70px;
+}
+
+.navbar{
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  opacity: 0.9;
+}
+
+/* following code is obsolet */
+
 .toolbar {
   height: 60px;
   margin: -8px;
