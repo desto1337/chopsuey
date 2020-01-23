@@ -1,17 +1,22 @@
 @import "globalvariables";
 
 footer {
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 100px;
+  padding-top: 60px;
   /* Set the fixed height of the footer here */
   line-height: 20px;
-  height: 20px;
+  height: 140px;
   position: absolute;
   bottom: 0;
   width: 100%;
+  border-top: solid $grey-lighter 1px;
 }
 
 footer a {
   display: flex;
   align-items: center;
+}
+
+footer small {
+  color: $grey-default;
 }
