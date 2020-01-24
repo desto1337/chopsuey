@@ -1,11 +1,10 @@
 @import "globalvariables";
 
 footer {
-  margin-top: 100px;
-  padding-top: 60px;
+  padding-top: 40px;
   /* Set the fixed height of the footer here */
   line-height: 20px;
-  height: 140px;
+  height: 160px;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -17,6 +16,19 @@ footer a {
   align-items: center;
 }
 
-footer small {
+footer #copyrightContainer {
+  margin-top: 10px;
+}
+
+footer #copyrightContainer small {
   color: $grey-default;
+}
+
+#bottomLineContainer {
+  margin-top: 20px;
+}
+
+#bottomLineContainer a {
+  margin-left: 20px;
+  margin-right: 20px;
 }
