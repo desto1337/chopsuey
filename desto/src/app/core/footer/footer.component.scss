@@ -1,14 +1,20 @@
 @import "globalvariables";
 
 footer {
-  padding-top: 40px;
   /* Set the fixed height of the footer here */
   line-height: 20px;
-  height: 160px;
+  height: 180px;
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+#footerLine {
+  margin-top: 20px;
+  padding-bottom: 40px;
+  width: 100%;
   border-top: solid $grey-lighter 1px;
+  max-width: 1200px; // default: 960;
 }
 
 footer a {
