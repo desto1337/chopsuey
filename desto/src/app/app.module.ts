@@ -16,6 +16,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { LegalsComponent } from './core/legals/legals.component';
 import { PrivacypolicyComponent } from './core/privacypolicy/privacypolicy.component';
 import { DashboardComponent } from './core/dashboard/dashboard.component';
+import { PersonComponent } from './core/person/person.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DashboardComponent } from './core/dashboard/dashboard.component';
     FooterComponent,
     LegalsComponent,
     PrivacypolicyComponent,
-    DashboardComponent
+    DashboardComponent,
+    PersonComponent
   ],
   imports: [
     BrowserModule,

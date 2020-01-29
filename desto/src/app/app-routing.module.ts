@@ -7,16 +7,17 @@ import { PrivacypolicyComponent } from './core/privacypolicy/privacypolicy.compo
 import { ContactmeComponent } from './modules/contactme/contactme.component';
 import { MyprojectsComponent } from './modules/myprojects/myprojects.component';
 import { MyskillsComponent } from './modules/myskills/myskills.component';
+import { PersonComponent } from './core/person/person.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent},
+  { path: 'person', component: PersonComponent},
+  { path: 'skills', component: MyskillsComponent},
+  { path: 'projects', component: MyprojectsComponent},
+  { path: 'contact', component: ContactmeComponent},
   { path: 'legals', component: LegalsComponent},
   { path: 'privacy', component: PrivacypolicyComponent},
-  { path: 'contact', component: ContactmeComponent},
-  { path: 'projects', component: MyprojectsComponent},
-  { path: 'skills', component: MyskillsComponent},
-  { path: 'career', component: MycareerComponent},
   { path: 'examples', component: MycareerComponent} // TO DO remove, just tests
 ];
 
