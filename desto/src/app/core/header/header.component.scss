@@ -1,8 +1,8 @@
 @import "globalvariables";
 
-
 header {
-  margin-bottom: 70px;
+  margin-bottom: 40px;
+  max-height: $header-maxheight;
 }
 
 .navbar{

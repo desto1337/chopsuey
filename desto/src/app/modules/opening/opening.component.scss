@@ -1,2 +1,21 @@
 @import "globalvariables";
 
+#openingModule::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: calc(100vh - #{$header-maxheight});;
+  z-index: -1;
+
+  background: linear-gradient(
+        rgba(0, 0, 0, 0.25),
+        rgba(0, 0, 0, 0.25)
+      ), url('../../../assets/images/website_background.jpg') no-repeat center center / cover;
+
+  background-position-y: 15%;
+}
+
+#openingModule {
+  width: 100vw;
+  height: calc(100vh - #{$header-maxheight});
+}
