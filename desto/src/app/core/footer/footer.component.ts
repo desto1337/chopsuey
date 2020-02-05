@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-footer',
@@ -8,11 +9,19 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
 
   private currentYear: number;
+  private urlXing: string;
+  private urlLinkedIn: string;
+  private urlGithub: string;
+  private urlStackoverflow: string;
 
   constructor() { }
 
   ngOnInit() {
     this.currentYear = new Date().getFullYear();
+    this.urlXing = environment.urlXing;
+    this.urlLinkedIn = environment.urlLinkedIn;
+    this.urlGithub = environment.urlGithub;
+    this.urlStackoverflow = environment.urlStackoverflow;
   }
 
 }
