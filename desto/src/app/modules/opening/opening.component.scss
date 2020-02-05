@@ -4,7 +4,8 @@
   content: "";
   position: absolute;
   width: 100vw;
-  height: calc(100vh - #{$header-maxheight});;
+  height: calc(100vh);;
+  transform: translateY(-#{$header-maxheight});
   z-index: -1;
 
   background: linear-gradient(

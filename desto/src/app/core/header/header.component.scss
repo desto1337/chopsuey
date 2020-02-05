@@ -5,10 +5,6 @@ header {
   max-height: $header-maxheight;
 }
 
-.navbar-default {
-  background-color: $secondary-color;
-}
-
 .navbar{
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
