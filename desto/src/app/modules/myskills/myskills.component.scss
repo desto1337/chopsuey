@@ -1,2 +1,16 @@
 @import "globalvariables";
 
+.row {
+  margin-top: 2vh;
+}
+
+.card {
+  width: 100%;
+  min-height: 30vh;
+}
+
+.chartContainer {
+  width: 500px;
+  height: 500px;
+  border: solid 5px $secondary-color;
+}
