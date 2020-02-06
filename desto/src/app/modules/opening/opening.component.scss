@@ -1,21 +1,49 @@
 @import "globalvariables";
 
-#openingModule::before {
+#openingcontent::before {
   content: "";
   position: absolute;
   width: 100vw;
-  height: calc(100vh);;
+  height: calc(100vh);
   transform: translateY(-#{$header-maxheight});
   z-index: -1;
 
   background: linear-gradient(
     rgba(0, 0, 0, 0.25),
     rgba(0, 0, 0, 0.25)
-  ), url('../../../assets/images/website_background.jpg') no-repeat center center / cover;;
-  background-position-y: 15%;
+  ), url('../../../assets/images/website_background.jpg') no-repeat center center / cover;
+  background-position-y: -30%;
 }
 
-#openingModule {
+#openingcontent {
   width: 100vw;
   height: calc(100vh - #{$header-maxheight});
+  display: flex;
+  margin: 32px auto;
+  padding: 0 16px;
+  max-width: 95vw; // default: 960
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom {
+  // background: green;
+  align-self: flex-end;
+  height: 35vh;
+}
+
+.bottomTitle {
+  //background: green;
+  align-self: flex-end;
+  height: 5vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+p {
+  font-size: 1.6em;
+  color: rgba(255, 255, 255, 0.7);
 }
