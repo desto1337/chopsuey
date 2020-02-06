@@ -19,9 +19,9 @@
   width: 100vw;
   height: calc(100vh - #{$header-maxheight});
   display: flex;
-  margin: 32px auto;
+  margin: $header-maxheight auto;
   padding: 0 16px;
-  max-width: 95vw; // default: 960
+  max-width: 1500px; // default: 960
   flex-direction: column;
   align-items: center;
 }
