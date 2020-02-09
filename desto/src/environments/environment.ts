@@ -10,6 +10,20 @@ export const environment = {
   urlStackoverflow: 'https://stackoverflow.com/users/10895592/dennis-stoklosa'
 };
 
+export const CONTENTFULCONFIG = {
+  space: 'bb0iogj7txbo',
+  accessToken: 'AnrycwjW7XHkkVYqeIyCFP8F6cab33_NXcZpzGW7Uys',
+
+  contentTypeIds: {
+    aboutMe: 'aboutMe',
+    openingContent: 'openingContent',
+    characteristic: 'characteristic',
+    job: 'job',
+    project: 'project',
+    skill: 'skill'
+  }
+};
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
