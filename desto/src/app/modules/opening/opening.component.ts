@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { OpeningContent } from '../../models/opening/opening-content';
+import { OpeningContentFields } from 'src/app/models/opening/openingContentFields';
+import { ContentfulService } from 'src/app/core/services/contentful/contentful.service';
+import { Entry } from 'contentful';
 
 @Component({
   selector: 'app-opening',
@@ -8,13 +10,15 @@ import { OpeningContent } from '../../models/opening/opening-content';
 })
 export class OpeningComponent implements OnInit {
 
-  protected openingContent: OpeningContent;
+  private openingContent: OpeningContentFields;
 
-  constructor() { }
+  constructor(private contentfulService: ContentfulService) { }
 
   ngOnInit() {
-    this.openingContent = new OpeningContent();
-    console.log('Mein OpeningContent: ', this.openingContent);
+    this.contentfulService.getOpeningPageContent().then((openingPageContent: Entry<OpeningContentFields>[]) => {
+      this.openingContent = openingPageContent[0].fields;
+      console.log('Mein OpeningContent: ', this.openingContent);
+    });
   }
 
 }

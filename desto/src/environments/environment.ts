@@ -15,7 +15,12 @@ export const CONTENTFULCONFIG = {
   accessToken: 'AnrycwjW7XHkkVYqeIyCFP8F6cab33_NXcZpzGW7Uys',
 
   contentTypeIds: {
-    aboutMe: 'aboutMe'
+    aboutMe: 'aboutMe',
+    openingContent: 'openingContent',
+    characteristic: 'characteristic',
+    job: 'job',
+    project: 'project',
+    skill: 'skill'
   }
 };
 

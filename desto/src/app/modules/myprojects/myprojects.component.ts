@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentfulService } from 'src/app/core/services/contentful/contentful.service';
+import { ProjectFields } from 'src/app/models/project/projectFields';
+import { Entry } from 'contentful';
 
 @Component({
   selector: 'app-myprojects',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyprojectsComponent implements OnInit {
 
-  constructor() { }
+  private projects: ProjectFields[];
+
+  constructor(private contentfulService: ContentfulService) { }
 
   ngOnInit() {
+    this.contentfulService.getProjectPageContent().then((projectEntries: Entry<ProjectFields>[]) => {
+      console.log('Meine Project-Entries: ', projectEntries);
+      this.projects = this.resolveProjects(projectEntries);
+    }).catch(error => {
+      console.log('Contentful-API: Es wurden keine Projects gefunden: ', error);
+    });
+  }
+
+  resolveProjects(entries: Entry<ProjectFields>[]): ProjectFields[] {
+    const projects: ProjectFields[] = [];
+
+    entries.forEach(entry => {
+      projects.push(entry.fields);
+    });
+
+    return projects;
   }
 
 }

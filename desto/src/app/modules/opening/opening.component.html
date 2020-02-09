@@ -1,7 +1,7 @@
 <div id="openingcontent">
-  <div class="row h-100">
+  <div *ngIf="openingContent" class="row h-100">
     <div class="col-12 bottomTitle">
-      <h1>{{ openingContent.title }}</h1>
+      <h1>{{ openingContent.headline }}</h1>
     </div>
     <div class="col-md-5 bottom">
       <p>{{ openingContent.description }}</p>
