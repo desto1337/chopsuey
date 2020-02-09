@@ -1,17 +1,17 @@
 <div class="content">
-  <div class="row justify-content-center">
+  <div *ngIf="aboutmeContent" class="row justify-content-center">
     <div class="col-md-7">
       <div id="imagecontainer"></div>
     </div>
     <div class="col-md-5">
       <h2>Das ist ein Aboutme</h2>
       <p id="quote">
-        <i>Das ist ein Quote
+        <i>{{ aboutmeContent.quote }}
           <br>
-          Author XY
+          {{ aboutmeContent.quoteAuthor }}
         </i>
       </p>
-      <p>Das ist ein Text. Das ist ein Text.</p>
+      <p>{{ aboutmeContent.introText }}</p>
 
       <div class="card-container">
         <a class="custom_card" target="_blank" rel="noopener" href="#">Über mich</a>

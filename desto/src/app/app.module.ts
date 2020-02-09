@@ -17,6 +17,7 @@ import { LegalsComponent } from './core/legals/legals.component';
 import { PrivacypolicyComponent } from './core/privacypolicy/privacypolicy.component';
 import { DashboardComponent } from './core/dashboard/dashboard.component';
 import { PersonComponent } from './core/person/person.component';
+import { ContentfulService } from './core/services/contentful/contentful.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import { PersonComponent } from './core/person/person.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    ContentfulService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
