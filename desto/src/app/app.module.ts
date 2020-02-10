@@ -39,7 +39,7 @@ import { ContentfulService } from './core/services/contentful/contentful.service
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [
     ContentfulService

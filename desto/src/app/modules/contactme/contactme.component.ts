@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactmeComponent implements OnInit {
 
-  constructor() { }
+  private disabledGenerateEmail = true;
+  private contactname: string;
+  private subject: string;
+  private message: string;
 
-  ngOnInit() {
+    constructor() { }
+
+    ngOnInit() {}
   }
-
-}

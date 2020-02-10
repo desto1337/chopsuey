@@ -1,4 +1,55 @@
 <div class="content">
-  <h2>Eine Test-H2-Headline</h2>
-  <p>contactme works!</p>
+  <h2>Nehmen Sie Kontakt mit mir auf</h2>
+
+  <div class="row justify-content-center">
+    <!-- Terminal -->
+    <div class="emailoverlay">
+      <pre>
+<b>Verfasse E-Mail..</b>
+      </pre>
+      <pre>
+Ihr Name:
+          <input
+            type="text"
+            id="name"
+            class="form-control"
+            placeholder="Name"
+            [(ngModel)]="contactname"
+          />
+Betreff:
+          <select class="form-control" [(ngModel)]="subject">
+            <option value="Feedback" selected>Feedback</option>
+            <option value="Mittleilung eines Bugs">Mitteilung eines Bugs</option>
+            <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
+          </select>
+Mitteilung:
+          <textarea
+            class="form-control rounded-0"
+            id="exampleFormControlTextarea2"
+            rows="5"
+            [(ngModel)]="message"
+            placeholder="Ihre Nachricht an mich"></textarea>
+        </pre>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="card-container">
+        <a
+          class="custom_card card-small"
+          target="_blank"
+          rel="noopener"
+          href="mailto:contact@dennis-stoklosa.de"
+        >
+          Erstelle E-Mail
+        </a>
+      </div>
+    </div>
+    <div class="col-12 text-center">
+      <small
+        >Oder schreiben Sie direkt eine E-Mail an contact (at)
+        dennis-stoklosa.de</small
+      >
+    </div>
+  </div>
 </div>
