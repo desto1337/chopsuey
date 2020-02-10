@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private el: ElementRef, private renderer: Renderer) { }
 
   ngOnInit() {
+  }
+
+  closeMenu() {
+    this.renderer.setElementClass(this.el.nativeElement.querySelector('.navbar-collapse'), 'show', false);
   }
 
 }
