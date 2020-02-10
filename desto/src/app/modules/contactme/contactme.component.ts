@@ -1,5 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-contactme',
@@ -8,30 +7,12 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class ContactmeComponent implements OnInit {
 
-  public contactForm: FormGroup;
-  public disabledSubmitButton = true;
-  public optionsSelect: Array<any>;
+  private disabledGenerateEmail = true;
+  private contactname: string;
+  private subject: string;
+  private message: string;
 
-  @HostListener('input') oninput() {
-
-    if (this.contactForm.valid) {
-      this.disabledSubmitButton = false;
-      }
-    }
-
-  constructor(private fb: FormBuilder) {
-    this.contactForm = fb.group({
-      contactFormName: ['', Validators.required],
-      contactFormEmail: ['', Validators.compose([Validators.required, Validators.email])],
-      contactFormSubjects: ['', Validators.required],
-      contactFormMessage: ['', Validators.required],
-      contactFormCopy: [''],
-      });
-    }
+    constructor() { }
 
     ngOnInit() {}
-
-    onSubmit() {
-      console.log('Meine Form: ', this.contactForm.value);
-    }
   }
