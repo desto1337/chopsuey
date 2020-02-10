@@ -15,9 +15,10 @@ Ihr Name:
             class="form-control"
             placeholder="Name"
             [(ngModel)]="contactname"
+            (ngModelChange)="updateMailtoString()"
           />
 Betreff:
-          <select class="form-control" [(ngModel)]="subject">
+          <select class="form-control" [(ngModel)]="subject" (ngModelChange)="updateMailtoString()">
             <option value="Feedback" selected>Feedback</option>
             <option value="Mittleilung eines Bugs">Mitteilung eines Bugs</option>
             <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
@@ -25,9 +26,10 @@ Betreff:
 Mitteilung:
           <textarea
             class="form-control rounded-0"
-            id="exampleFormControlTextarea2"
+            id="messageTextarea"
             rows="5"
             [(ngModel)]="message"
+            (ngModelChange)="updateMailtoString()"
             placeholder="Ihre Nachricht an mich"></textarea>
         </pre>
     </div>
@@ -39,7 +41,7 @@ Mitteilung:
           class="custom_card card-small"
           target="_blank"
           rel="noopener"
-          href="mailto:contact@dennis-stoklosa.de"
+          href="mailto:{{mailtoString}}"
         >
           Erstelle E-Mail
         </a>
