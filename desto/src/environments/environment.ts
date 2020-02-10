@@ -2,6 +2,8 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { NgcCookieConsentConfig } from 'ngx-cookieconsent';
+
 export const environment = {
   production: false,
   urlXing: 'https://www.xing.com/profile/Dennis_Stoklosa',
@@ -21,6 +23,35 @@ export const CONTENTFULCONFIG = {
     job: 'job',
     project: 'project',
     skill: 'skill'
+  }
+};
+
+export const cookieConfiguration: NgcCookieConsentConfig = {
+  cookie: {
+    domain: 'https://dennis-stoklosa.de' // or 'your.domain.com' // it is mandatory to set a domain, for cookies to work properly (see https://goo.gl/S2Hy2A)
+  },
+  position: 'bottom-right',
+  theme: 'classic',
+  palette: {
+    popup: {
+      background: '#000000',
+      text: '#9ABAEF',
+      link: '#B4D4FF'
+    },
+    button: {
+      background: '#B4D4FF',
+      text: '#000000',
+      border: 'transparent'
+    }
+  },
+  type: 'info',
+  content: {
+    message: 'Diese Web-Applikation verwendet Cookies. Nähere Informationen dazu und Ihren Rechten finden Sie in der auf dieser Seite ersichtlichen Datenschutzerklärung.',
+    dismiss: 'Verstanden',
+    deny: 'Ablehnen',
+    link: 'Datenschutzerklärung',
+    href: 'https://dennis-stoklosa.de/privacy',
+    policy: 'Cookie Policy'
   }
 };
 

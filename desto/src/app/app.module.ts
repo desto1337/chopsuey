@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { NgcCookieConsentModule, NgcCookieConsentConfig } from 'ngx-cookieconsent';
+import { cookieConfiguration } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +20,8 @@ import { PrivacypolicyComponent } from './core/privacypolicy/privacypolicy.compo
 import { DashboardComponent } from './core/dashboard/dashboard.component';
 import { PersonComponent } from './core/person/person.component';
 import { ContentfulService } from './core/services/contentful/contentful.service';
+
+const cookieConfig: NgcCookieConsentConfig = cookieConfiguration;
 
 @NgModule({
   declarations: [
@@ -37,6 +41,7 @@ import { ContentfulService } from './core/services/contentful/contentful.service
     PersonComponent
   ],
   imports: [
+    NgcCookieConsentModule.forRoot(cookieConfig),
     BrowserModule,
     FormsModule,
     AppRoutingModule,
