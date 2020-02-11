@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactdecryptionService } from 'src/app/core/services/contactdecryption/contactdecryption.service';
 
 @Component({
   selector: 'app-contactme',
@@ -7,42 +8,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactmeComponent implements OnInit {
 
-  private mailtoString = 'contact@dennis-stoklosa.de';
+  private prefix: string; // prefix
+  private contact: string; // contactaddress
+  private options: string;
   private contactname: string;
   private subject = 'Feedback';
   private message: string;
   private messageHtml: any;
 
-    constructor() { }
+    constructor(private contactDecryptionService: ContactdecryptionService) { }
 
     ngOnInit() {
+      this.contact = this.contactDecryptionService.decrypContact('TROLOLO');
+
       if (this.contactname || this.subject || this.message) {
 
-        this.mailtoString = 'contact@dennis-stoklosa.de?';
-        this.mailtoString = 'contact@dennis-stoklosa.de?subject=' + this.subject; // subject ist immer ausgewählt
+        this.options = '?subject=' + this.subject; // subject ist immer ausgewählt
 
         if (this.message) {
-          this.mailtoString = this.mailtoString + '&body=' + this.message;
+          this.options = this.options + '&body=' + this.message;
         }
 
-      } else {
-        this.mailtoString = 'contact@dennis-stoklosa.de';
       }
+
+      // Initialize Prefix
+      this.prefix = this.contactDecryptionService.resolvePrefix('hexhex');
+
+      console.log('Initiale Mail', this.contact);
+      console.log('Initialer Prefix', this.prefix);
     }
 
     updateMailtoString() {
 
       if (this.contactname || this.subject || this.message) {
-
-        this.mailtoString = 'contact@dennis-stoklosa.de?';
-        this.mailtoString = 'contact@dennis-stoklosa.de?subject=' + this.subject; // subject ist immer ausgewählt
+        this.options = '?subject=' + this.subject; // subject ist immer ausgewählt
 
         if (this.message) {
-          this.mailtoString = this.mailtoString + '&body=' + this.message;
+          this.options = this.options + '&body=' + this.message;
         }
 
-      } else {
-        this.mailtoString = 'contact@dennis-stoklosa.de';
       }
     }
   }

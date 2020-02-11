@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  contact: 'contactTROLOLOdennis-stoklosa.de',
   urlXing: 'https://www.xing.com/profile/Dennis_Stoklosa',
   urlLinkedIn: 'https://www.linkedin.com/in/dennis-stoklosa-295b4a159/',
   urlGithub: 'https://github.com/desto1337',

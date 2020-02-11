@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactdecryptionService } from '../services/contactdecryption/contactdecryption.service';
 
 @Component({
   selector: 'app-privacypolicy',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrivacypolicyComponent implements OnInit {
 
-  constructor() { }
+  private contact: string;
+
+  constructor(private contactDescryptionService: ContactdecryptionService) { }
 
   ngOnInit() {
+    const encrypted = this.contactDescryptionService.decrypContact('TROLOLO');
+    this.contact = 'Email: ' + encrypted;
   }
 
 }
