@@ -23,7 +23,7 @@ $theme-colors: (
 /* any relevant bootstrap navbar property */
 /* change the background color */
 .navbar-custom {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: $navbar-color;
 }
 /* change the brand and text color */
 .navbar-custom .navbar-brand,

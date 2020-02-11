@@ -9,10 +9,13 @@
   z-index: -1;
 
   background: linear-gradient(
-    rgba(0, 0, 0, 0.25),
-    rgba(0, 0, 0, 0.25)
-  ), url('../../../assets/images/website_background.jpg') no-repeat center center / cover;
-  background-position-y: -30%;
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ), url('../../../assets/images/website_background.jpg') no-repeat top center / cover;
+
+  background-position-y: $header-maxheight; // Space von Navbar-Höhe
+  // background-position: center right;
+  background-color: $navbar-color; // Navback-Background Space
 }
 
 #openingcontent {

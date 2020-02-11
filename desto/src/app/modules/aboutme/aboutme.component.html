@@ -1,9 +1,9 @@
 <div class="content">
   <div *ngIf="aboutmeContent" class="row justify-content-center">
-    <div class="col-md-7">
-      <div id="imagecontainer"></div>
+    <div class="col-md-7 pr-lg-5">
+      <img class="img-fluid" src="../../../assets/images/aboutme_picture.jpg" alt="Kein Image vorhanden :-("/>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-5 pl-lg-5">
       <h2>Das ist ein Aboutme</h2>
       <p id="quote">
         <i>{{ aboutmeContent.quote }}
@@ -14,10 +14,10 @@
       <p>{{ aboutmeContent.introText }}</p>
 
       <div class="card-container">
-        <a class="custom_card" target="_blank" rel="noopener" href="#">Über mich</a>
+        <a class="custom_card" rel="noopener" routerLink="/skills">Technologie-Stack & mehr</a>
       </div>
       <div class="card-container">
-        <a class="custom_card" target="_blank" rel="noopener" href="#">Über mich2</a>
+        <a class="custom_card" rel="noopener" routerLink="/projects">Aktuelle, private Projekte</a>
       </div>
     </div>
   </div>
