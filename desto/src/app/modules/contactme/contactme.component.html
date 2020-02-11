@@ -1,57 +1,85 @@
 <div class="content">
   <h2>Nehmen Sie Kontakt mit mir auf</h2>
-
-  <div class="row justify-content-center">
-    <!-- Terminal -->
-    <div class="emailoverlay">
-      <pre>
-<b>Verfasse E-Mail..</b>
-      </pre>
-      <pre>
+    <ul class="nav nav-pills justify-content-center" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="emailcontact-tab" data-toggle="tab" href="#emailcontact" role="tab" aria-controls="home" aria-selected="true">Kontakt via E-Mail</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="socialmedia-tab" data-toggle="tab" href="#socialmedia" role="tab" aria-controls="profile" aria-selected="false">Kontakt via Social Media</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="emailcontact" role="tabpanel" aria-labelledby="emailcontact-tab">
+        <div class="row">
+          <!-- Terminal -->
+          <div class="emailoverlay">
+            <pre>
+      <b>Verfasse E-Mail..</b>
+            </pre>
+            <pre>
 Ihr Name:
-          <input
-            type="text"
-            id="name"
-            class="form-control"
-            placeholder="Name"
-            [(ngModel)]="contactname"
-            (ngModelChange)="updateMailtoString()"
-          />
+                <input
+                  type="text"
+                  id="name"
+                  class="form-control"
+                  placeholder="Name"
+                  [(ngModel)]="contactname"
+                  (ngModelChange)="updateMailtoString()"
+                />
 Betreff:
-          <select class="form-control" [(ngModel)]="subject" (ngModelChange)="updateMailtoString()">
-            <option value="Feedback" selected>Feedback</option>
-            <option value="Mittleilung eines Bugs">Mitteilung eines Bugs</option>
-            <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
-          </select>
+                <select class="form-control" [(ngModel)]="subject" (ngModelChange)="updateMailtoString()">
+                  <option value="Feedback" selected>Feedback</option>
+                  <option value="Mittleilung eines Bugs">Mitteilung eines Bugs</option>
+                  <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
+                </select>
 Mitteilung:
-          <textarea
-            class="form-control rounded-0"
-            id="messageTextarea"
-            rows="5"
-            [(ngModel)]="message"
-            (ngModelChange)="updateMailtoString()"
-            placeholder="Ihre Nachricht an mich"></textarea>
-        </pre>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-12">
-      <div class="card-container">
-        <a
-          class="custom_card card-small"
-          target="_blank"
-          rel="noopener"
-          href="mailto:{{mailtoString}}"
-        >
-          Erstelle E-Mail
-        </a>
+                <textarea
+                  class="form-control rounded-0"
+                  id="messageTextarea"
+                  rows="5"
+                  [(ngModel)]="message"
+                  (ngModelChange)="updateMailtoString()"
+                  placeholder="Ihre Nachricht an mich"></textarea>
+              </pre>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="card-container">
+              <a
+                class="custom_card card-small"
+                target="_blank"
+                rel="noopener"
+                href="mailto:{{mailtoString}}"
+              >
+                Erstelle E-Mail
+              </a>
+            </div>
+          </div>
+          <div class="col-12 text-center">
+            <small
+              >Oder schreiben Sie direkt eine E-Mail an contact (at)
+              dennis-stoklosa.de</small
+            >
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="socialmedia" role="tabpanel" aria-labelledby="socialmedia-tab">
+        <div class="row">
+          <div class="col text-center">
+            <p>
+              Gerne können Sie mich auch über die sozialen Medien kontaktieren:
+            </p>
+            <div class="card-container">
+              <a class="custom_card" target="_blank" rel="noopener" routerLink="/projects">Link1</a>
+              <a class="custom_card" target="_blank" rel="noopener" routerLink="/projects">Link2</a>
+            </div>
+            <div class="card-container">
+              <a class="custom_card" target="_blank" rel="noopener" routerLink="/projects">Link3</a>
+              <a class="custom_card" target="_blank" rel="noopener" routerLink="/projects">Link4</a>
+            </div>
+        </div>
+      </div>
       </div>
     </div>
-    <div class="col-12 text-center">
-      <small
-        >Oder schreiben Sie direkt eine E-Mail an contact (at)
-        dennis-stoklosa.de</small
-      >
-    </div>
-  </div>
 </div>
