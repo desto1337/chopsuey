@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faCoffee, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { ContactdecryptionService } from 'src/app/core/services/contactdecryption/contactdecryption.service';
 
 @Component({
@@ -7,6 +8,8 @@ import { ContactdecryptionService } from 'src/app/core/services/contactdecryptio
   styleUrls: ['./contactme.component.scss']
 })
 export class ContactmeComponent implements OnInit {
+
+  public faCoffee: IconDefinition = faCoffee;
 
   private prefix: string; // prefix
   private contact: string; // contactaddress
