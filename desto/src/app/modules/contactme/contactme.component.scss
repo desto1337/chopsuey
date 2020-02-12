@@ -1,5 +1,13 @@
 @import "globalvariables";
 
+h4 {
+  margin-bottom: 7vh;
+}
+
+#emailcontact, #socialmedia, .nav {
+  margin-top: 3vh;
+}
+
 .nav-pills .nav-link.active {
   background-color: $secondary-color;
 }

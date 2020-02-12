@@ -11,7 +11,6 @@ export class ContactmeComponent implements OnInit {
   private prefix: string; // prefix
   private contact: string; // contactaddress
   private options: string;
-  private contactname: string;
   private subject = 'Feedback';
   private message: string;
   private messageHtml: any;
@@ -21,26 +20,18 @@ export class ContactmeComponent implements OnInit {
     ngOnInit() {
       this.contact = this.contactDecryptionService.decrypContact('TROLOLO');
 
-      if (this.contactname || this.subject || this.message) {
-
-        this.options = '?subject=' + this.subject; // subject ist immer ausgewählt
-
-        if (this.message) {
-          this.options = this.options + '&body=' + this.message;
-        }
-
-      }
-
       // Initialize Prefix
       this.prefix = this.contactDecryptionService.resolvePrefix('hexhex');
 
       console.log('Initiale Mail', this.contact);
       console.log('Initialer Prefix', this.prefix);
+
+      this.updateMailtoString();
     }
 
     updateMailtoString() {
 
-      if (this.contactname || this.subject || this.message) {
+      if (this.subject || this.message) {
         this.options = '?subject=' + this.subject; // subject ist immer ausgewählt
 
         if (this.message) {

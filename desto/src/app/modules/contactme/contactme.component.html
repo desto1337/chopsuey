@@ -1,5 +1,8 @@
 <div class="content">
   <h2>Nehmen Sie Kontakt mit mir auf</h2>
+  <p>
+    Das ist eine wunderschöne Beschreibung TODO.
+  </p>
     <ul class="nav nav-pills justify-content-center" id="myTab" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" id="emailcontact-tab" data-toggle="tab" href="#emailcontact" role="tab" aria-controls="home" aria-selected="true">Kontakt via E-Mail</a>
@@ -17,15 +20,6 @@
       <b>Verfasse E-Mail..</b>
             </pre>
             <pre>
-Ihr Name:
-                <input
-                  type="text"
-                  id="name"
-                  class="form-control"
-                  placeholder="Name"
-                  [(ngModel)]="contactname"
-                  (ngModelChange)="updateMailtoString()"
-                />
 Betreff:
                 <select class="form-control" [(ngModel)]="subject" (ngModelChange)="updateMailtoString()">
                   <option value="Feedback" selected>Feedback</option>
@@ -36,7 +30,7 @@ Mitteilung:
                 <textarea
                   class="form-control rounded-0"
                   id="messageTextarea"
-                  rows="5"
+                  rows="4"
                   [(ngModel)]="message"
                   (ngModelChange)="updateMailtoString()"
                   placeholder="Ihre Nachricht an mich"></textarea>
@@ -66,9 +60,9 @@ Mitteilung:
       <div class="tab-pane fade" id="socialmedia" role="tabpanel" aria-labelledby="socialmedia-tab">
         <div class="row">
           <div class="col text-center">
-            <p>
+            <h4>
               Gerne können Sie mich auch über die sozialen Medien kontaktieren:
-            </p>
+            </h4>
             <div class="card-container">
               <a class="custom_card" target="_blank" rel="noopener" routerLink="/projects">Link1</a>
               <a class="custom_card" target="_blank" rel="noopener" routerLink="/projects">Link2</a>

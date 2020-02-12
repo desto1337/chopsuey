@@ -1,5 +1,7 @@
+import { TechnologyLayerType } from './technologyLayerType';
+
 export interface TechnologyLayerDescription {
-  type: string;
+  type: TechnologyLayerType;
   technologyDescriptionText: string;
   languageDescriptionText: string;
 }
