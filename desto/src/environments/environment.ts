@@ -21,7 +21,8 @@ export const CONTENTFULCONFIG = {
     characteristic: 'characteristic',
     job: 'job',
     project: 'project',
-    skill: 'skill'
+    skill: 'skill',
+    technologyLayerDescription: 'technologyLayerDescription'
   }
 };
 
