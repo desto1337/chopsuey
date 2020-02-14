@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { faCoffee, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+// import { faCoffee, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { faStackOverflow, faGithubAlt, faXing, faLinkedinIn, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { ContactdecryptionService } from 'src/app/core/services/contactdecryption/contactdecryption.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-contactme',
@@ -9,7 +11,15 @@ import { ContactdecryptionService } from 'src/app/core/services/contactdecryptio
 })
 export class ContactmeComponent implements OnInit {
 
-  public faCoffee: IconDefinition = faCoffee;
+  private xingLink: string;
+  private linkedinLink: string;
+  private githubLink: string;
+  private stackoverflowLink: string;
+
+  public faStackOverflow: IconDefinition = faStackOverflow;
+  public faGithubAlt: IconDefinition = faGithubAlt;
+  public faXing: IconDefinition = faXing;
+  public faLinkedinIn: IconDefinition = faLinkedinIn;
 
   private prefix: string; // prefix
   private contact: string; // contactaddress
@@ -21,6 +31,11 @@ export class ContactmeComponent implements OnInit {
     constructor(private contactDecryptionService: ContactdecryptionService) { }
 
     ngOnInit() {
+      this.xingLink = environment.urlXing;
+      this.linkedinLink = environment.urlLinkedIn;
+      this.githubLink = environment.urlGithub;
+      this.stackoverflowLink = environment.urlStackoverflow;
+
       this.contact = this.contactDecryptionService.decrypContact('TROLOLO');
 
       // Initialize Prefix

@@ -64,15 +64,24 @@ Mitteilung:
               Gerne können Sie mich auch über die sozialen Medien kontaktieren:
             </h4>
             <div class="card-container">
-              <a class="custom_card" target="_blank" rel="noopener" routerLink="/projects">
-                <fa-icon [icon]="faCoffee"></fa-icon>
-                Test1
+              <a class="custom_card" target="_blank" rel="noopener" [href]="xingLink">
+                <fa-icon [icon]="faXing" size="lg" pull="left"></fa-icon>
+                Xing
               </a>
-              <a class="custom_card" target="_blank" rel="noopener" routerLink="/projects">Link2</a>
+              <a class="custom_card" target="_blank" rel="noopener" [href]="linkedinLink">
+                <fa-icon [icon]="faLinkedinIn" size="lg" pull="left"></fa-icon>
+                Linked-In
+              </a>
             </div>
             <div class="card-container">
-              <a class="custom_card" target="_blank" rel="noopener" routerLink="/projects">Link3</a>
-              <a class="custom_card" target="_blank" rel="noopener" routerLink="/projects">Link4</a>
+              <a class="custom_card" target="_blank" rel="noopener" [href]="githubLink">
+                <fa-icon [icon]="faGithubAlt" size="lg" pull="left"></fa-icon>
+                Github
+              </a>
+              <a class="custom_card" target="_blank" rel="noopener" [href]="stackoverflowLink">
+                <fa-icon [icon]="faStackOverflow" size="lg" pull="left"></fa-icon>
+                Stack Overflow
+              </a>
             </div>
         </div>
       </div>
