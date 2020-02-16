@@ -33,11 +33,13 @@
   <div class="row justify-content-center align-middle">
     <div class="col-md-6">
       <div class="chartContainer">
-        <apx-chart [series]="frontendChartSeries" [chart]="chartType" [title]="frontendChartTitle" [xaxis]="frontendChartXaxis" [theme]="chartTheme"></apx-chart>
+        <apx-chart [series]="frontendTechChartSeries" [chart]="chartType" [title]="techChartTitle" [xaxis]="frontendTechChartXaxis" [theme]="chartTheme"></apx-chart>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="chartContainer"></div>
+      <div class="chartContainer">
+        <apx-chart [series]="frontendLangChartSeries" [chart]="chartType" [title]="langChartTitle" [xaxis]="frontendLangChartXaxis" [theme]="chartTheme"></apx-chart>
+      </div>
     </div>
   </div>
 </div>
