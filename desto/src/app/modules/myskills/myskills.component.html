@@ -1,54 +1,265 @@
 <div class="content">
   <h2>Meine Fähigkeiten</h2>
-  <div class="row justify-content-center">
-    <h3>Frontend-Technologien</h3>
-    <div class="card">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <p>Hier kommt noch ein netter Text.</p>
+
+<!-- Frontend-Chart-Content -->
+  <div class="chartContentArea">
+      <h3>Frontend-Technologien</h3>
+        <ul class="nav justify-content-center" id="myTab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" id="tech-tab" data-toggle="tab" href="#tech" role="tab" aria-controls="tech" aria-selected="true">Frontend-Technologien</a>
+            <a
+              class="nav-link active"
+              id="frontendtech-tab"
+              data-toggle="tab"
+              href="#frontendtech"
+              role="tab"
+              aria-controls="frontendtech"
+              aria-selected="true"
+              >Frontend-Technologien</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="language-tab" data-toggle="tab" href="#language" role="tab" aria-controls="language" aria-selected="false">Programmiersprachen</a>
+            <a
+              class="nav-link"
+              id="frontendlang-tab"
+              data-toggle="tab"
+              href="#frontendlang"
+              role="tab"
+              aria-controls="frontendlang"
+              aria-selected="false"
+              >Programmiersprachen</a
+            >
           </li>
         </ul>
-        <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="tech" role="tabpanel" aria-labelledby="tech-tab">
+        <div class="tab-content" id="myFrontendTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="frontendtech"
+            role="tabpanel"
+            aria-labelledby="frontendtech-tab"
+          >
             <div class="card-body">
               <h5 class="card-title">Technologien</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text">
+                With supporting text below as a natural lead-in to additional
+                content.
+              </p>
             </div>
           </div>
-          <div class="tab-pane fade" id="language" role="tabpanel" aria-labelledby="language-tab">
+          <div
+            class="tab-pane fade"
+            id="frontendlang"
+            role="tabpanel"
+            aria-labelledby="frontendlang-tab"
+          >
             <div class="card-body">
               <h5 class="card-title">Spektrum der Programmiersprachen</h5>
               <p class="card-text">blablabla</p>
             </div>
           </div>
         </div>
-    </div>
-  </div>
-  <div class="row justify-content-center align-middle" *ngIf="frontendTechChartSeries && frontendLangChartSeries">
-    <div class="col-md-6">
-      <div class="chartContainer">
-        <apx-chart
-          [series]="frontendTechChartSeries"
-          [chart]="chartType"
-          [title]="techChartTitle"
-          [xaxis]="frontendTechChartXaxis"
-          [theme]="chartTheme">
-        </apx-chart>
+    <div
+      class="row justify-content-center align-middle"
+      *ngIf="frontendTechChartSeries && frontendLangChartSeries"
+    >
+      <div class="col-md-6">
+        <div class="chartContainer">
+          <apx-chart
+            [series]="frontendTechChartSeries"
+            [chart]="chartType"
+            [title]="techChartTitle"
+            [xaxis]="frontendTechChartXaxis"
+            [theme]="chartTheme"
+          >
+          </apx-chart>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="chartContainer">
+          <apx-chart
+            [series]="frontendLangChartSeries"
+            [chart]="chartType"
+            [title]="langChartTitle"
+            [xaxis]="frontendLangChartXaxis"
+            [theme]="chartTheme"
+          >
+          </apx-chart>
+        </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="chartContainer">
-        <apx-chart
-          [series]="frontendLangChartSeries"
-          [chart]="chartType"
-          [title]="langChartTitle"
-          [xaxis]="frontendLangChartXaxis"
-          [theme]="chartTheme">
-        </apx-chart>
+  </div>
+
+<!-- MiddleWare Chart Content -->
+  <div class="chartContentArea">
+      <h3>Middleware-Technologien</h3>
+        <ul class="nav justify-content-center" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              id="middlewaretech-tab"
+              data-toggle="tab"
+              href="#middlewaretech"
+              role="tab"
+              aria-controls="middlewaretech"
+              aria-selected="true"
+              >Middleware-Technologien</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="middlewarelang-tab"
+              data-toggle="tab"
+              href="#middlewarelang"
+              role="tab"
+              aria-controls="middlewarelang"
+              aria-selected="false"
+              >Programmiersprachen</a
+            >
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="middlewaretech"
+            role="tabpanel"
+            aria-labelledby="middlewaretech-tab"
+          >
+            <div class="card-body">
+              <h5 class="card-title">Technologien</h5>
+              <p class="card-text">
+                With supporting text below as a natural lead-in to additional
+                content.
+              </p>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="middlewarelang"
+            role="tabpanel"
+            aria-labelledby="middlewarelang-tab"
+          >
+            <div class="card-body">
+              <h5 class="card-title">Spektrum der Programmiersprachen</h5>
+              <p class="card-text">yepyep</p>
+            </div>
+          </div>
+        </div>
+    <div
+      class="row justify-content-center align-middle"
+      *ngIf="middlewareTechChartSeries && middlewareLangChartSeries"
+    >
+      <div class="col-md-6">
+        <div class="chartContainer">
+          <apx-chart
+            [series]="middlewareTechChartSeries"
+            [chart]="chartType"
+            [title]="techChartTitle"
+            [xaxis]="middlewareTechChartXaxis"
+            [theme]="chartTheme"
+          >
+          </apx-chart>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="chartContainer">
+          <apx-chart
+            [series]="middlewareLangChartSeries"
+            [chart]="chartType"
+            [title]="langChartTitle"
+            [xaxis]="middlewareLangChartXaxis"
+            [theme]="chartTheme"
+          >
+          </apx-chart>
+        </div>
       </div>
     </div>
   </div>
+
+<!-- Backend Chart Content -->
+<div class="chartContentArea">
+  <h3>Backend-Technologien</h3>
+    <ul class="nav justify-content-center" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a
+          class="nav-link active"
+          id="backendtech-tab"
+          data-toggle="tab"
+          href="#backendtech"
+          role="tab"
+          aria-controls="backendtech"
+          aria-selected="true"
+          >Backend-Technologien</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          id="backendlang-tab"
+          data-toggle="tab"
+          href="#backendlang"
+          role="tab"
+          aria-controls="backendlang"
+          aria-selected="false"
+          >Programmiersprachen</a
+        >
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div
+        class="tab-pane fade show active"
+        id="backendtech"
+        role="tabpanel"
+        aria-labelledby="backendtech-tab"
+      >
+        <div class="card-body">
+          <h5 class="card-title">Technologien</h5>
+          <p class="card-text">
+            With supporting text below as a natural lead-in to additional
+            content.
+          </p>
+        </div>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="backendlang"
+        role="tabpanel"
+        aria-labelledby="backendlang-tab"
+      >
+        <div class="card-body">
+          <h5 class="card-title">Spektrum der Programmiersprachen</h5>
+          <p class="card-text">yepyep</p>
+        </div>
+      </div>
+    </div>
+<div
+  class="row justify-content-center align-middle"
+  *ngIf="backendTechChartSeries && backendLangChartSeries"
+>
+  <div class="col-md-6">
+    <div class="chartContainer">
+      <apx-chart
+        [series]="backendTechChartSeries"
+        [chart]="chartType"
+        [title]="techChartTitle"
+        [xaxis]="backendTechChartXaxis"
+        [theme]="chartTheme"
+      >
+      </apx-chart>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="chartContainer">
+      <apx-chart
+        [series]="backendLangChartSeries"
+        [chart]="chartType"
+        [title]="langChartTitle"
+        [xaxis]="backendLangChartXaxis"
+        [theme]="chartTheme"
+      >
+      </apx-chart>
+    </div>
+  </div>
+</div>
+</div>
 </div>
