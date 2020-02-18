@@ -5,6 +5,7 @@ import { Entry } from 'contentful';
 import { TechnologyLayerDescription } from 'src/app/models/technologyLayerDescription/technologyLayerDescription';
 import { ApexChart, ApexTitleSubtitle, ApexAxisChartSeries, ApexXAxis, ApexTheme } from 'ng-apexcharts';
 import { SkillType } from 'src/app/models/skill/skillTypes';
+import { TechnologyLayerType } from 'src/app/models/technologyLayerDescription/technologyLayerType'; // used in UI Component
 
 @Component({
   selector: 'app-myskills',
@@ -238,5 +239,11 @@ export class MyskillsComponent implements OnInit {
             }
           );
     return isCorrect;
+  }
+
+  getTechnologyLayerDescriptions(type: TechnologyLayerType): TechnologyLayerDescription {
+    return this.technologyDescriptions.find(singleDescription => {
+      return singleDescription.type === type;
+    });
   }
 }

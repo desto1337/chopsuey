@@ -40,10 +40,18 @@
           >
             <div class="card-body">
               <h5 class="card-title">Technologien</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
+              <div class="card-text">
+                <div class="row card-content">
+                  <div class="col" *ngIf="technologyDescriptions && technologyDescriptions && getTechnologyLayerDescriptions('Frontend')">
+                    <p>
+                      {{ getTechnologyLayerDescriptions('Frontend').technologyDescriptionText }}
+                    </p>
+                  </div>
+                  <div class="col-md-5" *ngIf="frontendTechChartXaxis">
+                    <span *ngFor="let technology of frontendTechChartXaxis.categories">{{ technology }}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div
@@ -54,7 +62,18 @@
           >
             <div class="card-body">
               <h5 class="card-title">Spektrum der Programmiersprachen</h5>
-              <p class="card-text">blablabla</p>
+              <div class="card-text">
+                <div class="row card-content">
+                  <div class="col" *ngIf="technologyDescriptions && getTechnologyLayerDescriptions('Frontend')">
+                    <p>
+                      {{ getTechnologyLayerDescriptions('Frontend').languageDescriptionText }}
+                    </p>
+                  </div>
+                  <div class="col-md-5" *ngIf="frontendLangChartXaxis">
+                    <span *ngFor="let language of frontendLangChartXaxis.categories">{{ language }}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -127,10 +146,18 @@
           >
             <div class="card-body">
               <h5 class="card-title">Technologien</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
+              <div class="card-text">
+                <div class="row card-content">
+                  <div class="col"  *ngIf="technologyDescriptions && getTechnologyLayerDescriptions('Middleware')">
+                    <p>
+                      {{ getTechnologyLayerDescriptions('Middleware').technologyDescriptionText }}
+                    </p>
+                  </div>
+                  <div class="col-md-5" *ngIf="middlewareTechChartXaxis">
+                    <span *ngFor="let technology of middlewareTechChartXaxis.categories">{{ technology }}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div
@@ -141,7 +168,18 @@
           >
             <div class="card-body">
               <h5 class="card-title">Spektrum der Programmiersprachen</h5>
-              <p class="card-text">yepyep</p>
+              <div class="card-text">
+                <div class="row card-content">
+                  <div class="col" *ngIf="technologyDescriptions && getTechnologyLayerDescriptions('Middleware')">
+                    <p>
+                      {{ getTechnologyLayerDescriptions('Middleware').languageDescriptionText }}
+                    </p>
+                  </div>
+                  <div class="col-md-5" *ngIf="middlewareLangChartXaxis">
+                    <span *ngFor="let language of middlewareLangChartXaxis.categories">{{ language }}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -214,10 +252,18 @@
       >
         <div class="card-body">
           <h5 class="card-title">Technologien</h5>
-          <p class="card-text">
-            With supporting text below as a natural lead-in to additional
-            content.
-          </p>
+          <div class="card-text">
+            <div class="row card-content">
+              <div class="col" *ngIf="technologyDescriptions && getTechnologyLayerDescriptions('Backend')">
+                <p>
+                  {{ getTechnologyLayerDescriptions('Backend').technologyDescriptionText }}
+                </p>
+              </div>
+              <div class="col-md-5" *ngIf="backendTechChartXaxis">
+                <span *ngFor="let technology of backendTechChartXaxis.categories">{{ technology }}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -228,7 +274,18 @@
       >
         <div class="card-body">
           <h5 class="card-title">Spektrum der Programmiersprachen</h5>
-          <p class="card-text">yepyep</p>
+          <div class="card-text">
+            <div class="row card-content">
+              <div class="col" *ngIf="technologyDescriptions && getTechnologyLayerDescriptions('Backend')">
+                <p>
+                  {{ getTechnologyLayerDescriptions('Backend').languageDescriptionText }}
+                </p>
+              </div>
+              <div class="col-md-5" *ngIf="backendLangChartXaxis">
+                <span *ngFor="let language of backendLangChartXaxis.categories">{{ language }}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
