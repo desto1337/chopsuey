@@ -23,3 +23,16 @@ h3 {
   max-height: 600px;
   // border: solid 5px $secondary-color;
 }
+
+.card-content .badge {
+  font-size: 100%;
+}
+
+.card-content .badge-pill {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.3rem;
+  margin: 5px;
+}

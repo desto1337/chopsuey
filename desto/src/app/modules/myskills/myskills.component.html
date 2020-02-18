@@ -47,8 +47,8 @@
                       {{ getTechnologyLayerDescriptions('Frontend').technologyDescriptionText }}
                     </p>
                   </div>
-                  <div class="col-md-5" *ngIf="frontendTechChartXaxis">
-                    <span *ngFor="let technology of frontendTechChartXaxis.categories">{{ technology }}</span>
+                  <div class="col-md-5 mt-3" *ngIf="frontendTechChartXaxis">
+                    <span *ngFor="let technology of frontendTechChartXaxis.categories" class="badge badge-pill badge-secondary">{{ technology }}</span>
                   </div>
                 </div>
               </div>
@@ -69,8 +69,8 @@
                       {{ getTechnologyLayerDescriptions('Frontend').languageDescriptionText }}
                     </p>
                   </div>
-                  <div class="col-md-5" *ngIf="frontendLangChartXaxis">
-                    <span *ngFor="let language of frontendLangChartXaxis.categories">{{ language }}</span>
+                  <div class="col-md-5 mt-3" *ngIf="frontendLangChartXaxis">
+                    <span *ngFor="let language of frontendLangChartXaxis.categories" class="badge badge-pill badge-secondary">{{ language }}</span>
                   </div>
                 </div>
               </div>
@@ -153,8 +153,8 @@
                       {{ getTechnologyLayerDescriptions('Middleware').technologyDescriptionText }}
                     </p>
                   </div>
-                  <div class="col-md-5" *ngIf="middlewareTechChartXaxis">
-                    <span *ngFor="let technology of middlewareTechChartXaxis.categories">{{ technology }}</span>
+                  <div class="col-md-5 mt-3" *ngIf="middlewareTechChartXaxis">
+                    <span *ngFor="let technology of middlewareTechChartXaxis.categories" class="badge badge-pill badge-secondary">{{ technology }}</span>
                   </div>
                 </div>
               </div>
@@ -175,8 +175,8 @@
                       {{ getTechnologyLayerDescriptions('Middleware').languageDescriptionText }}
                     </p>
                   </div>
-                  <div class="col-md-5" *ngIf="middlewareLangChartXaxis">
-                    <span *ngFor="let language of middlewareLangChartXaxis.categories">{{ language }}</span>
+                  <div class="col-md-5 mt-3" *ngIf="middlewareLangChartXaxis">
+                    <span *ngFor="let language of middlewareLangChartXaxis.categories" class="badge badge-pill badge-secondary">{{ language }}</span>
                   </div>
                 </div>
               </div>
@@ -259,8 +259,8 @@
                   {{ getTechnologyLayerDescriptions('Backend').technologyDescriptionText }}
                 </p>
               </div>
-              <div class="col-md-5" *ngIf="backendTechChartXaxis">
-                <span *ngFor="let technology of backendTechChartXaxis.categories">{{ technology }}</span>
+              <div class="col-md-5 mt-3" *ngIf="backendTechChartXaxis">
+                <span *ngFor="let technology of backendTechChartXaxis.categories" class="badge badge-pill badge-secondary">{{ technology }}</span>
               </div>
             </div>
           </div>
@@ -281,8 +281,8 @@
                   {{ getTechnologyLayerDescriptions('Backend').languageDescriptionText }}
                 </p>
               </div>
-              <div class="col-md-5" *ngIf="backendLangChartXaxis">
-                <span *ngFor="let language of backendLangChartXaxis.categories">{{ language }}</span>
+              <div class="col-md-5 mt-3" *ngIf="backendLangChartXaxis">
+                <span *ngFor="let language of backendLangChartXaxis.categories" class="badge badge-pill badge-secondary">{{ language }}</span>
               </div>
             </div>
           </div>
