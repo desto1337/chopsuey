@@ -3,7 +3,7 @@ import { ContentfulService } from 'src/app/core/services/contentful/contentful.s
 import { SkillFields } from 'src/app/models/skill/skillFields';
 import { Entry } from 'contentful';
 import { TechnologyLayerDescription } from 'src/app/models/technologyLayerDescription/technologyLayerDescription';
-import { ApexChart, ApexTitleSubtitle, ApexAxisChartSeries, ApexXAxis, ApexTheme } from 'ng-apexcharts';
+import { ApexChart, ApexTitleSubtitle, ApexAxisChartSeries, ApexXAxis, ApexTheme, ApexDataLabels } from 'ng-apexcharts';
 import { SkillType } from 'src/app/models/skill/skillTypes';
 import { TechnologyLayerType } from 'src/app/models/technologyLayerDescription/technologyLayerType'; // used in UI Component
 
@@ -19,6 +19,7 @@ export class MyskillsComponent implements OnInit {
 
   // chart stuff
   private chartType: ApexChart;
+  private chartDataLabels: ApexDataLabels;
   private chartTheme: ApexTheme;
 
   private techChartTitle: ApexTitleSubtitle;
@@ -28,6 +29,16 @@ export class MyskillsComponent implements OnInit {
   private frontendTechChartXaxis: ApexXAxis;
   private frontendLangChartSeries: ApexAxisChartSeries;
   private frontendLangChartXaxis: ApexXAxis;
+
+  private middlewareTechChartSeries: ApexAxisChartSeries;
+  private middlewareTechChartXaxis: ApexXAxis;
+  private middlewareLangChartSeries: ApexAxisChartSeries;
+  private middlewareLangChartXaxis: ApexXAxis;
+
+  private backendTechChartSeries: ApexAxisChartSeries;
+  private backendTechChartXaxis: ApexXAxis;
+  private backendLangChartSeries: ApexAxisChartSeries;
+  private backendLangChartXaxis: ApexXAxis;
 
   constructor(private contentfulService: ContentfulService) { }
 
@@ -72,6 +83,8 @@ export class MyskillsComponent implements OnInit {
     this.generateChartsBasicTheme();
     this.setChartTitles();
     this.setChartSeriesAndXaxisLabels(SkillType.frontend);
+    this.setChartSeriesAndXaxisLabels(SkillType.middleware);
+    this.setChartSeriesAndXaxisLabels(SkillType.backend);
   }
 
 /**
@@ -83,6 +96,12 @@ export class MyskillsComponent implements OnInit {
     };
 
     this.chartType = chart;
+
+    this.chartDataLabels = {
+      formatter: (val, opts) => {
+        return val + ' %';
+      }
+    }
 
     this.chartTheme = {
       monochrome: {
@@ -126,10 +145,43 @@ export class MyskillsComponent implements OnInit {
           name: techToolTipDesc,
           data: techSeries
         }];
-
         const langSeries = this.resolveChartSeriesData(true, skillType);
 
         this.frontendLangChartSeries = [{
+          name: langToolTipDesc,
+          data: langSeries
+        }];
+
+        break;
+      }
+      case SkillType.middleware: {
+
+        const techSeries = this.resolveChartSeriesData(false, skillType);
+
+        this.middlewareTechChartSeries = [{
+          name: techToolTipDesc,
+          data: techSeries
+        }];
+        const langSeries = this.resolveChartSeriesData(true, skillType);
+
+        this.middlewareLangChartSeries = [{
+          name: langToolTipDesc,
+          data: langSeries
+        }];
+
+        break;
+      }
+      case SkillType.backend: {
+
+        const techSeries = this.resolveChartSeriesData(false, skillType);
+
+        this.backendTechChartSeries = [{
+          name: techToolTipDesc,
+          data: techSeries
+        }];
+        const langSeries = this.resolveChartSeriesData(true, skillType);
+
+        this.backendLangChartSeries = [{
           name: langToolTipDesc,
           data: langSeries
         }];
@@ -154,7 +206,6 @@ export class MyskillsComponent implements OnInit {
       case SkillType.frontend: {
 
         // const xaxis: number[] = [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999];
-
         const xaxis: string[] = [];
 
         filteredSkills.forEach(skill => {
@@ -167,6 +218,42 @@ export class MyskillsComponent implements OnInit {
           };
         } else {
           this.frontendLangChartXaxis = {
+            categories: xaxis
+          };
+        }
+        break;
+      }
+      case SkillType.middleware: {
+        const xaxis: string[] = [];
+
+        filteredSkills.forEach(skill => {
+          xaxis.push(skill.title);
+        });
+
+        if (!isLanguageProperty) {
+          this.middlewareTechChartXaxis = {
+            categories: xaxis
+          };
+        } else {
+          this.middlewareLangChartXaxis = {
+            categories: xaxis
+          };
+        }
+        break;
+      }
+      case SkillType.backend: {
+        const xaxis: string[] = [];
+
+        filteredSkills.forEach(skill => {
+          xaxis.push(skill.title);
+        });
+
+        if (!isLanguageProperty) {
+          this.backendTechChartXaxis = {
+            categories: xaxis
+          };
+        } else {
+          this.backendLangChartXaxis = {
             categories: xaxis
           };
         }
@@ -190,30 +277,19 @@ export class MyskillsComponent implements OnInit {
 
     const seriesData: number[] = [];
 
-    switch (skillType) {
+    const filteredSkills: SkillFields[] = this.skills.filter(skill => {
+      return this.checkSkillField(skill, isLanguageProperty, skillType);
+    });
 
-      case SkillType.frontend: {
+    filteredSkills.sort((a, b) => b.level - a.level); // Größter Value zuerst, von links nach rechts
+    console.log('filteredSkills, isLanguage: ' + isLanguageProperty + " , für SkillType: " + skillType, filteredSkills);
 
-        const filteredSkills: SkillFields[] = this.skills.filter(skill => {
-            return this.checkSkillField(skill, isLanguageProperty, skillType);
-          });
+    filteredSkills.forEach(skill => {
+      seriesData.push(skill.level);
+    });
 
-        filteredSkills.sort((a, b) => b.level - a.level); // Größter Value zuerst, von links nach rechts
-        console.log('filteredSkills (Nur Tech oder Lang): ', filteredSkills);
-
-        filteredSkills.forEach(skill => {
-          seriesData.push(skill.level);
-        });
-
-        // Erzeuge zugehörig auch die X-Achsen-Beschriftungen für Tech oder Lang
-        this.setXaxis(skillType, isLanguageProperty, filteredSkills);
-        break;
-      }
-      default: {
-        // TO DO
-        console.log('Kein Handling berücksichtigt');
-      }
-    }
+    // Erzeuge zugehörig auch die X-Achsen-Beschriftungen für Tech oder Lang
+    this.setXaxis(skillType, isLanguageProperty, filteredSkills);
 
     return seriesData;
   }
