@@ -1,5 +1,14 @@
 @import "globalvariables";
 
+h3 {
+  text-align: center;
+}
+
+.chartContentArea{
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
 .row {
   margin-top: 2vh;
 }
@@ -10,7 +19,37 @@
 }
 
 .chartContainer {
-  max-width: 500px;
-  max-height: 500px;
-  border: solid 5px $secondary-color;
+  max-width: 600px;
+  max-height: 600px;
+  // border: solid 5px $secondary-color;
+}
+
+.otherContent {
+  text-align: center;
+}
+
+.card-content .badge {
+  font-size: 100%;
+}
+
+.card-content .badge-pill {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.3rem;
+  margin: 5px;
+}
+
+.otherContent .badge{
+  font-size: 130%;
+}
+
+.otherContent .badge-pill {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 1rem;
+  margin: 20px;
 }
