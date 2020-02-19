@@ -24,6 +24,10 @@ h3 {
   // border: solid 5px $secondary-color;
 }
 
+.otherContent {
+  text-align: center;
+}
+
 .card-content .badge {
   font-size: 100%;
 }
@@ -35,4 +39,17 @@ h3 {
   padding-bottom: 0.5rem;
   border-radius: 0.3rem;
   margin: 5px;
+}
+
+.otherContent .badge{
+  font-size: 130%;
+}
+
+.otherContent .badge-pill {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 1rem;
+  margin: 20px;
 }

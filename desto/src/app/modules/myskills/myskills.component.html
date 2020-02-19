@@ -2,81 +2,108 @@
   <h2>Meine Fähigkeiten</h2>
   <p>Hier kommt noch ein netter Text.</p>
 
-<!-- Frontend-Chart-Content -->
+  <!-- Frontend-Chart-Content -->
   <div class="chartContentArea">
-      <h3>Frontend-Technologien</h3>
-        <ul class="nav justify-content-center" id="myTab" role="tablist">
-          <li class="nav-item">
-            <a
-              class="nav-link active"
-              id="frontendtech-tab"
-              data-toggle="tab"
-              href="#frontendtech"
-              role="tab"
-              aria-controls="frontendtech"
-              aria-selected="true"
-              >Frontend-Technologien</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              id="frontendlang-tab"
-              data-toggle="tab"
-              href="#frontendlang"
-              role="tab"
-              aria-controls="frontendlang"
-              aria-selected="false"
-              >Programmiersprachen</a
-            >
-          </li>
-        </ul>
-        <div class="tab-content" id="myFrontendTabContent">
-          <div
-            class="tab-pane fade show active"
-            id="frontendtech"
-            role="tabpanel"
-            aria-labelledby="frontendtech-tab"
-          >
-            <div class="card-body">
-              <h5 class="card-title">Technologien</h5>
-              <div class="card-text">
-                <div class="row card-content">
-                  <div class="col" *ngIf="technologyDescriptions && technologyDescriptions && getTechnologyLayerDescriptions('Frontend')">
-                    <p>
-                      {{ getTechnologyLayerDescriptions('Frontend').technologyDescriptionText }}
-                    </p>
-                  </div>
-                  <div class="col-md-5 mt-3" *ngIf="frontendTechChartXaxis">
-                    <span *ngFor="let technology of frontendTechChartXaxis.categories" class="badge badge-pill badge-secondary">{{ technology }}</span>
-                  </div>
-                </div>
+    <h3>Frontend-Technologien</h3>
+    <ul class="nav justify-content-center" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a
+          class="nav-link active"
+          id="frontendtech-tab"
+          data-toggle="tab"
+          href="#frontendtech"
+          role="tab"
+          aria-controls="frontendtech"
+          aria-selected="true"
+          >Frontend-Technologien</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          id="frontendlang-tab"
+          data-toggle="tab"
+          href="#frontendlang"
+          role="tab"
+          aria-controls="frontendlang"
+          aria-selected="false"
+          >Programmiersprachen</a
+        >
+      </li>
+    </ul>
+    <div class="tab-content" id="myFrontendTabContent">
+      <div
+        class="tab-pane fade show active"
+        id="frontendtech"
+        role="tabpanel"
+        aria-labelledby="frontendtech-tab"
+      >
+        <div class="card-body">
+          <h5 class="card-title">Technologien</h5>
+          <div class="card-text">
+            <div class="row card-content">
+              <div
+                class="col"
+                *ngIf="
+                  technologyDescriptions &&
+                  technologyDescriptions &&
+                  getTechnologyLayerDescriptions('Frontend')
+                "
+              >
+                <p>
+                  {{
+                    getTechnologyLayerDescriptions("Frontend")
+                      .technologyDescriptionText
+                  }}
+                </p>
               </div>
-            </div>
-          </div>
-          <div
-            class="tab-pane fade"
-            id="frontendlang"
-            role="tabpanel"
-            aria-labelledby="frontendlang-tab"
-          >
-            <div class="card-body">
-              <h5 class="card-title">Spektrum der Programmiersprachen</h5>
-              <div class="card-text">
-                <div class="row card-content">
-                  <div class="col" *ngIf="technologyDescriptions && getTechnologyLayerDescriptions('Frontend')">
-                    <p>
-                      {{ getTechnologyLayerDescriptions('Frontend').languageDescriptionText }}
-                    </p>
-                  </div>
-                  <div class="col-md-5 mt-3" *ngIf="frontendLangChartXaxis">
-                    <span *ngFor="let language of frontendLangChartXaxis.categories" class="badge badge-pill badge-secondary">{{ language }}</span>
-                  </div>
-                </div>
+              <div class="col-md-5 mt-3" *ngIf="frontendTechChartXaxis">
+                <span
+                  *ngFor="let technology of frontendTechChartXaxis.categories"
+                  class="badge badge-pill badge-secondary"
+                  >{{ technology }}</span
+                >
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="frontendlang"
+        role="tabpanel"
+        aria-labelledby="frontendlang-tab"
+      >
+        <div class="card-body">
+          <h5 class="card-title">Spektrum der Programmiersprachen</h5>
+          <div class="card-text">
+            <div class="row card-content">
+              <div
+                class="col"
+                *ngIf="
+                  technologyDescriptions &&
+                  getTechnologyLayerDescriptions('Frontend')
+                "
+              >
+                <p>
+                  {{
+                    getTechnologyLayerDescriptions("Frontend")
+                      .languageDescriptionText
+                  }}
+                </p>
+              </div>
+              <div class="col-md-5 mt-3" *ngIf="frontendLangChartXaxis">
+                <span
+                  *ngFor="let language of frontendLangChartXaxis.categories"
+                  class="badge badge-pill badge-secondary"
+                  >{{ language }}</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div
       class="row justify-content-center align-middle"
       *ngIf="frontendTechChartSeries && frontendLangChartSeries"
@@ -110,81 +137,107 @@
     </div>
   </div>
 
-<!-- MiddleWare Chart Content -->
+  <!-- MiddleWare Chart Content -->
   <div class="chartContentArea">
-      <h3>Middleware-Technologien</h3>
-        <ul class="nav justify-content-center" id="myTab" role="tablist">
-          <li class="nav-item">
-            <a
-              class="nav-link active"
-              id="middlewaretech-tab"
-              data-toggle="tab"
-              href="#middlewaretech"
-              role="tab"
-              aria-controls="middlewaretech"
-              aria-selected="true"
-              >Middleware-Technologien</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              id="middlewarelang-tab"
-              data-toggle="tab"
-              href="#middlewarelang"
-              role="tab"
-              aria-controls="middlewarelang"
-              aria-selected="false"
-              >Programmiersprachen</a
-            >
-          </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-          <div
-            class="tab-pane fade show active"
-            id="middlewaretech"
-            role="tabpanel"
-            aria-labelledby="middlewaretech-tab"
-          >
-            <div class="card-body">
-              <h5 class="card-title">Technologien</h5>
-              <div class="card-text">
-                <div class="row card-content">
-                  <div class="col"  *ngIf="technologyDescriptions && getTechnologyLayerDescriptions('Middleware')">
-                    <p>
-                      {{ getTechnologyLayerDescriptions('Middleware').technologyDescriptionText }}
-                    </p>
-                  </div>
-                  <div class="col-md-5 mt-3" *ngIf="middlewareTechChartXaxis">
-                    <span *ngFor="let technology of middlewareTechChartXaxis.categories" class="badge badge-pill badge-secondary">{{ technology }}</span>
-                  </div>
-                </div>
+    <h3>Middleware-Technologien</h3>
+    <ul class="nav justify-content-center" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a
+          class="nav-link active"
+          id="middlewaretech-tab"
+          data-toggle="tab"
+          href="#middlewaretech"
+          role="tab"
+          aria-controls="middlewaretech"
+          aria-selected="true"
+          >Middleware-Technologien</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          id="middlewarelang-tab"
+          data-toggle="tab"
+          href="#middlewarelang"
+          role="tab"
+          aria-controls="middlewarelang"
+          aria-selected="false"
+          >Programmiersprachen</a
+        >
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div
+        class="tab-pane fade show active"
+        id="middlewaretech"
+        role="tabpanel"
+        aria-labelledby="middlewaretech-tab"
+      >
+        <div class="card-body">
+          <h5 class="card-title">Technologien</h5>
+          <div class="card-text">
+            <div class="row card-content">
+              <div
+                class="col"
+                *ngIf="
+                  technologyDescriptions &&
+                  getTechnologyLayerDescriptions('Middleware')
+                "
+              >
+                <p>
+                  {{
+                    getTechnologyLayerDescriptions("Middleware")
+                      .technologyDescriptionText
+                  }}
+                </p>
               </div>
-            </div>
-          </div>
-          <div
-            class="tab-pane fade"
-            id="middlewarelang"
-            role="tabpanel"
-            aria-labelledby="middlewarelang-tab"
-          >
-            <div class="card-body">
-              <h5 class="card-title">Spektrum der Programmiersprachen</h5>
-              <div class="card-text">
-                <div class="row card-content">
-                  <div class="col" *ngIf="technologyDescriptions && getTechnologyLayerDescriptions('Middleware')">
-                    <p>
-                      {{ getTechnologyLayerDescriptions('Middleware').languageDescriptionText }}
-                    </p>
-                  </div>
-                  <div class="col-md-5 mt-3" *ngIf="middlewareLangChartXaxis">
-                    <span *ngFor="let language of middlewareLangChartXaxis.categories" class="badge badge-pill badge-secondary">{{ language }}</span>
-                  </div>
-                </div>
+              <div class="col-md-5 mt-3" *ngIf="middlewareTechChartXaxis">
+                <span
+                  *ngFor="let technology of middlewareTechChartXaxis.categories"
+                  class="badge badge-pill badge-secondary"
+                  >{{ technology }}</span
+                >
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="middlewarelang"
+        role="tabpanel"
+        aria-labelledby="middlewarelang-tab"
+      >
+        <div class="card-body">
+          <h5 class="card-title">Spektrum der Programmiersprachen</h5>
+          <div class="card-text">
+            <div class="row card-content">
+              <div
+                class="col"
+                *ngIf="
+                  technologyDescriptions &&
+                  getTechnologyLayerDescriptions('Middleware')
+                "
+              >
+                <p>
+                  {{
+                    getTechnologyLayerDescriptions("Middleware")
+                      .languageDescriptionText
+                  }}
+                </p>
+              </div>
+              <div class="col-md-5 mt-3" *ngIf="middlewareLangChartXaxis">
+                <span
+                  *ngFor="let language of middlewareLangChartXaxis.categories"
+                  class="badge badge-pill badge-secondary"
+                  >{{ language }}</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div
       class="row justify-content-center align-middle"
       *ngIf="middlewareTechChartSeries && middlewareLangChartSeries"
@@ -218,9 +271,9 @@
     </div>
   </div>
 
-<!-- Backend Chart Content -->
-<div class="chartContentArea">
-  <h3>Backend-Technologien</h3>
+  <!-- Backend Chart Content -->
+  <div class="chartContentArea">
+    <h3>Backend-Technologien</h3>
     <ul class="nav justify-content-center" id="myTab" role="tablist">
       <li class="nav-item">
         <a
@@ -258,13 +311,26 @@
           <h5 class="card-title">Technologien</h5>
           <div class="card-text">
             <div class="row card-content">
-              <div class="col" *ngIf="technologyDescriptions && getTechnologyLayerDescriptions('Backend')">
+              <div
+                class="col"
+                *ngIf="
+                  technologyDescriptions &&
+                  getTechnologyLayerDescriptions('Backend')
+                "
+              >
                 <p>
-                  {{ getTechnologyLayerDescriptions('Backend').technologyDescriptionText }}
+                  {{
+                    getTechnologyLayerDescriptions("Backend")
+                      .technologyDescriptionText
+                  }}
                 </p>
               </div>
               <div class="col-md-5 mt-3" *ngIf="backendTechChartXaxis">
-                <span *ngFor="let technology of backendTechChartXaxis.categories" class="badge badge-pill badge-secondary">{{ technology }}</span>
+                <span
+                  *ngFor="let technology of backendTechChartXaxis.categories"
+                  class="badge badge-pill badge-secondary"
+                  >{{ technology }}</span
+                >
               </div>
             </div>
           </div>
@@ -280,49 +346,70 @@
           <h5 class="card-title">Spektrum der Programmiersprachen</h5>
           <div class="card-text">
             <div class="row card-content">
-              <div class="col" *ngIf="technologyDescriptions && getTechnologyLayerDescriptions('Backend')">
+              <div
+                class="col"
+                *ngIf="
+                  technologyDescriptions &&
+                  getTechnologyLayerDescriptions('Backend')
+                "
+              >
                 <p>
-                  {{ getTechnologyLayerDescriptions('Backend').languageDescriptionText }}
+                  {{
+                    getTechnologyLayerDescriptions("Backend")
+                      .languageDescriptionText
+                  }}
                 </p>
               </div>
               <div class="col-md-5 mt-3" *ngIf="backendLangChartXaxis">
-                <span *ngFor="let language of backendLangChartXaxis.categories" class="badge badge-pill badge-secondary">{{ language }}</span>
+                <span
+                  *ngFor="let language of backendLangChartXaxis.categories"
+                  class="badge badge-pill badge-secondary"
+                  >{{ language }}</span
+                >
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-<div
-  class="row justify-content-center align-middle"
-  *ngIf="backendTechChartSeries && backendLangChartSeries"
->
-  <div class="col-md-6">
-    <div class="chartContainer">
-      <apx-chart
-        [series]="backendTechChartSeries"
-        [chart]="chartType"
-        [title]="techChartTitle"
-        [xaxis]="backendTechChartXaxis"
-        [theme]="chartTheme"
-        [dataLabels]="chartDataLabels"
-      >
-      </apx-chart>
+    <div
+      class="row justify-content-center align-middle"
+      *ngIf="backendTechChartSeries && backendLangChartSeries"
+    >
+      <div class="col-md-6">
+        <div class="chartContainer">
+          <apx-chart
+            [series]="backendTechChartSeries"
+            [chart]="chartType"
+            [title]="techChartTitle"
+            [xaxis]="backendTechChartXaxis"
+            [theme]="chartTheme"
+            [dataLabels]="chartDataLabels"
+          >
+          </apx-chart>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="chartContainer">
+          <apx-chart
+            [series]="backendLangChartSeries"
+            [chart]="chartType"
+            [title]="langChartTitle"
+            [xaxis]="backendLangChartXaxis"
+            [theme]="chartTheme"
+            [dataLabels]="chartDataLabels"
+          >
+          </apx-chart>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-md-6">
-    <div class="chartContainer">
-      <apx-chart
-        [series]="backendLangChartSeries"
-        [chart]="chartType"
-        [title]="langChartTitle"
-        [xaxis]="backendLangChartXaxis"
-        [theme]="chartTheme"
-        [dataLabels]="chartDataLabels"
-      >
-      </apx-chart>
+
+  <div *ngIf="otherSkills" class="chartContentArea otherContent">
+    <h3>Weitere Technologien und Kenntnisse</h3>
+    <p>Hier kommt noch ein netter Text.</p>
+    <div class="row justify-content-center">
+      <span *ngFor="let otherSkill of otherSkills" class="badge badge-pill badge-light">{{ otherSkill.title }}</span>
     </div>
   </div>
-</div>
-</div>
 </div>

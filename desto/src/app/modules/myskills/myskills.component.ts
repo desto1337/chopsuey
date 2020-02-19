@@ -6,6 +6,7 @@ import { TechnologyLayerDescription } from 'src/app/models/technologyLayerDescri
 import { ApexChart, ApexTitleSubtitle, ApexAxisChartSeries, ApexXAxis, ApexTheme, ApexDataLabels } from 'ng-apexcharts';
 import { SkillType } from 'src/app/models/skill/skillTypes';
 import { TechnologyLayerType } from 'src/app/models/technologyLayerDescription/technologyLayerType'; // used in UI Component
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-myskills',
@@ -15,6 +16,7 @@ import { TechnologyLayerType } from 'src/app/models/technologyLayerDescription/t
 export class MyskillsComponent implements OnInit {
 
   private skills: SkillFields[];
+  private otherSkills: SkillFields[];
   private technologyDescriptions: TechnologyLayerDescription[];
 
   // chart stuff
@@ -46,6 +48,8 @@ export class MyskillsComponent implements OnInit {
     this.contentfulService.getSkillPageContent().then((skillEntries: Entry<SkillFields>[]) => {
       console.log('Meine Skill-Entries: ', skillEntries);
       this.skills = this.resolveInnerEntriesOfType(skillEntries);
+      this.otherSkills = this.resolveOtherSkills(this.skills);
+      console.log('OtherSkills: ', this.otherSkills);
       this.initializeCharts();
     }).catch(error => {
       console.log('Contentful-API: Es wurden keine Skills gefunden: ', error);
@@ -106,7 +110,7 @@ export class MyskillsComponent implements OnInit {
     this.chartTheme = {
       monochrome: {
           enabled: true,
-          color: '#6597e7',
+          color: environment.chartThemeColor,
           shadeTo: 'light',
           shadeIntensity: 0.65
         }
@@ -316,6 +320,34 @@ export class MyskillsComponent implements OnInit {
           );
     return isCorrect;
   }
+
+
+  resolveOtherSkills(allSkills: SkillFields[]) {
+    let filteredSkills: SkillFields[] = allSkills.filter(skill => {
+      return this.detectNotListedSkill(skill);
+    });
+
+    filteredSkills = filteredSkills.sort((a, b) => b.level - a.level); // Höchster Level zurerst
+
+    return filteredSkills;
+  }
+
+
+/**
+ * TO DO
+ */
+detectNotListedSkill(skill: SkillFields): boolean {
+  let isOther = false;
+
+  skill.type.forEach(skilltype => {
+            if (skilltype !== SkillType.frontend && skilltype !== SkillType.middleware && skilltype !== SkillType.backend  ) {
+              isOther = true;
+              return;
+            }
+          }
+        );
+  return isOther;
+}
 
   getTechnologyLayerDescriptions(type: TechnologyLayerType): TechnologyLayerDescription {
     return this.technologyDescriptions.find(singleDescription => {
