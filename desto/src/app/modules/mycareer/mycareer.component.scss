@@ -1,10 +1,9 @@
 @import "globalvariables";
 
-.content {
-  // Just test
-  border: solid black 1px;
-}
-
-.card {
-  margin: 10px;
+.jobcontent {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
