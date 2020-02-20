@@ -89,6 +89,14 @@ export class MyskillsComponent implements OnInit {
     this.setChartSeriesAndXaxisLabels(SkillType.frontend);
     this.setChartSeriesAndXaxisLabels(SkillType.middleware);
     this.setChartSeriesAndXaxisLabels(SkillType.backend);
+
+    /* Angezeige Elemente in Charts auf maximal 5 Beschränken */
+    if(this.frontendTechChartSeries.length > 5) this.frontendTechChartSeries.slice(0,5);
+    if(this.frontendLangChartSeries.length > 5) this.frontendLangChartSeries.slice(0,5);
+    if(this.middlewareTechChartSeries.length > 5) this.middlewareTechChartSeries.slice(0,5);
+    if(this.middlewareLangChartSeries.length > 5) this.middlewareLangChartSeries.slice(0,5);
+    if(this.backendTechChartSeries.length > 5) this.backendTechChartSeries.slice(0,5);
+    if(this.backendLangChartSeries.length > 5) this.backendLangChartSeries.slice(0,5);
   }
 
 /**
