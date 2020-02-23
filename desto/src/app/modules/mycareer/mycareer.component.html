@@ -1,23 +1,50 @@
 <div class="content">
   <h2>Mein Werdegang</h2>
+  <p>
+    Das ist noch eine schöne Beschreibung
+  </p>
 
-  <div class="subcontent">
-    <div class="jobcontent">
-      <div class="row justfiy-content-center">
-        <div class="col">
-          <div class="card mb-3 mt-3">
-            <div class="card-header bg-transparent">Place Image here</div>
-            <div class="card-body">
-              <h5 class="card-title">Success card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-            <div class="card-footer bg-transparent">Link</div>
+    <div class="jobcontent" *ngIf="fulltimeJobEntries">
+      <h4>Meine Jobs</h4>
+      <p>
+        Das ist eine Beschreibung.
+      </p>
+      <ul class="timeline">
+        <li *ngFor="let job of fulltimeJobEntries; let i = index">
+          <a target="_blank" [href]="job.url">{{ job.title }} bei {{ job.company }}</a>
+          <span class="float-right dateintervall">
+            <span *ngIf="!job.tillDate">dato - {{ job.fromDate }}</span>
+            <span *ngElse>{{ job.tillDate }} - {{ job.fromDate }}</span>
+          </span>
+          <div *ngIf="job.icon && i == 0" class="img-container">
+            <img [src]="formatService.revealContentfulImageUrl(job.icon)"/>
           </div>
-        </div>
-      </div>
+          <p>{{ job.description }}</p>
+        </li>
+      </ul>
     </div>
-  </div>
+
+    <div class="jobcontent">
+      <h4>Meine Nebenjobs</h4>
+      <p>
+        Das ist eine Beschreibung.
+      </p>
+      <ul class="timeline">
+        <li>
+          <a target="_blank" href="https://www.totoprayogo.com/#">Unternehmen</a>
+          <span class="float-right dateintervall">21 March, 2014</span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+        </li>
+        <li>
+          <a href="#">21 000 Job Seekers</a>
+          <span class="float-right dateintervall">4 March, 2014</span>
+          <p>Curabitur purus sem, malesuada eu luctus eget, suscipit sed turpis. Nam pellentesque felis vitae justo accumsan, sed semper nisi sollicitudin...</p>
+        </li>
+        <li>
+          <a href="#">Awesome Employers</a>
+          <span class="float-right dateintervall">1 April, 2014</span>
+          <p>Fusce ullamcorper ligula sit amet quam accumsan aliquet. Sed nulla odio, tincidunt vitae nunc vitae, mollis pharetra velit. Sed nec tempor nibh...</p>
+        </li>
+      </ul>
+    </div>
 </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from 'src/app/core/services/contentful/contentful.service';
 import { JobFields } from 'src/app/models/job/jobFields';
 import { Entry } from 'contentful';
+import { FormatService } from 'src/app/core/services/format/format.service';
 
 @Component({
   selector: 'app-mycareer',
@@ -10,10 +11,10 @@ import { Entry } from 'contentful';
 })
 export class MycareerComponent implements OnInit {
 
-  private fulltimeJobEntries: JobFields[];
-  private sideJobEntries: JobFields[];
+  private fulltimeJobEntries: JobFields[] = [];
+  private sideJobEntries: JobFields[] = [];
 
-  constructor(private contentfulService: ContentfulService) { }
+  constructor(private contentfulService: ContentfulService, private formatService: FormatService) { }
 
   ngOnInit() {
     this.contentfulService.getJobPageContent().then((jobEntries: Entry<JobFields>[]) => {
@@ -28,6 +29,7 @@ export class MycareerComponent implements OnInit {
       if (jobEntry.fields.sideJob) {
         this.sideJobEntries.push(jobEntry.fields);
       } else {
+        console.log("Gefundener Entry: ", jobEntry);
         this.fulltimeJobEntries.push(jobEntry.fields);
       }
     });

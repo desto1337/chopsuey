@@ -1,13 +1,10 @@
-import { Sys, Asset } from 'contentful';
+import { Asset } from 'contentful';
 
 export interface ProjectFields {
   title: string;
   date: Date;
   description: string;
   skills: string[];
-  image: {
-    sys: Sys,
-    fields: Asset
-  }; // TO DO
+  image: Asset; // TO DO
   url: string;
 }
