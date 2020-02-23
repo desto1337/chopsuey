@@ -91,12 +91,7 @@ export class MyskillsComponent implements OnInit {
     this.setChartSeriesAndXaxisLabels(SkillType.backend);
 
     /* Angezeige Elemente in Charts auf maximal 5 Beschränken */
-    if(this.frontendTechChartSeries.length > 5) this.frontendTechChartSeries.slice(0,5);
-    if(this.frontendLangChartSeries.length > 5) this.frontendLangChartSeries.slice(0,5);
-    if(this.middlewareTechChartSeries.length > 5) this.middlewareTechChartSeries.slice(0,5);
-    if(this.middlewareLangChartSeries.length > 5) this.middlewareLangChartSeries.slice(0,5);
-    if(this.backendTechChartSeries.length > 5) this.backendTechChartSeries.slice(0,5);
-    if(this.backendLangChartSeries.length > 5) this.backendLangChartSeries.slice(0,5);
+    // this.sliceChartSeries(2);
   }
 
 /**
@@ -361,5 +356,35 @@ detectNotListedSkill(skill: SkillFields): boolean {
     return this.technologyDescriptions.find(singleDescription => {
       return singleDescription.type === type;
     });
+  }
+
+  sliceChartSeries(numberOfBars?: number) {
+
+    /* Angezeige Elemente in Charts auf maximal 5 Beschränken */
+    if(this.frontendTechChartSeries[0].data.length > numberOfBars) {
+      this.frontendTechChartSeries[0].data = this.frontendTechChartSeries[0].data.slice(0, numberOfBars);
+      this.frontendTechChartXaxis.categories = this.frontendTechChartXaxis.categories.slice(0, numberOfBars);
+    }
+
+    if(this.frontendLangChartSeries[0].data.length > numberOfBars) {
+      this.frontendLangChartSeries[0].data= this.frontendLangChartSeries[0].data.slice(0, numberOfBars);
+    }
+
+    if(this.middlewareTechChartSeries[0].data.length > numberOfBars) {
+      this.middlewareTechChartSeries[0].data = this.middlewareTechChartSeries[0].data.slice(0, numberOfBars);
+    }
+
+    if(this.middlewareLangChartSeries[0].data.length > numberOfBars) {
+      this.middlewareLangChartSeries[0].data = this.middlewareLangChartSeries[0].data.slice(0, numberOfBars);
+    }
+
+    if(this.backendTechChartSeries[0].data.length > numberOfBars) {
+      this.backendTechChartSeries[0].data.slice(0, numberOfBars);
+    }
+
+    if(this.backendLangChartSeries[0].data.length > numberOfBars) {
+      this.backendLangChartSeries[0].data = this.backendLangChartSeries[0].data.slice(0, numberOfBars);
+    }
+
   }
 }
