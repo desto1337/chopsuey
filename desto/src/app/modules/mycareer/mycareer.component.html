@@ -4,44 +4,58 @@
     Das ist noch eine schöne Beschreibung
   </p>
 
-    <div class="jobcontent" *ngIf="fulltimeJobEntries.length">
-      <h4>Meine Jobs</h4>
-      <p>
-        Das ist eine Beschreibung.
-      </p>
-      <ul class="timeline">
-        <li *ngFor="let job of fulltimeJobEntries; let i = index">
-          <div *ngIf="job.icon && i == 0" class="img-container">
-            <img [src]="formatService.revealContentfulImageUrl(job.icon)"/>
+  <div class="jobcontent" *ngIf="fulltimeJobEntries.length">
+    <h4>Meine Jobs</h4>
+    <p>
+      Das ist eine Beschreibung.
+    </p>
+    <ul class="timeline">
+      <li *ngFor="let job of fulltimeJobEntries; let i = index">
+        <div class="row">
+          <div class="col">
+            <span class="dateintervall">
+              <span *ngIf="!job.tillDate">dato - {{ job.fromDate }}</span>
+              <span *ngElse>{{ job.tillDate }} - {{ job.fromDate }}</span>
+            </span>
+            <h4>{{ job.title }}</h4>
+            <span>bei </span>
+            <a target="_blank" [href]="job.url">{{ job.company }}</a>
           </div>
-          <span class="float-right dateintervall">
-            <span *ngIf="!job.tillDate">dato - {{ job.fromDate }}</span>
-            <span *ngElse>{{ job.tillDate }} - {{ job.fromDate }}</span>
-          </span>
-          <h4>{{ job.title }}</h4>
-          <span>bei </span>
-          <a target="_blank" [href]="job.url">{{ job.company }}</a>
+          <div class="col" *ngIf="job.icon && i == 0">
+            <div class="img-container">
+              <img [src]="formatService.revealContentfulImageUrl(job.icon)" />
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
           <p class="description">{{ job.description }}</p>
-        </li>
-      </ul>
-    </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 
-    <div class="jobcontent" *ngIf="sideJobEntries.length">
-      <h4>Meine Nebenjobs</h4>
-      <p>
-        Das ist eine Beschreibung.
-      </p>
-      <ul class="timeline">
-        <li *ngFor="let sidejob of sideJobEntries">
-          <span class="float-right dateintervall">
-            <span *ngIf="!sidejob.tillDate">dato - {{ sidejob.fromDate }}</span>
-            <span *ngElse>{{ sidejob.tillDate }} - {{ sidejob.fromDate }}</span>
-          </span>
-          <h4>{{ sidejob.title }}</h4>
-          <span>bei </span>
-          <a target="_blank" [href]="sidejob.url">{{ sidejob.company }}</a>
+  <div class="jobcontent" *ngIf="sideJobEntries.length">
+    <h4>Meine Nebenjobs</h4>
+    <p>
+      Das ist eine Beschreibung.
+    </p>
+    <ul class="timeline">
+      <li *ngFor="let sidejob of sideJobEntries">
+        <div class="row">
+          <div class="col">
+            <span class="dateintervall">
+              <span *ngIf="!sidejob.tillDate">dato - {{ sidejob.fromDate }}</span>
+              <span *ngElse>{{ sidejob.tillDate }} - {{ sidejob.fromDate }}</span>
+            </span>
+            <h4>{{ sidejob.title }}</h4>
+            <span>bei </span>
+            <a target="_blank" [href]="sidejob.url">{{ sidejob.company }}</a>
+          </div>
+        </div>
+        <div class="row justify-content-center">
           <p class="description">{{ sidejob.description }}</p>
-        </li>
-      </ul>
-    </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
