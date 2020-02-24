@@ -4,46 +4,43 @@
     Das ist noch eine schöne Beschreibung
   </p>
 
-    <div class="jobcontent" *ngIf="fulltimeJobEntries">
+    <div class="jobcontent" *ngIf="fulltimeJobEntries.length">
       <h4>Meine Jobs</h4>
       <p>
         Das ist eine Beschreibung.
       </p>
       <ul class="timeline">
         <li *ngFor="let job of fulltimeJobEntries; let i = index">
-          <a target="_blank" [href]="job.url">{{ job.title }} bei {{ job.company }}</a>
+          <div *ngIf="job.icon && i == 0" class="img-container">
+            <img [src]="formatService.revealContentfulImageUrl(job.icon)"/>
+          </div>
           <span class="float-right dateintervall">
             <span *ngIf="!job.tillDate">dato - {{ job.fromDate }}</span>
             <span *ngElse>{{ job.tillDate }} - {{ job.fromDate }}</span>
           </span>
-          <div *ngIf="job.icon && i == 0" class="img-container">
-            <img [src]="formatService.revealContentfulImageUrl(job.icon)"/>
-          </div>
-          <p>{{ job.description }}</p>
+          <h4>{{ job.title }}</h4>
+          <span>bei </span>
+          <a target="_blank" [href]="job.url">{{ job.company }}</a>
+          <p class="description">{{ job.description }}</p>
         </li>
       </ul>
     </div>
 
-    <div class="jobcontent">
+    <div class="jobcontent" *ngIf="sideJobEntries.length">
       <h4>Meine Nebenjobs</h4>
       <p>
         Das ist eine Beschreibung.
       </p>
       <ul class="timeline">
-        <li>
-          <a target="_blank" href="https://www.totoprayogo.com/#">Unternehmen</a>
-          <span class="float-right dateintervall">21 March, 2014</span>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
-        </li>
-        <li>
-          <a href="#">21 000 Job Seekers</a>
-          <span class="float-right dateintervall">4 March, 2014</span>
-          <p>Curabitur purus sem, malesuada eu luctus eget, suscipit sed turpis. Nam pellentesque felis vitae justo accumsan, sed semper nisi sollicitudin...</p>
-        </li>
-        <li>
-          <a href="#">Awesome Employers</a>
-          <span class="float-right dateintervall">1 April, 2014</span>
-          <p>Fusce ullamcorper ligula sit amet quam accumsan aliquet. Sed nulla odio, tincidunt vitae nunc vitae, mollis pharetra velit. Sed nec tempor nibh...</p>
+        <li *ngFor="let sidejob of sideJobEntries">
+          <span class="float-right dateintervall">
+            <span *ngIf="!sidejob.tillDate">dato - {{ sidejob.fromDate }}</span>
+            <span *ngElse>{{ sidejob.tillDate }} - {{ sidejob.fromDate }}</span>
+          </span>
+          <h4>{{ sidejob.title }}</h4>
+          <span>bei </span>
+          <a target="_blank" [href]="sidejob.url">{{ sidejob.company }}</a>
+          <p class="description">{{ sidejob.description }}</p>
         </li>
       </ul>
     </div>
