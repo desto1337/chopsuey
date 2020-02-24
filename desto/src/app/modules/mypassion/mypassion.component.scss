@@ -1,2 +1,21 @@
 @import "globalvariables";
 
+h2,
+p {
+  text-align: center;
+}
+
+.subcontent {
+  margin-top: 5vh;
+}
+
+.icon {
+  display: block;
+  margin-bottom: 50px;
+  background: $secondary-color;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: 50%;
+  margin: 0 auto 30px auto;
+}
