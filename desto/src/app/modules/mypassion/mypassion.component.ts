@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faStackOverflow, faGithubAlt, faXing, faLinkedinIn, IconDefinition } from '@fortawesome/free-brands-svg-icons';
-import { faTabletAlt} from '@fortawesome/free-solid-svg-icons';
+import { faTabletAlt, faPuzzlePiece, faCogs, faSlidersH, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { ContentfulService } from 'src/app/core/services/contentful/contentful.service';
 import { CharacteristicFields } from 'src/app/models/characteristic/characteristicFields';
 import { Entry } from 'contentful';
@@ -16,6 +15,9 @@ export class MypassionComponent implements OnInit {
 
 
   public visionIcon: IconDefinition = faTabletAlt;
+  public flexibilityIcon: IconDefinition = faSlidersH;
+  public completeIcon: IconDefinition = faCogs;
+  public overallIcon: IconDefinition = faPuzzlePiece;
 
   constructor(private contentfulService: ContentfulService) { }
 
