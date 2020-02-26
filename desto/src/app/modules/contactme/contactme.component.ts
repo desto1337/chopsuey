@@ -26,7 +26,7 @@ export class ContactmeComponent implements OnInit {
   private options: string;
   private subject = 'Feedback';
   private message: string;
-  private messageHtml: any;
+  private messageFormatted: any;
 
     constructor(private contactDecryptionService: ContactdecryptionService) { }
 
@@ -53,9 +53,23 @@ export class ContactmeComponent implements OnInit {
         this.options = '?subject=' + this.subject; // subject ist immer ausgewählt
 
         if (this.message) {
-          this.options = this.options + '&body=' + this.message;
+          this.messageFormatted = this.replaceLineBreaks(this.message);
+          this.options = this.options + '&body=' + this.messageFormatted;
         }
 
       }
+    }
+
+    replaceLineBreaks(rawMessage: string): string {
+
+      let formattedMessage = rawMessage;
+
+      while (formattedMessage.indexOf('\n') > 0) {
+        formattedMessage = formattedMessage.replace('\n', '%0D%0A');
+        formattedMessage = formattedMessage.replace('<s', 'ACHTUNG-S-TAG'); // just to be sure
+        formattedMessage = formattedMessage.replace('script', 'ACHTUNG-S-TAG'); // just to be sure
+      }
+
+      return formattedMessage;
     }
   }
