@@ -2,7 +2,27 @@
   <h2>Meine privaten Projekte</h2>
   <p>Das ist eine Beschreibung, welche in Zukunft noch detailliert ausgeführt wird.</p>
 
-  <div class="row justify-content-center subcontent">
+  <div *ngFor="let project of projects; let i = index" [class.content-right]="i % 2 == 0" [class.content-left]="i % 2 != 0" class="row justify-content-center subcontent">
+      <div *ngIf="i % 2 != 0" class="col-md-7">
+        <div class="imageContainer">
+          <img [src]="formatService.revealContentfulImageUrl(project.image)" />
+        </div>
+      </div>
+      <div class="col-md-5">
+        <h4>{{ project.title }}</h4>
+        <p>{{ project.description }}</p>
+      </div>
+      <div *ngIf="i % 2 == 0" class="col-md-7">
+        <div class="imageContainer">
+          <img [src]="formatService.revealContentfulImageUrl(project.image)" />
+        </div>
+      </div>
+      <div class="col-md-12">
+        <p>Eingesetzte Technologien: <span *ngFor="let skill of project.skills">{{ skill }}, </span>
+      </div>
+  </div>
+
+  <div class="row justify-content-center subcontent content-right">
     <div class="col-md-5">
       <h4>Meine Projektüberschrift</h4>
       <p>Mein Projekttext kommt hierhin. Mein Projekttext kommt hierhin. Mein Projekttext kommt hierhin. Mein Projekttext kommt hierhin.
@@ -11,7 +31,7 @@
       </p>
     </div>
     <div class="col-md-7">
-      <div class="imageContainer right">
+      <div class="imageContainer">
         <!-- TO DO -->
       </div>
     </div>
@@ -20,9 +40,9 @@
     </div>
   </div>
 
-  <div class="row justify-content-center subcontent">
+  <div class="row justify-content-center subcontent content-left">
     <div class="col-md-7">
-      <div class="imageContainer left">
+      <div class="imageContainer">
         <!-- TO DO -->
       </div>
     </div>

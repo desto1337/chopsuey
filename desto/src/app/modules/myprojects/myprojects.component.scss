@@ -5,15 +5,18 @@
   margin-bottom: 3vh;
 }
 
-.right {
+.content-right .imageContainer {
   margin-left: auto;
 }
 
-.left {
+.content-left .imageContainer {
   margin-right: auto;
 }
+
 .imageContainer {
-  width: 500px;
-  height: 350px;
-  border: solid 1px grey;
+  // max-width: 500px;
+}
+
+img {
+  max-width: 100%;
 }

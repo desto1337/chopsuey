@@ -29,7 +29,7 @@ export class MycareerComponent implements OnInit {
       if (jobEntry.fields.sideJob) {
         this.sideJobEntries.push(jobEntry.fields);
       } else {
-        console.log("Gefundener Entry: ", jobEntry);
+        console.log('Gefundener Entry: ', jobEntry);
         this.fulltimeJobEntries.push(jobEntry.fields);
       }
     });
