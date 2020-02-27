@@ -9,12 +9,15 @@ p {
   text-align: center;
 }
 
-.jobcontent {
-  width: $jobcontent-maxwidth;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+/* For Tablets */
+@media screen and (min-width: 540px) {
+  .jobcontent {
+    width: $jobcontent-maxwidth;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
 }
 
 .jobcontent h4:first-child {
@@ -40,6 +43,6 @@ p {
   margin-top: 1vh;
 }
 
-img {
-  width: 100%;
-}
+  #jobtitle {
+    text-align: center;
+  }

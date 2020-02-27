@@ -14,16 +14,18 @@
         <div class="row">
           <div class="col">
             <span class="dateintervall">
-              <span *ngIf="!job.tillDate">dato - {{ job.fromDate }}</span>
-              <span *ngElse>{{ job.tillDate }} - {{ job.fromDate }}</span>
+              <span *ngIf="!job.tillDate">{{ job.fromDate | date:'dd.MM.yyyy' }} - dato</span>
+              <span *ngElse>{{ job.fromDate | date:'dd.MM.yyyy' }} - {{ job.tillDate }}</span>
             </span>
-            <h4>{{ job.title }}</h4>
-            <span>bei </span>
-            <a target="_blank" [href]="job.url">{{ job.company }}</a>
+            <div id="jobtitle">
+              <h4>{{ job.title }}</h4>
+              <span>bei </span>
+              <a target="_blank" [href]="job.url">{{ job.company }}</a>
+            </div>
           </div>
-          <div class="col" *ngIf="job.icon && i == 0">
+          <div class="col-md-6" *ngIf="job.icon && i == 0">
             <div class="img-container">
-              <img [src]="formatService.revealContentfulImageUrl(job.icon)" />
+              <img class="img-fluid" [src]="formatService.revealContentfulImageUrl(job.icon)" />
             </div>
           </div>
         </div>
@@ -35,7 +37,7 @@
   </div>
 
   <div class="jobcontent" *ngIf="sideJobEntries.length">
-    <h4>Meine Nebenjobs</h4>
+    <h4>Meine Nebentätigkeiten</h4>
     <p>
       Das ist eine Beschreibung.
     </p>
@@ -44,12 +46,14 @@
         <div class="row">
           <div class="col">
             <span class="dateintervall">
-              <span *ngIf="!sidejob.tillDate">dato - {{ sidejob.fromDate }}</span>
-              <span *ngElse>{{ sidejob.tillDate }} - {{ sidejob.fromDate }}</span>
+              <span *ngIf="!sidejob.tillDate">{{ sidejob.fromDate | date:'dd.MM.yyyy' }} - dato</span>
+              <span *ngElse>{{ sidejob.fromDate | date:'dd.MM.yyyy' }} - {{ sidejob.tillDate | date:'dd.MM.yyyy' }}</span>
             </span>
-            <h4>{{ sidejob.title }}</h4>
-            <span>bei </span>
-            <a target="_blank" [href]="sidejob.url">{{ sidejob.company }}</a>
+            <div id="jobtitle">
+              <h4>{{ sidejob.title }}</h4>
+              <span>bei </span>
+              <a target="_blank" [href]="sidejob.url">{{ sidejob.company }}</a>
+            </div>
           </div>
         </div>
         <div class="row justify-content-center">
