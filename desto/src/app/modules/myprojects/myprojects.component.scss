@@ -7,12 +7,35 @@
 
 .content-right .imageContainer {
   margin-left: auto;
+  text-align: right;
 }
 
 .content-left .imageContainer {
   margin-right: auto;
+  text-align: left;
 }
 
-.imageContainer {
-  // max-width: 500px;
+.skilllist {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border: 1px $secondary-color solid;
+  border-radius: 7px;
+  ul {
+    list-style-type: none;
+    .listheadline {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+      color: $secondary-color;
+    }
+    li {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      span {
+        padding-left: 30px;
+      }
+    }
+  }
 }

@@ -5,6 +5,7 @@ export interface ProjectFields {
   date: Date;
   description: string;
   skills: string[];
-  image: Asset; // TO DO
+  image: Asset;
+  imageCopyright: string;
   url: string;
 }

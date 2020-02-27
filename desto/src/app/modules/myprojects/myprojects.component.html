@@ -6,6 +6,7 @@
       <div *ngIf="i % 2 != 0" class="col-md-7">
         <div class="imageContainer">
           <img class="img-fluid shadow" [src]="formatService.revealContentfulImageUrl(project.image)" />
+          <small *ngIf="project.imageCopyright">{{ project.imageCopyright }}</small>
         </div>
       </div>
       <div class="col-md-5">
@@ -15,10 +16,19 @@
       <div *ngIf="i % 2 == 0" class="col-md-7">
         <div class="imageContainer">
           <img class="img-fluid shadow" [src]="formatService.revealContentfulImageUrl(project.image)" />
+          <small *ngIf="project.imageCopyright">{{ project.imageCopyright }}</small>
         </div>
       </div>
-      <div class="col-md-12">
-        <p>Eingesetzte Technologien: <span *ngFor="let skill of project.skills">{{ skill }}, </span>
+      <div class="col-md-8">
+        <div class="skilllist">
+          <ul>
+            <p class="listheadline">Eingesetzte Technologien:</p>
+            <li *ngFor="let skill of project.skills">
+              <fa-icon [icon]="listitemIcon" size="lg" [styles]="{'color': '#9ABAEF'}"></fa-icon>
+              <span>{{ skill }}</span>
+            </li>
+          </ul>
+        </div>
       </div>
   </div>
 
