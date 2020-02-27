@@ -5,7 +5,7 @@
   <div *ngFor="let project of projects; let i = index" [class.content-right]="i % 2 == 0" [class.content-left]="i % 2 != 0" class="row justify-content-center subcontent">
       <div *ngIf="i % 2 != 0" class="col-md-7">
         <div class="imageContainer">
-          <img [src]="formatService.revealContentfulImageUrl(project.image)" />
+          <img class="img-fluid shadow" [src]="formatService.revealContentfulImageUrl(project.image)" />
         </div>
       </div>
       <div class="col-md-5">
@@ -14,7 +14,7 @@
       </div>
       <div *ngIf="i % 2 == 0" class="col-md-7">
         <div class="imageContainer">
-          <img [src]="formatService.revealContentfulImageUrl(project.image)" />
+          <img class="img-fluid shadow" [src]="formatService.revealContentfulImageUrl(project.image)" />
         </div>
       </div>
       <div class="col-md-12">

@@ -28,6 +28,10 @@ p {
   margin: 0;
 }
 
+q {
+  font-style: italic;
+}
+
 .spacer {
   flex: 1;
 }
@@ -39,6 +43,16 @@ p {
   max-width: 1200px; // default: 960
   flex-direction: column;
   //align-items: center;
+}
+
+img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.shadow {
+  border-radius: 7px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 svg.material-icons {

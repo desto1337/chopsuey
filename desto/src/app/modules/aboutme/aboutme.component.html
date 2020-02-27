@@ -1,23 +1,24 @@
 <div class="content">
   <div *ngIf="aboutmeContent" class="row justify-content-center">
-    <div class="col-md-7 pr-lg-5">
-      <img class="img-fluid" src="../../../assets/images/aboutme_picture.jpg" alt="Kein Image vorhanden :-("/>
+    <div class="col-md-6 pr-lg-5">
+      <img class="img-fluid shadow" src="../../../assets/images/aboutme_picture.jpg" alt="Kein Image vorhanden :-("/>
     </div>
-    <div class="col-md-5 pl-lg-5">
-      <h2>Das ist ein Aboutme</h2>
-      <p id="quote">
-        <i>{{ aboutmeContent.quote }}
-          <br>
-          {{ aboutmeContent.quoteAuthor }}
-        </i>
-      </p>
+    <div class="col-md-6 pl-lg-5 pt-2">
+      <div id="quote">
+        <h2>Das ist ein Aboutme</h2>
+        <q>{{ aboutmeContent.quote }}</q>
+        <br>
+        <p id="author" style="text-align: center;">{{ aboutmeContent.quoteAuthor }}</p>
+      </div>
       <p>{{ aboutmeContent.introText }}</p>
 
-      <div class="card-container">
-        <a class="custom_card" rel="noopener" routerLink="/skills">Technologie-Stack & mehr</a>
-      </div>
-      <div class="card-container">
-        <a class="custom_card" rel="noopener" routerLink="/projects">Aktuelle, private Projekte</a>
+      <div id="cards-container">
+        <div class="card-container">
+          <a class="custom_card" rel="noopener" routerLink="/skills">Technologie-Stack & mehr</a>
+        </div>
+        <div class="card-container">
+          <a class="custom_card" rel="noopener" routerLink="/projects">Aktuelle, private Projekte</a>
+        </div>
       </div>
     </div>
   </div>

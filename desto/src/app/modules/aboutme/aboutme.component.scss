@@ -1,14 +1,18 @@
 @import "globalvariables";
 
+#cards-container {
+  margin-top: 5vh;
+}
+
 #quote {
   margin-top: 3vh;
   margin-bottom: 3vh;
   font-weight: 200;
   font-size: 1.5rem;
   line-height: 1.5;
-}
+  text-align: center;
 
-img-fluid {
-  max-width: 100%;
-  height: auto;
+  #author {
+    font-size: 80%;
+  }
 }

@@ -33,5 +33,5 @@ export class MycareerComponent implements OnInit {
         this.fulltimeJobEntries.push(jobEntry.fields);
       }
     });
-  };
+  }
 }
