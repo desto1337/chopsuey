@@ -19,6 +19,7 @@ export class MycareerComponent implements OnInit {
   ngOnInit() {
     this.contentfulService.getJobPageContent().then((jobEntries: Entry<JobFields>[]) => {
       this.resolveJobs(jobEntries);
+      this.sortJobs();
     }).then(error => {
       console.log('Contentful-API: Es wurden keinen Jobeinträge gefunden: ', error);
     });
@@ -33,5 +34,16 @@ export class MycareerComponent implements OnInit {
         this.fulltimeJobEntries.push(jobEntry.fields);
       }
     });
+  }
+
+  sortJobs() {
+    this.fulltimeJobEntries.sort((a, b) => this.sortingFunction(a, b));
+    this.sideJobEntries.sort((a, b) => this.sortingFunction(a, b));
+  }
+
+  sortingFunction(a: JobFields, b: JobFields) {
+    const aNew = new Date(a.fromDate);
+    const bNew = new Date(b.fromDate);
+    return aNew > bNew ? -1 : aNew < bNew ? 1 : 0;
   }
 }

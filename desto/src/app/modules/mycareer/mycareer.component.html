@@ -15,7 +15,7 @@
           <div class="col">
             <span class="dateintervall">
               <span *ngIf="!job.tillDate">{{ job.fromDate | date:'dd.MM.yyyy' }} - dato</span>
-              <span *ngElse>{{ job.fromDate | date:'dd.MM.yyyy' }} - {{ job.tillDate }}</span>
+              <span *ngIf="job.tillDate">{{ job.fromDate | date:'dd.MM.yyyy' }} - {{ job.tillDate | date:'dd.MM.yyyy' }}</span>
             </span>
             <div id="jobtitle">
               <h4>{{ job.title }}</h4>

@@ -5,16 +5,16 @@
   </p>
   <div class="row justify-content-center text-center subcontent">
     <div *ngFor="let characteristic of charateristics" class="col-md-6 text-center mb-5">
-      <div class="icon" *ngIf="characteristic.type == 'Querdenker'">
+      <div class="icon" *ngIf="characteristic.type == 'INTERDISCIPLINARY'">
         <fa-icon [icon]="overallIcon" size="3x" transform="down-10 right-2"></fa-icon>
       </div>
-      <div class="icon" *ngIf="characteristic.type == 'Vision'">
+      <div class="icon" *ngIf="characteristic.type == 'VISION'">
         <fa-icon [icon]="visionIcon" size="3x" transform="down-11"></fa-icon>
       </div>
-      <div class="icon" *ngIf="characteristic.type == 'Gesamtpaket'">
+      <div class="icon" *ngIf="characteristic.type == 'COMPLETEPACKAGE'">
         <fa-icon [icon]="completeIcon" size="3x" transform="down-10 right-2"></fa-icon>
       </div>
-      <div class="icon" *ngIf="characteristic.type == 'Flexibilität'">
+      <div class="icon" *ngIf="characteristic.type == 'FLEXIBILITY'">
         <fa-icon [icon]="flexibilityIcon" size="3x" transform="down-11"></fa-icon>
       </div>
       <div class="icon" *ngElse>
