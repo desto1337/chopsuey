@@ -5,7 +5,14 @@ $secondary-color: #9ABAEF; // rgba(154, 186, 239, 1)
 $grey-lighter: #d2d2d7;
 $grey-default: #848d95;
 
+$anchor-basecolor: #1976d2; // default: #1976d2
+$anchor-hovercolor: #125699; // default: #125699
+
 $navbar-color: rgba(0, 0, 0, 0.9);
+$navbar-link-active: rgb(187, 207, 238);
+
+$custom-card-bordercolor: #eee;
+$custom-card-backgroundcolor: #fafafa;
 
 $timeline-color: $grey-lighter;
 $timeline-circle-fill: white;
