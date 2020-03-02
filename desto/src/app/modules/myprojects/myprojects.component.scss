@@ -22,14 +22,14 @@
   padding-bottom: 2vh;
   border: 1px $secondary-color solid;
   border-radius: 7px;
+  .listheadline {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: $secondary-color;
+  }
   ul {
     list-style-type: none;
-    .listheadline {
-      text-align: center;
-      font-size: 1rem;
-      font-weight: bold;
-      color: $secondary-color;
-    }
     li {
       margin-top: 10px;
       margin-bottom: 10px;
