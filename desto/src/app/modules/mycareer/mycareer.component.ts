@@ -27,21 +27,21 @@ export class MycareerComponent implements OnInit {
 
   resolveJobs(jobEntries: Entry<JobFields>[]) {
     jobEntries.forEach((jobEntry: Entry<JobFields>) => {
-      if (jobEntry.fields.sideJob) {
+      console.log('Aktueller Wert: ', jobEntry);
+      if (jobEntry.fields.sidejob) {
         this.sideJobEntries.push(jobEntry.fields);
       } else {
-        console.log('Gefundener Entry: ', jobEntry);
         this.fulltimeJobEntries.push(jobEntry.fields);
       }
     });
   }
 
   sortJobs() {
-    this.fulltimeJobEntries.sort((a, b) => this.sortingFunction(a, b));
-    this.sideJobEntries.sort((a, b) => this.sortingFunction(a, b));
+    this.fulltimeJobEntries.sort((a, b) => this.sortingJobsByFromDate(a, b));
+    this.sideJobEntries.sort((a, b) => this.sortingJobsByFromDate(a, b));
   }
 
-  sortingFunction(a: JobFields, b: JobFields) {
+  sortingJobsByFromDate(a: JobFields, b: JobFields) {
     const aNew = new Date(a.fromDate);
     const bNew = new Date(b.fromDate);
     return aNew > bNew ? -1 : aNew < bNew ? 1 : 0;

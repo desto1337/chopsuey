@@ -8,6 +8,6 @@ export interface JobFields {
   fromDate: Date;
   tillDate: Date;
   url: string;
-  icon: Asset // TO DO
-  sideJob: boolean;
+  icon: Asset; // TO DO
+  sidejob: boolean;
 }

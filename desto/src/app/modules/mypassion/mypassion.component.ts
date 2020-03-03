@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faTabletAlt, faPuzzlePiece, faCogs, faSlidersH, faUserCog, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { ContentfulService } from 'src/app/core/services/contentful/contentful.service';
-import { CharacteristicFields } from 'src/app/models/characteristic/characteristicFields';
+import { CharacteristicFields, CharacteristicType } from 'src/app/models/characteristic/characteristicFields';
 import { Entry } from 'contentful';
 
 @Component({
@@ -39,6 +39,26 @@ export class MypassionComponent implements OnInit {
     });
 
     return characteristics;
+  }
+
+  formateCharacteristicType(type: CharacteristicType): string {
+    switch (type) {
+      case CharacteristicType.vision: {
+        return 'Vision';
+      }
+      case CharacteristicType.completepackage: {
+        return 'Gesamtpaket';
+      }
+      case CharacteristicType.flexibility: {
+        return 'Flexibilität';
+      }
+      case CharacteristicType.interdisciplinary: {
+        return 'Querdenker';
+      }
+      default: {
+        return type;
+      }
+    }
   }
 
 }

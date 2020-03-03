@@ -11,24 +11,26 @@
     </p>
     <ul class="timeline">
       <li *ngFor="let job of fulltimeJobEntries; let i = index">
-        <div class="row">
-          <div class="col">
-            <span class="dateintervall">
-              <span *ngIf="!job.tillDate">{{ job.fromDate | date:'dd.MM.yyyy' }} - dato</span>
-              <span *ngIf="job.tillDate">{{ job.fromDate | date:'dd.MM.yyyy' }} - {{ job.tillDate | date:'dd.MM.yyyy' }}</span>
-            </span>
-            <div id="jobtitle">
-              <h4>{{ job.title }}</h4>
-              <span>bei </span>
-              <a target="_blank" [href]="job.url">{{ job.company }}</a>
+          <div class="row">
+            <div class="col-12">
+              <span class="dateintervall">
+                <span *ngIf="!job.tillDate">{{ job.fromDate | date:'dd.MM.yyyy' }} - dato</span>
+                <span *ngIf="job.tillDate">{{ job.fromDate | date:'dd.MM.yyyy' }} - {{ job.tillDate | date:'dd.MM.yyyy' }}</span>
+              </span>
             </div>
-          </div>
-          <div class="col-md-6" *ngIf="job.icon && i == 0">
-            <div class="img-container">
+            <div class="col-12" *ngIf="job.icon && i == 0">
+              <div class="img-container">
               <img class="img-fluid" [src]="formatService.revealContentfulImageUrl(job.icon)" />
+              </div>
+            </div>
+            <div class="col-12 textcenter">
+              <h4>{{ job.title }}</h4>
+            </div>
+            <div class="col-12 textcenter">
+                <span>bei </span>
+                <a target="_blank" [href]="job.url">{{ job.company }}</a>
             </div>
           </div>
-        </div>
         <div class="row justify-content-center">
           <p class="description">{{ job.description }}</p>
         </div>
@@ -44,16 +46,23 @@
     <ul class="timeline">
       <li *ngFor="let sidejob of sideJobEntries">
         <div class="row">
-          <div class="col">
+          <div class="col-12">
             <span class="dateintervall">
               <span *ngIf="!sidejob.tillDate">{{ sidejob.fromDate | date:'dd.MM.yyyy' }} - dato</span>
-              <span *ngElse>{{ sidejob.fromDate | date:'dd.MM.yyyy' }} - {{ sidejob.tillDate | date:'dd.MM.yyyy' }}</span>
+              <span *ngIf="sidejob.tillDate">{{ sidejob.fromDate | date:'dd.MM.yyyy' }} - {{ sidejob.tillDate | date:'dd.MM.yyyy' }}</span>
             </span>
-            <div id="jobtitle">
-              <h4>{{ sidejob.title }}</h4>
+          </div>
+          <div class="col-12" *ngIf="sidejob.icon && i == 0">
+            <div class="img-container">
+            <img class="img-fluid" [src]="formatService.revealContentfulImageUrl(sidejob.icon)" />
+            </div>
+          </div>
+          <div class="col-12 textcenter">
+            <h4>{{ sidejob.title }}</h4>
+          </div>
+          <div class="col-12 textcenter">
               <span>bei </span>
               <a target="_blank" [href]="sidejob.url">{{ sidejob.company }}</a>
-            </div>
           </div>
         </div>
         <div class="row justify-content-center">

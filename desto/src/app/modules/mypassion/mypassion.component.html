@@ -12,19 +12,20 @@
         <fa-icon [icon]="visionIcon" size="3x" transform="down-11"></fa-icon>
       </div>
       <div class="icon" *ngIf="characteristic.type == 'COMPLETEPACKAGE'">
-        <fa-icon [icon]="completeIcon" size="3x" transform="down-10 right-2"></fa-icon>
+        <fa-icon [icon]="completeIcon" size="3x" transform="down-12 right-0"></fa-icon>
       </div>
       <div class="icon" *ngIf="characteristic.type == 'FLEXIBILITY'">
-        <fa-icon [icon]="flexibilityIcon" size="3x" transform="down-11"></fa-icon>
+        <fa-icon [icon]="flexibilityIcon" size="3x" transform="down-12"></fa-icon>
       </div>
       <div class="icon" *ngElse>
         <fa-icon [icon]="otherIcon" size="3x" transform="right-1 down-11"></fa-icon>
       </div>
-      <h5>{{ characteristic.type }}</h5>
+      <h5>{{ formateCharacteristicType(characteristic.type) }}</h5>
       <p>{{ characteristic.text }}</p>
     </div>
 
     <!-- TO DO to be removed -->
+    <!--
     <div class="col-md-6 text-center mb-5">
       <div class="icon">
         <fa-icon [icon]="otherIcon" size="3x" transform="down-11"></fa-icon>
@@ -32,5 +33,6 @@
       <h5>Vision</h5>
       <p>Ich brenne für die Entwicklung von Frontend-Applikationen, welche dem Benutzer eine attraktive User Experience gewährleisten und mittels jener Funktionalitäten elegant und verständlich zugänglich gemacht werden. Der Zwiespalt zwischen Eleganz und Funktionsvielfalt reizt mich - Dies ist die Motivation für mich zur Aneignung modernster Frontend-Technologien.</p>
     </div>
+    -->
   </div>
 </div>
