@@ -28,13 +28,21 @@ export class MyprojectsComponent implements OnInit {
   }
 
   resolveProjects(entries: Entry<ProjectFields>[]): ProjectFields[] {
-    const projects: ProjectFields[] = [];
+    let projects: ProjectFields[] = [];
 
     entries.forEach(entry => {
       projects.push(entry.fields);
     });
 
+    projects = projects.sort((a, b) => this.sortingProjectsByDate(a, b));
+
     return projects;
+  }
+
+  sortingProjectsByDate(a: ProjectFields, b: ProjectFields) {
+    const aNew = new Date(a.date);
+    const bNew = new Date(b.date);
+    return aNew > bNew ? -1 : aNew < bNew ? 1 : 0;
   }
 
 }
