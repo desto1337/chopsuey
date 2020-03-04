@@ -4,6 +4,7 @@ import { ContentfulService } from 'src/app/core/services/contentful/contentful.s
 import { ProjectFields } from 'src/app/models/project/projectFields';
 import { Entry } from 'contentful';
 import { FormatService } from 'src/app/core/services/format/format.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-myprojects',
@@ -16,9 +17,11 @@ export class MyprojectsComponent implements OnInit {
 
   private projects: ProjectFields[];
 
-  constructor(private contentfulService: ContentfulService, private formatService: FormatService) { }
+  constructor(private contentfulService: ContentfulService, private formatService: FormatService, private titleService: Title) { }
 
   ngOnInit() {
+    this.titleService.setTitle('Dennis Stoklosa | Projekte');
+
     this.contentfulService.getProjectPageContent().then((projectEntries: Entry<ProjectFields>[]) => {
       console.log('Meine Project-Entries: ', projectEntries);
       this.projects = this.resolveProjects(projectEntries);

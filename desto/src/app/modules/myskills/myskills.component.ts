@@ -7,6 +7,7 @@ import { ApexChart, ApexTitleSubtitle, ApexAxisChartSeries, ApexXAxis, ApexTheme
 import { SkillType } from 'src/app/models/skill/skillTypes';
 import { TechnologyLayerType } from 'src/app/models/technologyLayerDescription/technologyLayerType'; // used in UI Component
 import { environment } from 'src/environments/environment';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-myskills',
@@ -42,9 +43,11 @@ export class MyskillsComponent implements OnInit {
   private backendLangChartSeries: ApexAxisChartSeries;
   private backendLangChartXaxis: ApexXAxis;
 
-  constructor(private contentfulService: ContentfulService) { }
+  constructor(private contentfulService: ContentfulService, private titleService: Title) { }
 
   ngOnInit() {
+    this.titleService.setTitle('Dennis Stoklosa | Fähigkeiten');
+
     this.contentfulService.getSkillPageContent().then((skillEntries: Entry<SkillFields>[]) => {
       console.log('Meine Skill-Entries: ', skillEntries);
       this.skills = this.resolveInnerEntriesOfType(skillEntries);

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { faStackOverflow, faGithubAlt, faXing, faLinkedinIn, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { ContactdecryptionService } from 'src/app/core/services/contactdecryption/contactdecryption.service';
 import { environment } from 'src/environments/environment';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contactme',
@@ -28,9 +29,11 @@ export class ContactmeComponent implements OnInit {
   private message: string;
   private messageFormatted: any;
 
-    constructor(private contactDecryptionService: ContactdecryptionService) { }
+    constructor(private contactDecryptionService: ContactdecryptionService, private titleService: Title) { }
 
     ngOnInit() {
+      this.titleService.setTitle('Dennis Stoklosa | Kontakt');
+
       this.xingLink = environment.urlXing;
       this.linkedinLink = environment.urlLinkedIn;
       this.githubLink = environment.urlGithub;
