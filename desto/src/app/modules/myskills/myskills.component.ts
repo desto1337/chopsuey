@@ -43,6 +43,13 @@ export class MyskillsComponent implements OnInit {
   private backendLangChartSeries: ApexAxisChartSeries;
   private backendLangChartXaxis: ApexXAxis;
 
+  private frontendTechList: string[];
+  private frontendLangList: string[];
+  private middlewareTechList: string[];
+  private middlewareLangList: string[];
+  private backendTechList: string[];
+  private backendLangList: string[];
+
   constructor(private contentfulService: ContentfulService, private titleService: Title) { }
 
   ngOnInit() {
@@ -94,7 +101,7 @@ export class MyskillsComponent implements OnInit {
     this.setChartSeriesAndXaxisLabels(SkillType.backend);
 
     /* Angezeige Elemente in Charts auf maximal 5 Beschränken */
-    // this.sliceChartSeries(2);
+    this.sliceChartSeries(5);
   }
 
 /**
@@ -292,7 +299,7 @@ export class MyskillsComponent implements OnInit {
     });
 
     filteredSkills.sort((a, b) => b.level - a.level); // Größter Value zuerst, von links nach rechts
-    console.log('filteredSkills, isLanguage: ' + isLanguageProperty + " , für SkillType: " + skillType, filteredSkills);
+    console.log('filteredSkills, isLanguage: ' + isLanguageProperty + ' , für SkillType: ' + skillType, filteredSkills);
 
     filteredSkills.forEach(skill => {
       seriesData.push(skill.level);
@@ -363,30 +370,43 @@ detectNotListedSkill(skill: SkillFields): boolean {
 
   sliceChartSeries(numberOfBars?: number) {
 
+    /* Vorerst bisherige Gesamtmenge in jeweilige Lists schreiben, bevor Charts auf die Länge beschnibbelt werden */
+    this.frontendTechList = this.frontendTechChartXaxis.categories;
+    this.frontendLangList = this.frontendLangChartXaxis.categories;
+    this.middlewareTechList = this.middlewareTechChartXaxis.categories;
+    this.middlewareLangList = this.middlewareLangChartXaxis.categories;
+    this.backendTechList = this.backendTechChartXaxis.categories;
+    this.backendLangList = this.backendLangChartXaxis.categories;
+
     /* Angezeige Elemente in Charts auf maximal 5 Beschränken */
-    if(this.frontendTechChartSeries[0].data.length > numberOfBars) {
+    if (this.frontendTechChartSeries[0].data.length > numberOfBars) {
       this.frontendTechChartSeries[0].data = this.frontendTechChartSeries[0].data.slice(0, numberOfBars);
       this.frontendTechChartXaxis.categories = this.frontendTechChartXaxis.categories.slice(0, numberOfBars);
     }
 
-    if(this.frontendLangChartSeries[0].data.length > numberOfBars) {
-      this.frontendLangChartSeries[0].data= this.frontendLangChartSeries[0].data.slice(0, numberOfBars);
+    if (this.frontendLangChartSeries[0].data.length > numberOfBars) {
+      this.frontendLangChartSeries[0].data = this.frontendLangChartSeries[0].data.slice(0, numberOfBars);
+      this.frontendLangChartXaxis.categories = this.frontendLangChartXaxis.categories.slice(0, numberOfBars);
     }
 
-    if(this.middlewareTechChartSeries[0].data.length > numberOfBars) {
+    if (this.middlewareTechChartSeries[0].data.length > numberOfBars) {
       this.middlewareTechChartSeries[0].data = this.middlewareTechChartSeries[0].data.slice(0, numberOfBars);
+      this.middlewareTechChartXaxis.categories = this.middlewareTechChartXaxis.categories.slice(0, numberOfBars);
     }
 
-    if(this.middlewareLangChartSeries[0].data.length > numberOfBars) {
+    if (this.middlewareLangChartSeries[0].data.length > numberOfBars) {
       this.middlewareLangChartSeries[0].data = this.middlewareLangChartSeries[0].data.slice(0, numberOfBars);
+      this.middlewareLangChartXaxis.categories = this.middlewareLangChartXaxis.categories.slice(0, numberOfBars);
     }
 
-    if(this.backendTechChartSeries[0].data.length > numberOfBars) {
-      this.backendTechChartSeries[0].data.slice(0, numberOfBars);
+    if (this.backendTechChartSeries[0].data.length > numberOfBars) {
+      this.backendTechChartSeries[0].data = this.backendTechChartSeries[0].data.slice(0, numberOfBars);
+      this.backendTechChartXaxis.categories = this.backendTechChartXaxis.categories.slice(0, numberOfBars);
     }
 
-    if(this.backendLangChartSeries[0].data.length > numberOfBars) {
+    if (this.backendLangChartSeries[0].data.length > numberOfBars) {
       this.backendLangChartSeries[0].data = this.backendLangChartSeries[0].data.slice(0, numberOfBars);
+      this.backendLangChartXaxis.categories = this.backendLangChartXaxis.categories.slice(0, numberOfBars);
     }
 
   }
