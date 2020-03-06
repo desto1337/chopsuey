@@ -6,42 +6,29 @@ img {
 
 .subcontent {
   margin-top: 3vh;
-  margin-bottom: 3vh;
+  margin-bottom: 2vh;
+  border-bottom: 1px $grey-lighter solid;
+
+  h4 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.subcontent:last-child {
+  border-bottom: none;
 }
 
 .content-right .imageContainer {
+  padding-top: 2vh;
   margin-left: auto;
   text-align: right;
 }
 
 .content-left .imageContainer {
+  padding-top: 2vh;
   margin-right: auto;
   text-align: left;
-}
-
-.skilllist {
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  padding-top: 2vh;
-  padding-bottom: 2vh;
-  border: 1px $secondary-color solid;
-  border-radius: 7px;
-  .listheadline {
-    text-align: center;
-    font-size: 1.1rem;
-    color: $secondary-color;
-  }
-  ul {
-    list-style-type: none;
-    li {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      padding-right: 5vw;
-      span {
-        padding-left: 1vw;
-      }
-    }
-  }
 }
 
 .technologywrapper {
@@ -51,8 +38,8 @@ img {
 }
 
 .technologylist {
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+  margin-top: 20px;
+  margin-bottom: 5vh;
   border-radius: 7px;
   border-left: 1px $technologylist-bordercolor solid;
   border-right: 1px $technologylist-bordercolor solid;
