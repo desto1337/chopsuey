@@ -118,7 +118,7 @@ export class MyskillsComponent implements OnInit {
       formatter: (val, opts) => {
         return val + ' %';
       }
-    }
+    };
 
     this.chartTheme = {
       monochrome: {

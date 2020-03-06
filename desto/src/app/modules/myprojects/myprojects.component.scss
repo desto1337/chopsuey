@@ -43,3 +43,27 @@ img {
     }
   }
 }
+
+.technologylist {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $technologylist-maxwidth;
+  border-radius: 7px;
+  border-left: 1px $technologylist-bordercolor solid;
+  border-right: 1px $technologylist-bordercolor solid;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  p {
+    color: $secondary-color;
+    font-size: 110%;
+    margin-bottom: 1vh;
+  }
+  .item {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+}

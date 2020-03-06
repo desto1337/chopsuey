@@ -14,6 +14,8 @@ $anchor-hovercolor: #125699; // default: #125699
 $navbar-color: rgba(0, 0, 0, 0.9);
 $navbar-link-active: rgb(187, 207, 238);
 
+$technologylist-bordercolor: rgb(210, 229, 255);
+
 $custom-card-bordercolor: #eee;
 $custom-card-backgroundcolor: #fafafa;
 
@@ -26,6 +28,7 @@ $footer-sociallink-backgroundcolor: #fafafa;
 
 $content-maxwidth: 1200px;  // default: 960
 $jobcontent-maxwidth: 900px;
+$technologylist-maxwidth: $jobcontent-maxwidth;
 $img-container-maxwidth: 400px;
 $header-maxheight: 48px;
 $footer-height: 180px;
