@@ -2,7 +2,7 @@
   <h2>Meine privaten Projekte</h2>
   <p>Das ist eine Beschreibung, welche in Zukunft noch detailliert ausgeführt wird.</p>
 
-  <div *ngFor="let project of projects; let i = index" [class.content-right]="i % 2 == 0" [class.content-left]="i % 2 != 0" class="row justify-content-center subcontent">
+  <div *ngFor="let project of projects; let i = index, let last = last" [class.content-right]="i % 2 == 0" [class.content-left]="i % 2 != 0"  [class.dividerline-last-item]="last" class="row justify-content-center subcontent">
       <div *ngIf="i % 2 != 0" class="col-md-7 align-self-center">
         <div class="imageContainer">
           <img class="img-fluid" [src]="formatService.revealContentfulImageUrl(project.image)" />
@@ -47,6 +47,8 @@
         </div>
       </div>
       -->
+
+    <span class="dividerline"></span>
   </div>
 
 </div>

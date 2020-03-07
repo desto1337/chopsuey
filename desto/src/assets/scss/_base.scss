@@ -45,6 +45,23 @@ q {
   //align-items: center;
 }
 
+span.dividerline {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  width: 90%;
+  border-top: solid $divider-color 1px;
+  max-width: 1200px; // default: 960;
+}
+
+// has to be added with ngFor last element
+.dividerline-last-item {
+  span.dividerline {
+    margin-top: 0;
+    padding-bottom: 0;
+    border: none;
+  }
+}
+
 img-fluid {
   max-width: 100%;
   height: auto;
