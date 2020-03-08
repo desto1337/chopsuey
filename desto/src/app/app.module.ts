@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -20,6 +21,7 @@ import { PrivacypolicyComponent } from './core/privacypolicy/privacypolicy.compo
 import { DashboardComponent } from './core/dashboard/dashboard.component';
 import { PersonComponent } from './core/person/person.component';
 import { ContentfulService } from './core/services/contentful/contentful.service';
+import { OnviewportDirective } from './directives/onviewport/onviewport.directive';
 
 @NgModule({
   declarations: [
@@ -36,10 +38,12 @@ import { ContentfulService } from './core/services/contentful/contentful.service
     LegalsComponent,
     PrivacypolicyComponent,
     DashboardComponent,
-    PersonComponent
+    PersonComponent,
+    OnviewportDirective,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
     FontAwesomeModule,

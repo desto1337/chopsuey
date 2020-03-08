@@ -33,4 +33,8 @@ export class AboutmeComponent implements OnInit {
     return aboutmecontent.fields;
   }
 
+  test() {
+    console.log('Juhu! Ich bin zu sehen!');
+  }
+
 }
