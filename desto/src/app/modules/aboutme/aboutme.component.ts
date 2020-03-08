@@ -2,15 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from 'src/app/core/services/contentful/contentful.service';
 import { Entry } from 'contentful';
 import { AboutMeFields } from 'src/app/models/aboutme/aboutMeFields';
+import { BasicAnimations } from 'src/app/animations/basicanimations';
 
 @Component({
   selector: 'app-aboutme',
   templateUrl: './aboutme.component.html',
-  styleUrls: ['./aboutme.component.scss']
+  styleUrls: ['./aboutme.component.scss'],
+  animations: [
+    BasicAnimations.fadeSlow
+  ]
 })
 export class AboutmeComponent implements OnInit {
 
   private aboutmeContent: AboutMeFields;
+  public fademe: boolean;
 
   constructor(private contentfulService: ContentfulService) { }
 
@@ -35,6 +40,7 @@ export class AboutmeComponent implements OnInit {
 
   test() {
     console.log('Juhu! Ich bin zu sehen!');
+    this.fademe = !this.fademe;
   }
 
 }

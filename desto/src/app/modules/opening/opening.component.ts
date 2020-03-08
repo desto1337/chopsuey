@@ -2,35 +2,17 @@ import { Component, OnInit, HostBinding, HostListener, Inject } from '@angular/c
 import { OpeningContentFields } from 'src/app/models/opening/openingContentFields';
 import { ContentfulService } from 'src/app/core/services/contentful/contentful.service';
 import { Entry } from 'contentful';
-import { trigger, state, style, transition, animate } from '@angular/animations';
 import { DOCUMENT } from '@angular/common';
+import { BasicAnimations } from 'src/app/animations/basicanimations';
 
 @Component({
   selector: 'app-opening',
   templateUrl: './opening.component.html',
   styleUrls: ['./opening.component.scss'],
   animations: [
-    trigger('fade', [
-      transition(':enter', [
-        style({ opacity: '0' }),
-        animate('0.5s')
-      ]),
-      transition(':leave', animate('300ms ease-out', style({ opacity: 0 })))
-    ]),
-    trigger('flyIn1', [
-      state('in', style({ transform: 'translateX(0)' })),
-      transition(':enter', [
-        style({ opacity: '0', transform: 'translateX(-2vw)' }),
-        animate(600)
-      ])
-    ]),
-    trigger('flyIn2', [
-      state('in', style({ transform: 'translateX(0)' })),
-      transition(':enter', [
-        style({ opacity: '0', transform: 'translateX(-2vw)' }),
-        animate(800)
-      ])
-    ])
+    BasicAnimations.fade,
+    BasicAnimations.flyIn1,
+    BasicAnimations.flyIn2
   ]
 })
 export class OpeningComponent implements OnInit {
