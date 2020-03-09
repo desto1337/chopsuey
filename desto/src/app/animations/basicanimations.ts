@@ -10,24 +10,55 @@ export const BasicAnimations = {
       transition(':leave', animate('300ms ease-out', style({ opacity: 0 })))
     ]),
     fadeSlow: trigger('fadeSlow', [
-      transition('* => *', [
-        style({ opacity: '0' }),
-        animate('2.0s')
+      state('invisible', style({
+        opacity: 0,
+      })),
+      state('seen', style({
+        opacity: 1,
+      })),
+      transition('invisible => seen', [
+        animate('1.5s')
       ]),
-      transition(':leave', animate('300ms ease-out', style({ opacity: 0 })))
+      transition('seen => invisible', [
+        animate('0.5s')
+      ])
     ]),
-    flyIn1: trigger('flyIn1', [
+    fadeSlowOnEnter: trigger('fadeSlowOnEnter', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('1200ms', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [
+        animate('100ms', style({ opacity: 0 }))
+      ])
+    ]),
+    flyInOnEnter1: trigger('flyInOnEnter1', [
       state('in', style({ transform: 'translateX(0)' })),
       transition(':enter', [
         style({ opacity: '0', transform: 'translateX(-2vw)' }),
         animate(600)
       ])
     ]),
-    flyIn2: trigger('flyIn2', [
+    flyInOnEnter2: trigger('flyInOnEnter2', [
       state('in', style({ transform: 'translateX(0)' })),
       transition(':enter', [
         style({ opacity: '0', transform: 'translateX(-2vw)' }),
         animate(800)
       ])
+    ]),
+    flyInIfVisible: trigger('flyInIfVisible', [
+      state('invisible', style({
+        opacity: 0,
+        transform: 'translateX(-100%)'
+      })),
+      state('seen', style({
+        opacity: 1,
+      })),
+      transition('invisible => seen', [
+        animate('1.5s')
+      ]),
+      transition('seen => invisible', [
+        animate('0.5s')
+      ])
     ])
-}
+};

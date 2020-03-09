@@ -1,6 +1,6 @@
-<div class="content">
+<div [@fadeSlowOnEnter]="animateOnEnter" class="content">
   <h2>Mein Werdegang</h2>
-  <p>
+  <p (appOnviewport)="animateContent()">
     Das ist noch eine schöne Beschreibung
   </p>
 

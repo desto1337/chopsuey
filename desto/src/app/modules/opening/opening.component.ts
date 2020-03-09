@@ -10,9 +10,8 @@ import { BasicAnimations } from 'src/app/animations/basicanimations';
   templateUrl: './opening.component.html',
   styleUrls: ['./opening.component.scss'],
   animations: [
-    BasicAnimations.fade,
-    BasicAnimations.flyIn1,
-    BasicAnimations.flyIn2
+    BasicAnimations.flyInOnEnter1,
+    BasicAnimations.flyInOnEnter2
   ]
 })
 export class OpeningComponent implements OnInit {
@@ -26,32 +25,6 @@ export class OpeningComponent implements OnInit {
       this.openingContent = openingPageContent[0].fields;
       console.log('Mein OpeningContent: ', this.openingContent);
     });
-  }
-
-  /**
-  @HostListener('window:scroll', ['$event.target.id'])
-  onWindowScroll() {
-    if (this.document.body.scrollTop > 20 ||
-    this.document.documentElement.scrollTop > 20) {
-      console.log('Es wurde gescrollt');
-
-      const docViewTop = this.document.body.scrollTop;
-      const docViewBottom = docViewTop + this.document.body.clientHeight;
-
-      console.log('Top: ', docViewTop);
-      console.log('Bottom: ', docViewBottom);
-
-      /**
-        document.getElementById('subTitle').classList.add('red');
-        document.getElementById('paragraph').classList.add('green');
-       */
-      /**
-    }
-  }
-  */
-
-  test() {
-    console.log('Juhu! Ich bin zu sehen!');
   }
 
 }

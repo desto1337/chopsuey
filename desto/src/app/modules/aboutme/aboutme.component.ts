@@ -15,11 +15,13 @@ import { BasicAnimations } from 'src/app/animations/basicanimations';
 export class AboutmeComponent implements OnInit {
 
   private aboutmeContent: AboutMeFields;
-  public fademe: boolean;
+  private fadeState: string;
 
   constructor(private contentfulService: ContentfulService) { }
 
   ngOnInit() {
+    this.fadeState = 'invisible';
+
     this.contentfulService.getAboutMeContent().then(
       (items: Entry<AboutMeFields>[]) => {
         console.log('Meine Response: ', items);
@@ -38,9 +40,9 @@ export class AboutmeComponent implements OnInit {
     return aboutmecontent.fields;
   }
 
-  test() {
-    console.log('Juhu! Ich bin zu sehen!');
-    this.fademe = !this.fademe;
+  animateContent() {
+    // console.log('Juhu! Ich bin zu sehen!');
+    this.fadeState = 'seen';
   }
 
 }

@@ -34,7 +34,7 @@ export class OnviewportDirective implements AfterViewInit, OnDestroy {
   }
 
   saveScrollPos() {
-    console.log('window.scrollY: ' , this.scrollPos);
+    // console.log('window.scrollY: ' , this.scrollPos);
     this.scrollPos = window.scrollY;
   }
 
@@ -52,12 +52,12 @@ export class OnviewportDirective implements AfterViewInit, OnDestroy {
       if (this.isVisible()) {
         this.unsubscribe();
         this.appOnviewport.emit();
-        console.log('event emitted');
+        console.log('appOnViewPort-Event ausgelöst');
       }
     }
   }
   isVisible() {
-    console.log('Bin ich sichtbar? ', this.scrollPos >= this.elementPos || (this.scrollPos + this.windowHeight) >= (this.elementPos + this.elementHeight));
+    // console.log('Bin ich sichtbar? ', this.scrollPos >= this.elementPos || (this.scrollPos + this.windowHeight) >= (this.elementPos + this.elementHeight));
     return this.scrollPos >= this.elementPos || (this.scrollPos + this.windowHeight) >= (this.elementPos + this.elementHeight);
   }
 

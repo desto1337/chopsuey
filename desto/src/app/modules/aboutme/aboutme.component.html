@@ -1,12 +1,12 @@
-<div class="content" >
-  <div [@fadeSlow]="fademe" *ngIf="aboutmeContent" class="row justify-content-center">
+<div class="content">
+  <div [@fadeSlow]="fadeState" *ngIf="aboutmeContent" class="row justify-content-center">
     <div class="col-md-6 pr-lg-5">
       <img class="img-fluid shadow" src="../../../assets/images/aboutme_picture.jpg" alt="Kein Image vorhanden :-("/>
     </div>
     <div class="col-md-6 pl-lg-5 pt-2">
       <div id="quote">
         <h2>Das ist ein Aboutme</h2>
-        <q>{{ aboutmeContent.quote }}</q>
+        <q (appOnviewport)="animateContent()">{{ aboutmeContent.quote }}</q>
         <br>
         <p id="author" style="text-align: center;">{{ aboutmeContent.quoteAuthor }}</p>
       </div>
@@ -16,7 +16,7 @@
         <div class="card-container">
           <a class="custom_card" rel="noopener" routerLink="/skills">Technologie-Stack & mehr</a>
         </div>
-        <div (appOnviewport)="test()" class="card-container">
+        <div class="card-container">
           <a class="custom_card" rel="noopener" routerLink="/projects">Aktuelle, private Projekte</a>
         </div>
       </div>

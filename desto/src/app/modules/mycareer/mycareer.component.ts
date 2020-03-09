@@ -3,20 +3,30 @@ import { ContentfulService } from 'src/app/core/services/contentful/contentful.s
 import { JobFields } from 'src/app/models/job/jobFields';
 import { Entry } from 'contentful';
 import { FormatService } from 'src/app/core/services/format/format.service';
+import { BasicAnimations } from 'src/app/animations/basicanimations';
 
 @Component({
   selector: 'app-mycareer',
   templateUrl: './mycareer.component.html',
-  styleUrls: ['./mycareer.component.scss']
+  styleUrls: ['./mycareer.component.scss'],
+  animations: [
+    BasicAnimations.fadeSlowOnEnter
+  ]
 })
 export class MycareerComponent implements OnInit {
 
   private fulltimeJobEntries: JobFields[] = [];
   private sideJobEntries: JobFields[] = [];
 
+  private animateOnEnter = false;
+  private fadeState: string;
+
   constructor(private contentfulService: ContentfulService, private formatService: FormatService) { }
 
   ngOnInit() {
+    this.fadeState = 'invisible';
+    this.animateOnEnter = true;
+
     this.contentfulService.getJobPageContent().then((jobEntries: Entry<JobFields>[]) => {
       this.resolveJobs(jobEntries);
       this.sortJobs();
@@ -45,5 +55,10 @@ export class MycareerComponent implements OnInit {
     const aNew = new Date(a.fromDate);
     const bNew = new Date(b.fromDate);
     return aNew > bNew ? -1 : aNew < bNew ? 1 : 0;
+  }
+
+  animateContent() {
+    // console.log('Juhu! Ich bin zu sehen!');
+    this.fadeState = 'seen';
   }
 }
