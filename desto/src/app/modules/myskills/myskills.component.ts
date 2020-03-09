@@ -8,11 +8,15 @@ import { SkillType } from 'src/app/models/skill/skillTypes';
 import { TechnologyLayerType } from 'src/app/models/technologyLayerDescription/technologyLayerType'; // used in UI Component
 import { environment } from 'src/environments/environment';
 import { Title } from '@angular/platform-browser';
+import { BasicAnimations } from 'src/app/animations/basicanimations';
 
 @Component({
   selector: 'app-myskills',
   templateUrl: './myskills.component.html',
-  styleUrls: ['./myskills.component.scss']
+  styleUrls: ['./myskills.component.scss'],
+  animations: [
+    BasicAnimations.fadeSlow
+  ]
 })
 export class MyskillsComponent implements OnInit {
 
@@ -50,9 +54,12 @@ export class MyskillsComponent implements OnInit {
   private backendTechList: string[];
   private backendLangList: string[];
 
+  public fadeState: string;
+
   constructor(private contentfulService: ContentfulService, private titleService: Title) { }
 
   ngOnInit() {
+    this.fadeState = 'invisible';
     this.titleService.setTitle('Dennis Stoklosa | Fähigkeiten');
 
     this.contentfulService.getSkillPageContent().then((skillEntries: Entry<SkillFields>[]) => {
@@ -94,6 +101,7 @@ export class MyskillsComponent implements OnInit {
  * Creates chart series data and xaxis labeling of every chart based on fetched data in this.skills
  */
   initializeCharts() {
+    this.fadeState = 'seen';
     this.generateChartsBasicTheme();
     this.setChartTitles();
     this.setChartSeriesAndXaxisLabels(SkillType.frontend);

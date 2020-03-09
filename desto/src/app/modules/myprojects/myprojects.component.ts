@@ -5,26 +5,35 @@ import { ProjectFields } from 'src/app/models/project/projectFields';
 import { Entry } from 'contentful';
 import { FormatService } from 'src/app/core/services/format/format.service';
 import { Title } from '@angular/platform-browser';
+import { BasicAnimations } from 'src/app/animations/basicanimations';
 
 @Component({
   selector: 'app-myprojects',
   templateUrl: './myprojects.component.html',
-  styleUrls: ['./myprojects.component.scss']
+  styleUrls: ['./myprojects.component.scss'],
+  animations: [
+    BasicAnimations.fadeSlow
+  ]
 })
 export class MyprojectsComponent implements OnInit {
 
   public listitemIcon: IconDefinition = faChevronRight;
+
+  public fadeState: string;
 
   private projects: ProjectFields[];
 
   constructor(private contentfulService: ContentfulService, private formatService: FormatService, private titleService: Title) { }
 
   ngOnInit() {
+    this.fadeState = 'invisible';
+
     this.titleService.setTitle('Dennis Stoklosa | Projekte');
 
     this.contentfulService.getProjectPageContent().then((projectEntries: Entry<ProjectFields>[]) => {
       console.log('Meine Project-Entries: ', projectEntries);
       this.projects = this.resolveProjects(projectEntries);
+      this.fadeState = 'seen';
     }).catch(error => {
       console.log('Contentful-API: Es wurden keine Projects gefunden: ', error);
     });

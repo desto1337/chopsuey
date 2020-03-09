@@ -64,5 +64,5 @@ export const BasicAnimations = {
       transition('seen => invisible', [
         animate('0.5s')
       ])
-    ])
+    ]),
 };

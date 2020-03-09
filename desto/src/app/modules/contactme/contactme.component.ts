@@ -4,11 +4,15 @@ import { faStackOverflow, faGithubAlt, faXing, faLinkedinIn, IconDefinition } fr
 import { ContactdecryptionService } from 'src/app/core/services/contactdecryption/contactdecryption.service';
 import { environment } from 'src/environments/environment';
 import { Title } from '@angular/platform-browser';
+import { BasicAnimations } from 'src/app/animations/basicanimations';
 
 @Component({
   selector: 'app-contactme',
   templateUrl: './contactme.component.html',
-  styleUrls: ['./contactme.component.scss']
+  styleUrls: ['./contactme.component.scss'],
+  animations: [
+    BasicAnimations.fadeSlowOnEnter
+  ]
 })
 export class ContactmeComponent implements OnInit {
 
