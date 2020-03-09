@@ -62,6 +62,7 @@ export class MycareerComponent implements OnInit {
 
   animateSideJobs() {
     // console.log('Juhu! Ich bin zu sehen in MyCareer, Sidejobs!');
+    console.log('Meine Nebentätigkeiten sind sichtbar!');
     this.fadeSideJobsState = 'seen';
   }
 }

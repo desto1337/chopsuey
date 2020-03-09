@@ -3,7 +3,7 @@
   <p>
     Das ist ein Beispieltext zur Einleitung.
   </p>
-  <div class="row justify-content-center text-center subcontent">
+  <div (appOnviewport)="animateContent()" class="row justify-content-center text-center subcontent">
     <div *ngFor="let characteristic of charateristics" class="col-md-6 text-center mb-5">
       <div class="icon" *ngIf="characteristic.type == 'INTERDISCIPLINARY'">
         <fa-icon [icon]="overallIcon" size="3x" transform="down-10 right-2"></fa-icon>
@@ -20,7 +20,7 @@
       <div class="icon" *ngElse>
         <fa-icon [icon]="otherIcon" size="3x" transform="right-1 down-11"></fa-icon>
       </div>
-      <h5 (appOnviewport)="animateContent()">{{ formateCharacteristicType(characteristic.type) }}</h5>
+      <h5>{{ formateCharacteristicType(characteristic.type) }}</h5>
       <p>{{ characteristic.text }}</p>
     </div>
 

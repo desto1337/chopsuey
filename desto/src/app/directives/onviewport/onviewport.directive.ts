@@ -63,12 +63,16 @@ export class OnviewportDirective implements AfterViewInit, OnDestroy {
    *  console.log('D.h. Element Position zwischen ', this.elementPos + ' und ' +  (this.elementPos + this.elementHeight));
    *  console.log('Meine aktuelle Scrollposition liegt bei : ', this.scrollPos);
    *  console.log('Das heißt mein Fenster Viewport liegt zwischen ', this.scrollPos + ' und ' + (this.windowHeight + this.scrollPos));
-   *  console.log('Element liegt im Viewport: ', !(this.scrollPos >= this.elementPos && (this.windowHeight + this.scrollPos) >= (this.elementPos + this.elementHeight)));
+   *  console.log('Element liegt im Viewport: ', ((this.windowHeight + this.scrollPos) > this.elementPos &&  this.scrollPos < (this.elementPos + this.elementHeight)));
    *  console.log('-----------------');
    */
 
     // return this.scrollPos >= this.elementPos || (this.scrollPos + this.windowHeight) >= (this.elementPos + this.elementHeight);
-    return !(this.scrollPos >= this.elementPos || (this.windowHeight + this.scrollPos) < (this.elementPos + this.elementHeight));
+    // return !(this.scrollPos >= this.elementPos || (this.windowHeight + this.scrollPos) < (this.elementPos + this.elementHeight));
+
+    // console.log('Sichtbar: ', ((this.windowHeight + this.scrollPos) > this.elementPos &&  this.scrollPos < (this.elementPos + this.elementHeight)));
+
+    return ((this.windowHeight + this.scrollPos) > this.elementPos &&  this.scrollPos < (this.elementPos + this.elementHeight));
     }
 
   subscribe() {
