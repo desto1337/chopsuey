@@ -3,16 +3,21 @@ import { faTabletAlt, faPuzzlePiece, faCogs, faSlidersH, faUserCog, IconDefiniti
 import { ContentfulService } from 'src/app/core/services/contentful/contentful.service';
 import { CharacteristicFields, CharacteristicType } from 'src/app/models/characteristic/characteristicFields';
 import { Entry } from 'contentful';
+import { BasicAnimations } from 'src/app/animations/basicanimations';
 
 @Component({
   selector: 'app-mypassion',
   templateUrl: './mypassion.component.html',
-  styleUrls: ['./mypassion.component.scss']
+  styleUrls: ['./mypassion.component.scss'],
+  animations: [
+    BasicAnimations.fadeSlow
+  ]
 })
 export class MypassionComponent implements OnInit {
 
   public charateristics: CharacteristicFields[];
 
+  private fadeState: string;
 
   public visionIcon: IconDefinition = faTabletAlt;
   public flexibilityIcon: IconDefinition = faSlidersH;
@@ -23,6 +28,8 @@ export class MypassionComponent implements OnInit {
   constructor(private contentfulService: ContentfulService) { }
 
   ngOnInit() {
+    this.fadeState = 'invisible';
+
     this.contentfulService.getCharacteristicPageContent().then((personalityContent: Entry<CharacteristicFields>[]) => {
       console.log('Meine Characteristic-Entries: ', personalityContent);
       this.charateristics = this.resolveCharacteristics(personalityContent);
@@ -59,6 +66,11 @@ export class MypassionComponent implements OnInit {
         return type;
       }
     }
+  }
+
+  animateContent() {
+    // console.log('Juhu! Ich bin zu sehen in MyCareer, Sidejobs!');
+    this.fadeState = 'seen';
   }
 
 }

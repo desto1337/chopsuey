@@ -57,9 +57,19 @@ export class OnviewportDirective implements AfterViewInit, OnDestroy {
     }
   }
   isVisible() {
-    // console.log('Bin ich sichtbar? ', this.scrollPos >= this.elementPos || (this.scrollPos + this.windowHeight) >= (this.elementPos + this.elementHeight));
-    return this.scrollPos >= this.elementPos || (this.scrollPos + this.windowHeight) >= (this.elementPos + this.elementHeight);
-  }
+  /**
+   *  console.log('-----------------');
+   *  console.log('Element Position: ', this.elementPos + ' mit Elementhoehe: ' + this.elementHeight);
+   *  console.log('D.h. Element Position zwischen ', this.elementPos + ' und ' +  (this.elementPos + this.elementHeight));
+   *  console.log('Meine aktuelle Scrollposition liegt bei : ', this.scrollPos);
+   *  console.log('Das heißt mein Fenster Viewport liegt zwischen ', this.scrollPos + ' und ' + (this.windowHeight + this.scrollPos));
+   *  console.log('Element liegt im Viewport: ', !(this.scrollPos >= this.elementPos && (this.windowHeight + this.scrollPos) >= (this.elementPos + this.elementHeight)));
+   *  console.log('-----------------');
+   */
+
+    // return this.scrollPos >= this.elementPos || (this.scrollPos + this.windowHeight) >= (this.elementPos + this.elementHeight);
+    return !(this.scrollPos >= this.elementPos || (this.windowHeight + this.scrollPos) < (this.elementPos + this.elementHeight));
+    }
 
   subscribe() {
     this.subscriptionScroll = fromEvent(window, 'scroll')

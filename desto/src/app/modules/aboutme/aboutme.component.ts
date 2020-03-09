@@ -41,7 +41,7 @@ export class AboutmeComponent implements OnInit {
   }
 
   animateContent() {
-    // console.log('Juhu! Ich bin zu sehen!');
+    console.log('Juhu! Ich bin zu sehen!');
     this.fadeState = 'seen';
   }
 

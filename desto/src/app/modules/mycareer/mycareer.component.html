@@ -1,6 +1,6 @@
-<div [@fadeSlowOnEnter]="animateOnEnter" class="content">
+<div [@fadeSlow]="fadeState" class="content">
   <h2>Mein Werdegang</h2>
-  <p (appOnviewport)="animateContent()">
+  <p>
     Das ist noch eine schöne Beschreibung
   </p>
 
@@ -38,7 +38,7 @@
     </ul>
   </div>
 
-  <div class="jobcontent" *ngIf="sideJobEntries.length">
+  <div [@fadeSlow]="fadeSideJobsState" class="jobcontent" *ngIf="sideJobEntries.length">
     <h4>Meine Nebentätigkeiten</h4>
     <p>
       Das ist eine Beschreibung.
@@ -66,7 +66,7 @@
           </div>
         </div>
         <div class="row justify-content-center">
-          <p class="description">{{ sidejob.description }}</p>
+          <p (appOnviewport)="animateSideJobs()" class="description">{{ sidejob.description }}</p>
         </div>
       </li>
     </ul>

@@ -10,7 +10,7 @@ import { BasicAnimations } from 'src/app/animations/basicanimations';
   templateUrl: './mycareer.component.html',
   styleUrls: ['./mycareer.component.scss'],
   animations: [
-    BasicAnimations.fadeSlowOnEnter
+    BasicAnimations.fadeSlow
   ]
 })
 export class MycareerComponent implements OnInit {
@@ -20,16 +20,19 @@ export class MycareerComponent implements OnInit {
 
   private animateOnEnter = false;
   private fadeState: string;
+  private fadeSideJobsState: string;
 
   constructor(private contentfulService: ContentfulService, private formatService: FormatService) { }
 
   ngOnInit() {
     this.fadeState = 'invisible';
+    this.fadeSideJobsState = 'invisible';
     this.animateOnEnter = true;
 
     this.contentfulService.getJobPageContent().then((jobEntries: Entry<JobFields>[]) => {
       this.resolveJobs(jobEntries);
       this.sortJobs();
+      this.fadeState = 'seen';
     }).then(error => {
       console.log('Contentful-API: Es wurden keinen Jobeinträge gefunden: ', error);
     });
@@ -57,8 +60,8 @@ export class MycareerComponent implements OnInit {
     return aNew > bNew ? -1 : aNew < bNew ? 1 : 0;
   }
 
-  animateContent() {
-    // console.log('Juhu! Ich bin zu sehen!');
-    this.fadeState = 'seen';
+  animateSideJobs() {
+    // console.log('Juhu! Ich bin zu sehen in MyCareer, Sidejobs!');
+    this.fadeSideJobsState = 'seen';
   }
 }
