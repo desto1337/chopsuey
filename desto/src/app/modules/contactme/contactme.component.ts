@@ -11,7 +11,7 @@ import { BasicAnimations } from 'src/app/animations/basicanimations';
   templateUrl: './contactme.component.html',
   styleUrls: ['./contactme.component.scss'],
   animations: [
-    BasicAnimations.fadeSlowOnEnter
+    BasicAnimations.fadeOnEnter
   ]
 })
 export class ContactmeComponent implements OnInit {

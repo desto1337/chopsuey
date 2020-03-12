@@ -36,6 +36,15 @@ export const BasicAnimations = {
         animate('100ms', style({ opacity: 0 }))
       ])
     ]),
+    fadeOnEnter: trigger('fadeOnEnter', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('800ms', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [
+        animate('100ms', style({ opacity: 0 }))
+      ])
+    ]),
     flyInOnEnter1: trigger('flyInOnEnter1', [
       state('in', style({ transform: 'translateX(0)' })),
       transition(':enter', [
