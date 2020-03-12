@@ -40,12 +40,12 @@ textarea {
   text-indent: 4px;
 }
 
-.emailoverlay pre {
+.emailoverlay .mailcontent{
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
     sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   color: black;
   font-size: 1rem;
-  padding: 0 1.0rem 0.5rem;
+  padding: 1.0rem 1.0rem 1.0rem 1.0rem;
   margin: 0;
 }
 

@@ -18,25 +18,31 @@
         <div class="row">
           <!-- Terminal -->
           <div class="emailoverlay">
-            <pre>
-      <b>Verfasse E-Mail..</b>
-            </pre>
-            <pre>
-Betreff:
-                <select class="form-control" [(ngModel)]="subject" (ngModelChange)="updateMailtoString()">
-                  <option value="Feedback" selected>Feedback</option>
-                  <option value="Mittleilung eines Bugs">Mitteilung eines Bugs</option>
-                  <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
-                </select>
-Mitteilung:
-                <textarea
-                  class="form-control rounded-0"
-                  id="messageTextarea"
-                  rows="4"
-                  [(ngModel)]="message"
-                  (ngModelChange)="updateMailtoString()"
-                  placeholder="Ihre Nachricht an mich"></textarea>
-              </pre>
+            <div class="mailcontent">
+              <div class="form-group">
+                <label>
+                  <b>Verfasse E-Mail..</b>
+                </label>
+              </div>
+              <div class="form-group">
+                <label>Betreff:</label>
+                  <select class="form-control" [(ngModel)]="subject" (ngModelChange)="updateMailtoString()">
+                    <option value="Feedback" selected>Feedback</option>
+                    <option value="Mittleilung eines Bugs">Mitteilung eines Bugs</option>
+                    <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                <label>Mitteilung:</label>
+                  <textarea
+                    class="form-control rounded-0"
+                    id="messageTextarea"
+                    rows="5"
+                    [(ngModel)]="message"
+                    (ngModelChange)="updateMailtoString()"
+                    placeholder="Ihre Nachricht an mich"></textarea>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row justify-content-center">
