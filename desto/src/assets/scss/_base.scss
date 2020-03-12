@@ -151,6 +151,10 @@ a:hover {
   border: 1px $secondary-color solid;
 }
 
+.nav-item-customborder .active {
+  border-bottom: 1px $secondary-color solid;
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 767px) {
   .card-container > *:not(.circle-link),
