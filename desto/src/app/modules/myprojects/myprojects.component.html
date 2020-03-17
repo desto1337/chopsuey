@@ -26,15 +26,15 @@
 
       <div class="col-12 technologywrapper">
         <div class="technologylist">
-          <p>Eingesetzte Technologien:</p>
-          <div class="row align-items-strech">
-            <div *ngFor="let skill of project.skills" class="col-md-6 align-self-middle item">
-              <fa-icon [icon]="listitemIcon" size="lg" [styles]="{'color': '#9ABAEF'}"></fa-icon>
-              <span>
-                {{ skill }}
+            <p>Eingesetze Technologien:</p>
+            <div *ngFor="let skill of project.skills" class="row item">
+              <span class="col-2 text-right align-self-middle">
+                <fa-icon [icon]="listitemIcon" size="lg" [styles]="{'color': '#9ABAEF'}"></fa-icon>
               </span>
+                <span class="col-10 align-self-middle">
+                  {{ skill }}
+                </span>
             </div>
-          </div>
         </div>
       </div>
 

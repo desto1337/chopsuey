@@ -41,14 +41,17 @@ img {
   margin-top: 20px;
   margin-bottom: 5vh;
   border-radius: 7px;
-  border-left: 1px $technologylist-bordercolor solid;
-  border-right: 1px $technologylist-bordercolor solid;
   padding-top: 2vh;
   padding-bottom: 2vh;
   padding-left: 10px;
   padding-right: 10px;
+  background-color:	$secondary-color-lightest;
+  border: 1px transparent solid;
+  border-radius: 7px;
+  // color: white;
   p {
-    color: $secondary-color;
+    // color: white;
+    text-align: center;
     font-size: 110%;
     margin-bottom: 1vh;
   }
