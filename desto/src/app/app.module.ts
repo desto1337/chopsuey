@@ -20,6 +20,7 @@ import { LegalsComponent } from './core/legals/legals.component';
 import { PrivacypolicyComponent } from './core/privacypolicy/privacypolicy.component';
 import { DashboardComponent } from './core/dashboard/dashboard.component';
 import { PersonComponent } from './core/person/person.component';
+import { NotavailableComponent } from './modules/notavailable/notavailable.component';
 import { ContentfulService } from './core/services/contentful/contentful.service';
 import { OnviewportDirective } from './directives/onviewport/onviewport.directive';
 
@@ -40,6 +41,7 @@ import { OnviewportDirective } from './directives/onviewport/onviewport.directiv
     DashboardComponent,
     PersonComponent,
     OnviewportDirective,
+    NotavailableComponent,
   ],
   imports: [
     BrowserModule,
