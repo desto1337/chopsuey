@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactdecryptionService } from '../services/contactdecryption/contactdecryption.service';
 import { Title } from '@angular/platform-browser';
+import { BasicAnimations } from 'src/app/animations/basicanimations';
 
 @Component({
   selector: 'app-privacypolicy',
   templateUrl: './privacypolicy.component.html',
-  styleUrls: ['./privacypolicy.component.scss']
+  styleUrls: ['./privacypolicy.component.scss'],
+  animations: [
+    BasicAnimations.fadeOnEnter
+  ]
 })
 export class PrivacypolicyComponent implements OnInit {
 
