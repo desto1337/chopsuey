@@ -4,6 +4,7 @@ import { ContentfulService } from 'src/app/core/services/contentful/contentful.s
 import { CharacteristicFields, CharacteristicType } from 'src/app/models/characteristic/characteristicFields';
 import { Entry } from 'contentful';
 import { BasicAnimations } from 'src/app/animations/basicanimations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mypassion',
@@ -25,7 +26,7 @@ export class MypassionComponent implements OnInit {
   public overallIcon: IconDefinition = faPuzzlePiece;
   public otherIcon: IconDefinition = faUserCog;
 
-  constructor(private contentfulService: ContentfulService) { }
+  constructor(private contentfulService: ContentfulService, private router: Router) { }
 
   ngOnInit() {
     this.fadeState = 'invisible';
@@ -33,8 +34,8 @@ export class MypassionComponent implements OnInit {
     this.contentfulService.getCharacteristicPageContent().then((personalityContent: Entry<CharacteristicFields>[]) => {
       console.log('Meine Characteristic-Entries: ', personalityContent);
       this.charateristics = this.resolveCharacteristics(personalityContent);
-    }).catch(error => {
-      console.log('Contentful-API: Es wurden kein Characteric-Content gefunden: ', error);
+    }).catch((reason: any) => {
+      this.router.navigateByUrl('/notavailable');
     });
   }
 

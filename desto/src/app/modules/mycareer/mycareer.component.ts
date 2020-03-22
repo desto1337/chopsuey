@@ -4,6 +4,7 @@ import { JobFields } from 'src/app/models/job/jobFields';
 import { Entry } from 'contentful';
 import { FormatService } from 'src/app/core/services/format/format.service';
 import { BasicAnimations } from 'src/app/animations/basicanimations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mycareer',
@@ -22,7 +23,7 @@ export class MycareerComponent implements OnInit {
   private fadeState: string;
   private fadeSideJobsState: string;
 
-  constructor(private contentfulService: ContentfulService, private formatService: FormatService) { }
+  constructor(private contentfulService: ContentfulService, private formatService: FormatService, private router: Router) { }
 
   ngOnInit() {
     this.fadeState = 'invisible';
@@ -33,8 +34,8 @@ export class MycareerComponent implements OnInit {
       this.resolveJobs(jobEntries);
       this.sortJobs();
       this.fadeState = 'seen';
-    }).then(error => {
-      console.log('Contentful-API: Es wurden keinen Jobeinträge gefunden: ', error);
+    }).catch((reason: any) => {
+      this.router.navigateByUrl('/notavailable');
     });
   }
 

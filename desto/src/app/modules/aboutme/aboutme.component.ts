@@ -3,6 +3,7 @@ import { ContentfulService } from 'src/app/core/services/contentful/contentful.s
 import { Entry } from 'contentful';
 import { AboutMeFields } from 'src/app/models/aboutme/aboutMeFields';
 import { BasicAnimations } from 'src/app/animations/basicanimations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-aboutme',
@@ -17,7 +18,7 @@ export class AboutmeComponent implements OnInit {
   private aboutmeContent: AboutMeFields;
   private fadeState: string;
 
-  constructor(private contentfulService: ContentfulService) { }
+  constructor(private contentfulService: ContentfulService, private router: Router) { }
 
   ngOnInit() {
     this.fadeState = 'invisible';
@@ -27,8 +28,8 @@ export class AboutmeComponent implements OnInit {
         console.log('Meine Response: ', items);
         this.aboutmeContent = this.findActiveContent(items);
       }
-    ).catch(error => {
-      console.log('Es ist ein Fehler aufgetreten: ', error);
+    ).catch((reason: any) => {
+      this.router.navigateByUrl('/notavailable');
     });
   }
 

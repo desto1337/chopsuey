@@ -6,6 +6,7 @@ import { Entry } from 'contentful';
 import { FormatService } from 'src/app/core/services/format/format.service';
 import { Title } from '@angular/platform-browser';
 import { BasicAnimations } from 'src/app/animations/basicanimations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-myprojects',
@@ -23,7 +24,7 @@ export class MyprojectsComponent implements OnInit {
 
   private projects: ProjectFields[];
 
-  constructor(private contentfulService: ContentfulService, private formatService: FormatService, private titleService: Title) { }
+  constructor(private contentfulService: ContentfulService, private formatService: FormatService, private titleService: Title, private router: Router) { }
 
   ngOnInit() {
     this.fadeState = 'invisible';
@@ -34,8 +35,8 @@ export class MyprojectsComponent implements OnInit {
       console.log('Meine Project-Entries: ', projectEntries);
       this.projects = this.resolveProjects(projectEntries);
       this.fadeState = 'seen';
-    }).catch(error => {
-      console.log('Contentful-API: Es wurden keine Projects gefunden: ', error);
+    }).catch((reason: any) => {
+      this.router.navigateByUrl('/notavailable');
     });
   }
 

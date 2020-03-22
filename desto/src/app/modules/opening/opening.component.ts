@@ -4,6 +4,7 @@ import { ContentfulService } from 'src/app/core/services/contentful/contentful.s
 import { Entry } from 'contentful';
 import { DOCUMENT } from '@angular/common';
 import { BasicAnimations } from 'src/app/animations/basicanimations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-opening',
@@ -18,12 +19,14 @@ export class OpeningComponent implements OnInit {
 
   private openingContent: OpeningContentFields;
 
-  constructor(private contentfulService: ContentfulService, @Inject(DOCUMENT) private document: Document) { }
+  constructor(private contentfulService: ContentfulService, private router: Router) { }
 
   ngOnInit() {
     this.contentfulService.getOpeningPageContent().then((openingPageContent: Entry<OpeningContentFields>[]) => {
       this.openingContent = openingPageContent[0].fields;
       console.log('Mein OpeningContent: ', this.openingContent);
+    }).catch((reason: any) => {
+      this.router.navigateByUrl('/notavailable');
     });
   }
 

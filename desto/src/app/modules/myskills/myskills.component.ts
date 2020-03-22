@@ -9,6 +9,7 @@ import { TechnologyLayerType } from 'src/app/models/technologyLayerDescription/t
 import { environment } from 'src/environments/environment';
 import { Title } from '@angular/platform-browser';
 import { BasicAnimations } from 'src/app/animations/basicanimations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-myskills',
@@ -56,7 +57,7 @@ export class MyskillsComponent implements OnInit {
 
   public fadeState: string;
 
-  constructor(private contentfulService: ContentfulService, private titleService: Title) { }
+  constructor(private contentfulService: ContentfulService, private titleService: Title, private router: Router) { }
 
   ngOnInit() {
     this.fadeState = 'invisible';
@@ -68,15 +69,15 @@ export class MyskillsComponent implements OnInit {
       this.otherSkills = this.resolveOtherSkills(this.skills);
       console.log('OtherSkills: ', this.otherSkills);
       this.initializeCharts();
-    }).catch(error => {
-      console.log('Contentful-API: Es wurden keine Skills gefunden: ', error);
+    }).catch((reason: any) => {
+      this.router.navigateByUrl('/notavailable');
     });
 
     this.contentfulService.getTechnologyLayerDescriptionContent().then((techdescEntries: Entry<TechnologyLayerDescription>[]) => {
       console.log('Meine TechnologyDescription-Entries: ', techdescEntries);
       this.technologyDescriptions = this.resolveInnerEntriesOfType(techdescEntries);
-    }).catch(error => {
-      console.log('Contentful-API: Es wurden keine Technology-Beschreibungen gefunden: ', error);
+    }).catch((reason: any) => {
+      this.router.navigateByUrl('/notavailable');
     });
   }
 
