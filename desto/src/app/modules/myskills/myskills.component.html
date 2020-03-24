@@ -1,6 +1,10 @@
 <div [@fadeSlow]="fadeState" class="content">
   <h2>Meine Fähigkeiten</h2>
-  <p>Hier kommt noch ein netter Text.</p>
+  <p>In der Branche der Software-Entwicklung gehört es zum Alltag Thematiken eindeutig zu definieren, um eine Klassifizierung
+    sowie eine Minimierung von Missverständlichkeit gewährleisten zu können.
+    Drum definiere ich meinen bisherigen Technology-Stack - unmissverständlich.
+    Auf dieser Seite finden Sie mein gesamtes, berufsübergreifendes, Skillset.
+  </p>
 
   <!-- Frontend-Chart-Content -->
   <div class="chartContentArea">
@@ -455,9 +459,9 @@
 
   <div *ngIf="otherSkills" class="chartContentArea otherContent">
     <h3>Weitere Technologien und Kenntnisse</h3>
-    <p>Hier kommt noch ein netter Text.</p>
+    <p>Nicht eindeutig zuordenbare, aber nicht zu vernachlässigende Thematiken sowie Skills zähle ich in dieser Sektion auf:</p>
     <div class="row justify-content-center">
-      <span *ngFor="let otherSkill of otherSkills" class="badge badge-pill badge-light">{{ otherSkill.title }}</span>
+      <span *ngFor="let otherSkill of otherSkills" class="badge badge-pill badge-pill-customcolor">{{ otherSkill.title }}</span>
     </div>
   </div>
 </div>

@@ -8,7 +8,7 @@
   <div class="jobcontent" *ngIf="fulltimeJobEntries.length">
     <h4>Beruf & Ausbildung</h4>
     <p>
-      Das ist eine Beschreibung.
+      Dies sind meine bis zum jetzigen Zeitpunkt getätigten Vollzeitbeschäftigungen:
     </p>
     <ul class="timeline">
       <li *ngFor="let job of fulltimeJobEntries; let i = index">
@@ -42,7 +42,7 @@
   <div [@fadeSlow]="fadeSideJobsState" class="jobcontent" *ngIf="sideJobEntries.length">
     <h4>Meine Nebentätigkeiten</h4>
     <p>
-      Das ist eine Beschreibung.
+      Neben dem Studium oder dem Abitur erlangte ich ebenfalls praktische Erfahrung - Bei folgenden Teilzeitbeschäftigungen:
     </p>
     <ul (appOnviewport)="animateSideJobs()" class="timeline">
       <li *ngFor="let sidejob of sideJobEntries">
