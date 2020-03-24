@@ -24,7 +24,7 @@ export class OpeningComponent implements OnInit {
   ngOnInit() {
     this.contentfulService.getOpeningPageContent().then((openingPageContent: Entry<OpeningContentFields>[]) => {
       this.openingContent = openingPageContent[0].fields;
-      console.log('Mein OpeningContent: ', this.openingContent);
+      // console.log('Mein OpeningContent: ', this.openingContent);
     }).catch((reason: any) => {
       this.router.navigateByUrl('/notavailable');
     });

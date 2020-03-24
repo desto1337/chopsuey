@@ -25,7 +25,7 @@ export class AboutmeComponent implements OnInit {
 
     this.contentfulService.getAboutMeContent().then(
       (items: Entry<AboutMeFields>[]) => {
-        console.log('Meine Response: ', items);
+        // console.log('Meine Response: ', items);
         this.aboutmeContent = this.findActiveContent(items);
       }
     ).catch((reason: any) => {
@@ -42,7 +42,7 @@ export class AboutmeComponent implements OnInit {
   }
 
   animateContent() {
-    console.log('Juhu! Ich bin zu sehen!');
+    // console.log('Juhu! Ich bin zu sehen!');
     this.fadeState = 'seen';
   }
 

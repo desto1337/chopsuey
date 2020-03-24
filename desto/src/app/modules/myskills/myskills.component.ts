@@ -64,17 +64,17 @@ export class MyskillsComponent implements OnInit {
     this.titleService.setTitle('Dennis Stoklosa | Fähigkeiten');
 
     this.contentfulService.getSkillPageContent().then((skillEntries: Entry<SkillFields>[]) => {
-      console.log('Meine Skill-Entries: ', skillEntries);
+      // console.log('Meine Skill-Entries: ', skillEntries);
       this.skills = this.resolveInnerEntriesOfType(skillEntries);
       this.otherSkills = this.resolveOtherSkills(this.skills);
-      console.log('OtherSkills: ', this.otherSkills);
+      // console.log('OtherSkills: ', this.otherSkills);
       this.initializeCharts();
     }).catch((reason: any) => {
       this.router.navigateByUrl('/notavailable');
     });
 
     this.contentfulService.getTechnologyLayerDescriptionContent().then((techdescEntries: Entry<TechnologyLayerDescription>[]) => {
-      console.log('Meine TechnologyDescription-Entries: ', techdescEntries);
+      // console.log('Meine TechnologyDescription-Entries: ', techdescEntries);
       this.technologyDescriptions = this.resolveInnerEntriesOfType(techdescEntries);
     }).catch((reason: any) => {
       this.router.navigateByUrl('/notavailable');
@@ -216,7 +216,7 @@ export class MyskillsComponent implements OnInit {
       }
       default: {
         // TO DO
-        console.log('Kein bisheriges Handling des SkillTypes');
+        // console.log('Kein bisheriges Handling des SkillTypes');
       }
     }
   }
@@ -287,7 +287,7 @@ export class MyskillsComponent implements OnInit {
       }
       default: {
         // TO DO
-        console.log('Kein bisheriges Handling des SkillTypes');
+        // console.log('Kein bisheriges Handling des SkillTypes');
       }
     }
 
@@ -308,7 +308,7 @@ export class MyskillsComponent implements OnInit {
     });
 
     filteredSkills.sort((a, b) => b.level - a.level); // Größter Value zuerst, von links nach rechts
-    console.log('filteredSkills, isLanguage: ' + isLanguageProperty + ' , für SkillType: ' + skillType, filteredSkills);
+    // console.log('filteredSkills, isLanguage: ' + isLanguageProperty + ' , für SkillType: ' + skillType, filteredSkills);
 
     filteredSkills.forEach(skill => {
       seriesData.push(skill.level);

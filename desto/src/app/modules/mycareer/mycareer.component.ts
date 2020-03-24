@@ -41,7 +41,7 @@ export class MycareerComponent implements OnInit {
 
   resolveJobs(jobEntries: Entry<JobFields>[]) {
     jobEntries.forEach((jobEntry: Entry<JobFields>) => {
-      console.log('Aktueller Wert: ', jobEntry);
+      // console.log('Aktueller Wert: ', jobEntry);
       if (jobEntry.fields.sidejob) {
         this.sideJobEntries.push(jobEntry.fields);
       } else {
@@ -63,7 +63,7 @@ export class MycareerComponent implements OnInit {
 
   animateSideJobs() {
     // console.log('Juhu! Ich bin zu sehen in MyCareer, Sidejobs!');
-    console.log('Meine Nebentätigkeiten sind sichtbar!');
+    // console.log('Meine Nebentätigkeiten sind sichtbar!');
     this.fadeSideJobsState = 'seen';
   }
 }

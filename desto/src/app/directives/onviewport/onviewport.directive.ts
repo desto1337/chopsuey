@@ -19,7 +19,7 @@ export class OnviewportDirective implements AfterViewInit, OnDestroy {
   subscriptionResize: Subscription;
 
   constructor(private element: ElementRef) {
-    console.log('Direktive aufgerufen');
+    // console.log('Direktive aufgerufen');
     this.appOnviewport = new EventEmitter<void>();
   }
 
@@ -52,7 +52,7 @@ export class OnviewportDirective implements AfterViewInit, OnDestroy {
       if (this.isVisible()) {
         this.unsubscribe();
         this.appOnviewport.emit();
-        console.log('appOnViewPort-Event ausgelöst');
+        // console.log('appOnViewPort-Event ausgelöst');
       }
     }
   }
@@ -126,7 +126,7 @@ export class OnviewportDirective implements AfterViewInit, OnDestroy {
     // this.subscribeNew();
   }
   ngOnDestroy() {
-    console.log('Wurde ich destroyed?');
+    // console.log('Wurde ich destroyed?');
     this.unsubscribe();
   }
 

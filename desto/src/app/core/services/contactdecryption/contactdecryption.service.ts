@@ -12,7 +12,7 @@ export class ContactdecryptionService {
 
   constructor() {
     this.contactRaw = environment.contact;
-    console.log('raw:', this.contactRaw);
+    // console.log('raw:', this.contactRaw);
   }
 
   public resolvePrefix(key: string): string {

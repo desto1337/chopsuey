@@ -32,7 +32,7 @@ export class MypassionComponent implements OnInit {
     this.fadeState = 'invisible';
 
     this.contentfulService.getCharacteristicPageContent().then((personalityContent: Entry<CharacteristicFields>[]) => {
-      console.log('Meine Characteristic-Entries: ', personalityContent);
+      // console.log('Meine Characteristic-Entries: ', personalityContent);
       this.charateristics = this.resolveCharacteristics(personalityContent);
     }).catch((reason: any) => {
       this.router.navigateByUrl('/notavailable');

@@ -48,8 +48,8 @@ export class ContactmeComponent implements OnInit {
       // Initialize Prefix
       this.prefix = this.contactDecryptionService.resolvePrefix('hexhex');
 
-      console.log('Initiale Mail', this.contact);
-      console.log('Initialer Prefix', this.prefix);
+      // console.log('Initiale Mail', this.contact);
+      // console.log('Initialer Prefix', this.prefix);
 
       this.updateMailtoString();
     }

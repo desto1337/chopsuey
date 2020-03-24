@@ -32,7 +32,7 @@ export class MyprojectsComponent implements OnInit {
     this.titleService.setTitle('Dennis Stoklosa | Projekte');
 
     this.contentfulService.getProjectPageContent().then((projectEntries: Entry<ProjectFields>[]) => {
-      console.log('Meine Project-Entries: ', projectEntries);
+      // console.log('Meine Project-Entries: ', projectEntries);
       this.projects = this.resolveProjects(projectEntries);
       this.fadeState = 'seen';
     }).catch((reason: any) => {
