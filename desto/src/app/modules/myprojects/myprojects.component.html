@@ -1,4 +1,58 @@
-<div class="content">
-  <h2>Eine Test-H2-Headline</h2>
-  <p>myprojects works!</p>
+<div [@fadeSlow]="fadeState" class="content">
+  <h2>Meine privaten Projekte</h2>
+  <p>
+    Auch abseits des Berufsalltags nehme ich mir bewusst die Zeit mich in neue Technologien einzuarbeiten oder Projekte umzusetzen.
+    Aus Datenschutzgründen werden hier ausschließlich private Projekte aufgezählt. Mein gesamtes Skill-Portfolie finden Sie unter
+    "Meine Fähigkeiten".
+  </p>
+
+  <div *ngFor="let project of projects; let i = index, let last = last" [class.content-right]="i % 2 == 0" [class.content-left]="i % 2 != 0"  [class.dividerline-last-item]="last" class="row justify-content-center subcontent">
+      <div *ngIf="i % 2 != 0" class="col-md-7 align-self-center">
+        <div class="imageContainer">
+          <img class="img-fluid" [src]="formatService.revealContentfulImageUrl(project.image)" />
+          <small *ngIf="project.imageCopyright">{{ project.imageCopyright }}</small>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <h4>{{ project.title }}</h4>
+        <p>{{ project.description }}</p>
+      </div>
+      <div *ngIf="i % 2 == 0" class="col-md-7 align-self-center">
+        <div class="imageContainer">
+          <img class="img-fluid" [src]="formatService.revealContentfulImageUrl(project.image)" />
+          <small *ngIf="project.imageCopyright">{{ project.imageCopyright }}</small>
+        </div>
+      </div>
+
+      <div class="col-12 technologywrapper">
+        <div class="technologylist">
+            <p>Eingesetze Technologien:</p>
+            <div *ngFor="let skill of project.skills" class="row item">
+              <span class="col-2 text-right align-self-middle">
+                <fa-icon [icon]="listitemIcon" size="lg" [styles]="{'color': '#9ABAEF'}"></fa-icon>
+              </span>
+                <span class="col-10 align-self-middle">
+                  {{ skill }}
+                </span>
+            </div>
+        </div>
+      </div>
+
+     <!--
+      <div class="col-md-8">
+        <div class="skilllist">
+          <p class="listheadline">Eingesetzte Technologien:</p>
+          <ul>
+            <li *ngFor="let skill of project.skills">
+              <fa-icon [icon]="listitemIcon" size="lg" [styles]="{'color': '#9ABAEF'}"></fa-icon>
+              <span>{{ skill }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      -->
+
+    <span class="dividerline"></span>
+  </div>
+
 </div>

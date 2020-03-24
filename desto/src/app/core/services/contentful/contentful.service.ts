@@ -67,4 +67,13 @@ export class ContentfulService {
       return res.items;
     });
   }
+
+  getTechnologyLayerDescriptionContent(query?: object): Promise<Entry<any>[]> {
+    return this.cdaClient.getEntries(Object.assign({
+      content_type: CONTENTFULCONFIG.contentTypeIds.technologyLayerDescription
+    }, query))
+    .then(res => {
+      return res.items;
+    });
+  }
 }

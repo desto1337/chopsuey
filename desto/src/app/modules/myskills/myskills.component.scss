@@ -1,5 +1,18 @@
 @import "globalvariables";
 
+h3 {
+  text-align: center;
+}
+
+.tab-content .tab-pane {
+  min-height: 30vh;
+}
+
+.chartContentArea{
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+}
+
 .row {
   margin-top: 2vh;
 }
@@ -10,7 +23,59 @@
 }
 
 .chartContainer {
-  width: 500px;
-  height: 500px;
-  border: solid 5px $secondary-color;
+  max-width: 600px;
+  max-height: 600px;
+  margin-bottom: 3vh;
+  // border: solid 5px $secondary-color;
 }
+
+.otherContent {
+  text-align: center;
+}
+
+.card-content .badge {
+  font-size: 100%;
+}
+
+.card-content .badge-pill {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.3rem;
+  margin: 5px;
+}
+
+.otherContent .badge{
+  font-size: 130%;
+}
+
+.otherContent .badge-pill {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 1rem;
+  margin: 20px;
+}
+
+.mobilenotifer {
+  margin-top: 5vh;
+}
+
+/**
+.nav-pills .custompill .nav-link:not(.active) {
+  background-color: white;
+  color: $secondary-color;
+  border: 1px $secondary-color solid;
+}
+
+/** active navpill **/
+/**
+.nav-pills .custompill .nav-link {
+  background-color: blue;
+  color: white;
+  border: 1px black solid;
+}
+
+**/

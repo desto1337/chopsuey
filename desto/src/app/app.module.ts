@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { NgcCookieConsentModule, NgcCookieConsentConfig } from 'ngx-cookieconsent';
 import { cookieConfiguration } from '../environments/environment';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +22,9 @@ import { LegalsComponent } from './core/legals/legals.component';
 import { PrivacypolicyComponent } from './core/privacypolicy/privacypolicy.component';
 import { DashboardComponent } from './core/dashboard/dashboard.component';
 import { PersonComponent } from './core/person/person.component';
+import { NotavailableComponent } from './modules/notavailable/notavailable.component';
 import { ContentfulService } from './core/services/contentful/contentful.service';
+import { OnviewportDirective } from './directives/onviewport/onviewport.directive';
 
 const cookieConfig: NgcCookieConsentConfig = cookieConfiguration;
 
@@ -38,13 +43,18 @@ const cookieConfig: NgcCookieConsentConfig = cookieConfiguration;
     LegalsComponent,
     PrivacypolicyComponent,
     DashboardComponent,
-    PersonComponent
+    PersonComponent,
+    OnviewportDirective,
+    NotavailableComponent,
   ],
   imports: [
     NgcCookieConsentModule.forRoot(cookieConfig),
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
+    FontAwesomeModule,
+    NgApexchartsModule
   ],
   providers: [
     ContentfulService

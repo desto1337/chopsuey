@@ -14,7 +14,7 @@ footer {
 
 #footerLine {
   margin-top: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   width: 90%;
   border-top: solid $grey-lighter 1px;
   max-width: 1200px; // default: 960;
@@ -40,4 +40,33 @@ footer #copyrightContainer small {
 #bottomLineContainer a {
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.social-items {
+  //border-radius: 50%;
+  border: 1px solid $grey-lighter;
+  background-color: $footer-sociallink-backgroundcolor;
+  height: 40px;
+  width: 40px;
+  margin: 0 25px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+}
+
+.card-container .social-items:not(:last-child) {
+  margin-right: 0;
+}
+
+.card-container .social-items:not(.highlight-card) {
+  cursor: pointer;
+}
+
+.card-container .social-items:hover {
+  transform: translateY(-3px);
+  // box-shadow: 0 4px 17px rgba(black, 0.1);
 }

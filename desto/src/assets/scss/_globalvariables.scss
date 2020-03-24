@@ -2,8 +2,36 @@
 
 $primary-color: #6c757d;
 $secondary-color: #9ABAEF; // rgba(154, 186, 239, 1)
+$secondary-color-lightest: #f4f8fd;
 $grey-lighter: #d2d2d7;
 $grey-default: #848d95;
 
+$fontcolor-openingpage: rgba(255, 255, 255, 0.7);
+$background-gradient-openingpage: rgba(0, 0, 0, 0.43);
+$background-gradient-notavailablepage: rgba(0, 0, 0, 0.7);
+
+$anchor-basecolor: #1976d2; // default: #1976d2
+$anchor-hovercolor: #125699; // default: #125699
+
+$navbar-color: rgba(0, 0, 0, 0.9);
+$navbar-link-active: rgb(187, 207, 238);
+
+$technologylist-bordercolor: rgb(210, 229, 255);
+$divider-color: $technologylist-bordercolor;
+
+$custom-card-bordercolor: #eee;
+$custom-card-backgroundcolor: #fafafa;
+
+$timeline-color: $grey-lighter;
+$timeline-circle-fill: white;
+$timeline-circle-border: $secondary-color;
+
+/* additionally colorway of social links can be changed in styles properties of element [styles]= .. */
+$footer-sociallink-backgroundcolor: #fafafa;
+
+$content-maxwidth: 1200px;  // default: 960
+$jobcontent-maxwidth: 900px;
+$technologylist-maxwidth: $jobcontent-maxwidth;
+$img-container-maxwidth: 400px;
 $header-maxheight: 48px;
 $footer-height: 180px;

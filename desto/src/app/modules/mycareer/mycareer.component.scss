@@ -1,10 +1,41 @@
 @import "globalvariables";
+@import "timeline";
 
-.content {
-  // Just test
-  border: solid black 1px;
+h2 {
+  text-align: center;
 }
 
-.card {
-  margin: 10px;
+p {
+  text-align: center;
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px) {
+  .jobcontent {
+    width: $jobcontent-maxwidth;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+}
+
+.jobcontent h4:first-child {
+  text-align: center;
+}
+
+.jobcontent p {
+  text-align: center;
+}
+
+.dateintervall {
+  color: $secondary-color;
+}
+
+.jobcontent .description {
+  margin-top: 1vh;
+}
+
+.textcenter {
+  text-align: center;
 }

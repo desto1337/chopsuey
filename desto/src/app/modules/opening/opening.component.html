@@ -1,9 +1,9 @@
 <div id="openingcontent">
   <div *ngIf="openingContent" class="row h-100">
-    <div class="col-12 bottomTitle">
+    <div [@flyInOnEnter1]="openingContent" class="col-12 bottomTitle">
       <h1>{{ openingContent.headline }}</h1>
     </div>
-    <div class="col-md-5 bottom">
+    <div [@flyInOnEnter2]="openingContent" class="col-md-5 bottom">
       <p>{{ openingContent.description }}</p>
     </div>
   </div>

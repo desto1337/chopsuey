@@ -1,2 +1,62 @@
 @import "globalvariables";
 
+img {
+  border-radius: 7px;
+}
+
+.subcontent {
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+  // border-bottom: 1px $grey-lighter solid;
+
+  h4 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.subcontent:last-child {
+  border-bottom: none;
+}
+
+.content-right .imageContainer {
+  padding-top: 2vh;
+  margin-left: auto;
+  text-align: right;
+}
+
+.content-left .imageContainer {
+  padding-top: 2vh;
+  margin-right: auto;
+  text-align: left;
+}
+
+.technologywrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $technologylist-maxwidth;
+}
+
+.technologylist {
+  margin-top: 20px;
+  margin-bottom: 5vh;
+  border-radius: 7px;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color:	$secondary-color-lightest;
+  border: 1px transparent solid;
+  border-radius: 7px;
+  // color: white;
+  p {
+    // color: white;
+    text-align: center;
+    font-size: 110%;
+    margin-bottom: 1vh;
+  }
+  .item {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+}

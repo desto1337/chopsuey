@@ -1,8 +1,11 @@
+import { Asset } from 'contentful';
+
 export interface ProjectFields {
   title: string;
   date: Date;
   description: string;
   skills: string[];
-  image: any; // TO DO
+  image: Asset;
+  imageCopyright: string;
   url: string;
 }

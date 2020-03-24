@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faStackOverflow, faGithubAlt, faXing, faLinkedinIn, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { environment } from '../../../environments/environment';
 
 @Component({
@@ -7,6 +8,11 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+
+  public faStackOverflow: IconDefinition = faStackOverflow;
+  public faGithubAlt: IconDefinition = faGithubAlt;
+  public faXing: IconDefinition = faXing;
+  public faLinkedinIn: IconDefinition = faLinkedinIn;
 
   private currentYear: number;
   private urlXing: string;

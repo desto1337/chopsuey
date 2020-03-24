@@ -1,55 +1,98 @@
-<div class="content">
+<div [@fadeOnEnter] class="content">
   <h2>Nehmen Sie Kontakt mit mir auf</h2>
-
-  <div class="row justify-content-center">
-    <!-- Terminal -->
-    <div class="emailoverlay">
-      <pre>
-<b>Verfasse E-Mail..</b>
-      </pre>
-      <pre>
-Ihr Name:
-          <input
-            type="text"
-            id="name"
-            class="form-control"
-            placeholder="Name"
-            [(ngModel)]="contactname"
-          />
-Betreff:
-          <select class="form-control" [(ngModel)]="subject">
-            <option value="Feedback" selected>Feedback</option>
-            <option value="Mittleilung eines Bugs">Mitteilung eines Bugs</option>
-            <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
-          </select>
-Mitteilung:
-          <textarea
-            class="form-control rounded-0"
-            id="exampleFormControlTextarea2"
-            rows="5"
-            [(ngModel)]="message"
-            placeholder="Ihre Nachricht an mich"></textarea>
-        </pre>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-12">
-      <div class="card-container">
-        <a
-          class="custom_card card-small"
-          target="_blank"
-          rel="noopener"
-          href="mailto:contact@dennis-stoklosa.de"
-        >
-          Erstelle E-Mail
-        </a>
+  <p>
+    Sofern Sie auf einen Bug auf dieser Webseite gestoßen sind, ein konkretes Anliegen haben oder Sie sich schlichtweg mit mir
+    vernetzen wollen, so können Sie gern mit mir Kontakt aufnehmen. Ich bin auf den jeweiligen Social Media Kanälen vertreten,
+    ebenso freue ich mich auf Ihre Mail.
+  </p>
+    <ul class="nav justify-content-center" id="myTab" role="tablist">
+      <li class="nav-item nav-item-customborder">
+        <a class="nav-link active" id="emailcontact-tab" data-toggle="tab" href="#emailcontact" role="tab" aria-controls="home" aria-selected="true">Kontakt via E-Mail</a>
+      </li>
+      <li class="nav-item nav-item-customborder">
+        <a class="nav-link" id="socialmedia-tab" data-toggle="tab" href="#socialmedia" role="tab" aria-controls="profile" aria-selected="false">Kontakt via Social Media</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="emailcontact" role="tabpanel" aria-labelledby="emailcontact-tab">
+        <div class="row">
+          <!-- Terminal -->
+          <div class="emailoverlay">
+            <div class="mailcontent">
+              <div class="form-group">
+                <label>
+                  <b>Verfasse E-Mail..</b>
+                </label>
+              </div>
+              <div class="form-group">
+                <label>Betreff:</label>
+                  <select class="form-control" [(ngModel)]="subject" (ngModelChange)="updateMailtoString()">
+                    <option value="Feedback" selected>Feedback</option>
+                    <option value="Mittleilung eines Bugs">Mitteilung eines Bugs</option>
+                    <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                <label>Mitteilung:</label>
+                  <textarea
+                    class="form-control rounded-0"
+                    id="messageTextarea"
+                    rows="5"
+                    [(ngModel)]="message"
+                    (ngModelChange)="updateMailtoString()"
+                    placeholder="Ihre Nachricht an mich"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="card-container">
+              <a
+                class="custom_card card-small"
+                target="_blank"
+                rel="noopener"
+                href="{{prefix}}{{contact}}{{options}}"
+              >
+                Erstelle E-Mail
+              </a>
+            </div>
+          </div>
+          <div class="col-12 text-center">
+            <small>
+              Oder schreiben Sie direkt eine E-Mail an {{contact}}
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="socialmedia" role="tabpanel" aria-labelledby="socialmedia-tab">
+        <div class="row">
+          <div class="col text-center">
+            <h4>
+              Meine Social Media Profile:
+            </h4>
+            <div class="card-container">
+              <a class="custom_card" target="_blank" rel="noopener" [href]="xingLink">
+                <fa-icon [icon]="faXing" size="lg" pull="left"></fa-icon>
+                Xing
+              </a>
+              <a class="custom_card" target="_blank" rel="noopener" [href]="linkedinLink">
+                <fa-icon [icon]="faLinkedinIn" size="lg" pull="left"></fa-icon>
+                Linked-In
+              </a>
+            </div>
+            <div class="card-container">
+              <a class="custom_card" target="_blank" rel="noopener" [href]="githubLink">
+                <fa-icon [icon]="faGithubAlt" size="lg" pull="left"></fa-icon>
+                Github
+              </a>
+              <a class="custom_card" target="_blank" rel="noopener" [href]="stackoverflowLink">
+                <fa-icon [icon]="faStackOverflow" size="lg" pull="left"></fa-icon>
+                Stack Overflow
+              </a>
+            </div>
+        </div>
+      </div>
       </div>
     </div>
-    <div class="col-12 text-center">
-      <small
-        >Oder schreiben Sie direkt eine E-Mail an contact (at)
-        dennis-stoklosa.de</small
-      >
-    </div>
-  </div>
 </div>

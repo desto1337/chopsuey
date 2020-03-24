@@ -8,11 +8,12 @@
   transform: translateY(-#{$header-maxheight});
   z-index: -1;
 
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.25),
-    rgba(0, 0, 0, 0.25)
-  ), url('../../../assets/images/website_background.jpg') no-repeat center center / cover;
-  background-position-y: -30%;
+  background: linear-gradient($background-gradient-openingpage, $background-gradient-openingpage),
+    url('../../../assets/images/website_background.jpg') no-repeat top center / cover;
+
+  background-position-y: $header-maxheight; // Space von Navbar-Höhe
+  // background-position: center right;
+  background-color: $navbar-color; // Navback-Background Space
 }
 
 #openingcontent {
@@ -40,10 +41,10 @@
 
 h1 {
   font-size: 3.2em;
-  color: rgba(255, 255, 255, 0.7);
+  color: $fontcolor-openingpage;
 }
 
 p {
   font-size: 1.6em;
-  color: rgba(255, 255, 255, 0.7);
+  color: $fontcolor-openingpage;
 }
