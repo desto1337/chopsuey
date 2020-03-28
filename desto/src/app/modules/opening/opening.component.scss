@@ -30,13 +30,29 @@
 .bottom {
   // background: green;
   align-self: flex-end;
-  height: 35vh;
+  height: 50vh;
 }
 
 .bottomTitle {
   //background: green;
-  align-self: flex-end;
-  height: 5vh;
+  display: table-cell;
+  vertical-align: bottom;
+  height: 35vh;
+  //padding-bottom: 5vh;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 920px) {
+  .bottom {
+    height: 30vh;
+  }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 920px) {
+  .bottomTitle {
+    height: 60vh;
+  }
 }
 
 h1 {
@@ -44,7 +60,21 @@ h1 {
   color: $fontcolor-openingpage;
 }
 
+/* Responsive Styles */
+@media screen and (max-width: 920px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+}
+
 p {
   font-size: 1.6em;
   color: $fontcolor-openingpage;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+  p {
+    font-size: 1.2rem;
+  }
 }
