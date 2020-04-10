@@ -1,9 +1,9 @@
 <div class="content">
   <div [@fadeSlow]="fadeState" *ngIf="aboutmeContent" class="row justify-content-center">
-    <div class="col-md-6 pr-lg-5">
+    <div class="col-lg-6 pr-lg-5 align-middle">
       <img class="img-fluid shadow" src="../../../assets/images/aboutme_picture.jpg" alt="Kein Image vorhanden :-("/>
     </div>
-    <div class="col-md-6 pl-lg-5 pt-2">
+    <div class="col-lg-6 pl-lg-5 pt-2">
       <div id="quote">
         <h2>Über mich</h2>
         <q (appOnviewport)="animateContent()">{{ aboutmeContent.quote }}</q>

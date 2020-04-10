@@ -1,6 +1,7 @@
 ul.timeline {
   list-style-type: none;
   position: relative;
+  padding-inline-end: 40px; // fix centering content
 }
 ul.timeline:before {
   content: ' ';

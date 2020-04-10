@@ -2,8 +2,8 @@
   <h2>Meine privaten Projekte</h2>
   <p>
     Auch abseits des Berufsalltags nehme ich mir bewusst die Zeit mich in neue Technologien einzuarbeiten oder Projekte umzusetzen.
-    Aus Datenschutzgründen werden hier ausschließlich private Projekte aufgezählt. Mein gesamtes Skill-Portfolie finden Sie unter
-    "Meine Fähigkeiten".
+    Aus Datenschutzgründen werden hier ausschließlich private Projekte aufgezählt. Mein gesamtes Skill-Portfolie finden Sie unter dem Punkt
+    <a routerLink="/skills">Fähigkeiten</a>.
   </p>
 
   <div *ngFor="let project of projects; let i = index, let last = last" [class.content-right]="i % 2 == 0" [class.content-left]="i % 2 != 0"  [class.dividerline-last-item]="last" class="row justify-content-center subcontent">

@@ -1,6 +1,10 @@
 <div [@fadeSlow]="fadeState" class="content">
   <h2>Meine Fähigkeiten</h2>
-  <p>Hier kommt noch ein netter Text.</p>
+  <p>In der Branche der Software-Entwicklung gehört es zum Alltag Thematiken eindeutig zu definieren, um eine Klassifizierung
+    sowie eine Minimierung von Missverständlichkeit gewährleisten zu können.
+    Drum definiere ich meinen bisherigen Technology-Stack - unmissverständlich.
+    Auf dieser Seite finden Sie mein gesamtes, berufsübergreifendes, Skillset.
+  </p>
 
   <!-- Frontend-Chart-Content -->
   <div class="chartContentArea">
@@ -15,7 +19,7 @@
           role="tab"
           aria-controls="frontendtech"
           aria-selected="true"
-          >Frontend-Technologien</a
+          >Technologien</a
         >
       </li>
       <li class="nav-item nav-item-customborder">
@@ -39,7 +43,7 @@
         aria-labelledby="frontendtech-tab"
       >
         <div class="card-body">
-          <h5 class="card-title">Technologien</h5>
+          <h5 class="card-title">Frontend-Technologien</h5>
           <div class="card-text">
             <div class="row card-content">
               <div
@@ -166,7 +170,7 @@
           role="tab"
           aria-controls="middlewaretech"
           aria-selected="true"
-          >Middleware-Technologien</a
+          >Technologien</a
         >
       </li>
       <li class="nav-item nav-item-customborder">
@@ -190,7 +194,7 @@
         aria-labelledby="middlewaretech-tab"
       >
         <div class="card-body">
-          <h5 class="card-title">Technologien</h5>
+          <h5 class="card-title">Middleware-Technologien</h5>
           <div class="card-text">
             <div class="row card-content">
               <div
@@ -316,7 +320,7 @@
           role="tab"
           aria-controls="backendtech"
           aria-selected="true"
-          >Backend-Technologien</a
+          >Technologien</a
         >
       </li>
       <li class="nav-item nav-item-customborder">
@@ -340,7 +344,7 @@
         aria-labelledby="backendtech-tab"
       >
         <div class="card-body">
-          <h5 class="card-title">Technologien</h5>
+          <h5 class="card-title">Backend-Technologien</h5>
           <div class="card-text">
             <div class="row card-content">
               <div
@@ -455,9 +459,9 @@
 
   <div *ngIf="otherSkills" class="chartContentArea otherContent">
     <h3>Weitere Technologien und Kenntnisse</h3>
-    <p>Hier kommt noch ein netter Text.</p>
+    <p>Nicht eindeutig zuordenbare, aber nicht zu vernachlässigende Thematiken sowie Skills zähle ich in dieser Sektion auf:</p>
     <div class="row justify-content-center">
-      <span *ngFor="let otherSkill of otherSkills" class="badge badge-pill badge-light">{{ otherSkill.title }}</span>
+      <span *ngFor="let otherSkill of otherSkills" class="badge badge-pill badge-pill-customcolor">{{ otherSkill.title }}</span>
     </div>
   </div>
 </div>

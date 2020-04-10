@@ -6,13 +6,13 @@ h2 {
 }
 
 p {
-  text-align: center;
+  text-align: left;
 }
 
 /* For Tablets */
-@media screen and (min-width: 540px) {
+@media screen and (min-width: 768px) {
   .jobcontent {
-    width: $jobcontent-maxwidth;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5vh;
@@ -20,7 +20,7 @@ p {
   }
 }
 
-.jobcontent h4:first-child {
+.jobcontent h3:first-child {
   text-align: center;
 }
 
