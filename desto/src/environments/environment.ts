@@ -32,7 +32,7 @@ export const CONTENTFULCONFIG = {
 export const cookieConfiguration: NgcCookieConsentConfig = {
   cookie: {
    // domain: 'https://dennis-stoklosa.de' // or 'your.domain.com' // it is mandatory to set a domain, for cookies to work properly (see https://goo.gl/S2Hy2A)
-   domain: 'dennis.stoklosa.de'
+   domain: 'dennis-stoklosa.de'
   },
   position: 'bottom-right',
   theme: 'classic',
@@ -54,7 +54,7 @@ export const cookieConfiguration: NgcCookieConsentConfig = {
     dismiss: 'Verstanden',
     deny: 'Ablehnen',
     link: 'Datenschutzerklärung',
-    href: 'dennis-stoklosa.de/#/privacy',
+    href: '/#/privacy',
     policy: 'Cookie Policy'
   }
 };
