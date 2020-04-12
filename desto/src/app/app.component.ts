@@ -40,6 +40,8 @@ export class AppComponent implements OnInit, OnDestroy {
     this.statusChangeSubscription = this.ccService.statusChange$.subscribe(
       (event: NgcStatusChangeEvent) => {
         // you can use this.ccService.getConfig() to do stuff...
+        // console.log('status gesetzt');
+        // console.log(this.ccService.hasConsented());
       });
 
     this.revokeChoiceSubscription = this.ccService.revokeChoice$.subscribe(
