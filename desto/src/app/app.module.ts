@@ -25,6 +25,7 @@ import { PersonComponent } from './core/person/person.component';
 import { NotavailableComponent } from './modules/notavailable/notavailable.component';
 import { ContentfulService } from './core/services/contentful/contentful.service';
 import { OnviewportDirective } from './directives/onviewport/onviewport.directive';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 const cookieConfig: NgcCookieConsentConfig = cookieConfiguration;
 
@@ -57,7 +58,11 @@ const cookieConfig: NgcCookieConsentConfig = cookieConfiguration;
     NgApexchartsModule
   ],
   providers: [
-    ContentfulService
+    ContentfulService,
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }
   ],
   bootstrap: [AppComponent]
 })
