@@ -61,9 +61,15 @@ h1 {
 }
 
 /* Responsive Styles */
+@media screen and (max-width: 1280px) {
+  h1 {
+    font-size: 2.0rem;
+  }
+}
+
 @media screen and (max-width: 920px) {
   h1 {
-    font-size: 1.6rem;
+    font-size: 2.0rem;
   }
 }
 
